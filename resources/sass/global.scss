@@ -1,0 +1,65 @@
+input[disabled],
+button[disabled] {
+  opacity: 0.5;
+ cursor: unset;
+}
+
+@mixin list-reset () {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+}
+
+@mixin btn-reset () {
+ padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+ font-family: "Montserrat", sans-serif;
+}
+
+$blue-clr: #2B788B;
+$lightBlue-clr: #C3DCE3;
+$black-pink-clr: #945069;
+$pink-light-clr: #F2D4DC;
+$black-clr: #000000;
+$light-grey-clr: #F6F5F4;
+$medium-grey-clr: #E0E0E0;
+$grey-clr: #BABABA;
+$strong-grey-clr: #757575;
+$cyan-clr: #5996A5;
+$green: #639B6D;
+$pink-clr: #A15993;
+$red-clr: #A95151;
+$yellow: #A95151;
+$orange: #CB5B43;
+
+
+h1,
+h2,
+p {
+ margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[disabled],
+button[disabled] {
+  opacity: 0.5;
+ cursor: unset;
+}
+
+.container {
+    box-sizing: border-box;
+  max-width: 1080px;
+  width: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+}

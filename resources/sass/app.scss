@@ -1,8 +1,10 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//Normalize
+@import 'normalize.scss';
 
 // Variables
-@import 'variables';
+@import 'global';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.header {
+    color: red;
+}
+
