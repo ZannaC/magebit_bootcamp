@@ -20,9 +20,9 @@ function Example() {
 export default Example;
 
 if (document.getElementById('example')) {
-    alert('Hello World 1111111111');
+
     ReactDOM.render(<Example />, document.getElementById('example'));
 }
-
+alert('Hello World 1111111111');
 
 
