@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Homepage from '../pages/homepage';
+import Plp from '../pages/plp';
 import '../../sass/app.css';
 
 function App() {
@@ -19,13 +20,14 @@ function App() {
   };
 
   return (
-  <Router>
+  <BrowserRouter>
    <Layout>
     <Routes>
-     <Route path="/" element={<Homepage />} />
+     <Route path="" element={<Homepage />} />
+     <Route path="plp" element={<Plp />} />
     </Routes>
    </Layout>
-  </Router>
+  </BrowserRouter>
   );
 }
 
