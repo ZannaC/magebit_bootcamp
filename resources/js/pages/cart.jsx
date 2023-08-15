@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 
 function Cart() {
     return (
-        <div className="cart-wrapper">
+        <div className="container">
             <Helmet>
                 <title>Shopping cart</title>
             </Helmet>
