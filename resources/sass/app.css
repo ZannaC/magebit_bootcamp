@@ -351,4 +351,8 @@ button[disabled] {
   outline: 1px solid black;
 }
 
+.border {
+  outline: 1px solid black;
+}
+
 /*# sourceMappingURL=app.css.map */
