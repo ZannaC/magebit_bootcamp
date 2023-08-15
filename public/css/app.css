@@ -1670,6 +1670,6 @@ button[disabled] {
   margin: 0 auto;
 }
 
-.header {
-  color: red;
+.footer {
+  outline: 1px solid black;
 }
