@@ -1,3 +1,38 @@
-.border {
-    outline: 1px solid black;
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.billing_details {
+    padding-bottom: 15px;
+}
+
+.customer_details {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.order_notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_notes_text {
+    padding-top: 30px;
+}
+
+.order_note {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 250px;
+    min-height: 250px;
 }

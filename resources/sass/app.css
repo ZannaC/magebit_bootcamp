@@ -5,10 +5,9 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import "@fontsource/montserrat/300.css";
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/500.css";
-@import "@fontsource/dela-gothic-one/400.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/oxanium/400.css";
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -318,7 +317,7 @@ button[disabled] {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oxanium", sans-serif;
 }
 
 h1,
@@ -341,9 +340,9 @@ button[disabled] {
 
 .container {
   box-sizing: border-box;
-  max-width: 1080px;
+  max-width: 1120px;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 80px;
   margin: 0 auto;
 }
 
@@ -351,8 +350,43 @@ button[disabled] {
   outline: 1px solid black;
 }
 
-.border {
-  outline: 1px solid black;
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.billing_details {
+  padding-bottom: 15px;
+}
+
+.customer_details {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.order_notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_notes_text {
+  padding-top: 30px;
+}
+
+.order_note {
+  max-width: 200px;
+  min-width: 200px;
+  max-height: 250px;
+  min-height: 250px;
 }
 
 /*# sourceMappingURL=app.css.map */
