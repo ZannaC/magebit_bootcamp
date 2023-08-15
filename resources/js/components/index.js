@@ -5,7 +5,9 @@ import Header from './header';
 import Footer from './footer';
 import Homepage from '../pages/homepage';
 import Checkout from '../pages/checkout';
+import Cart from '../pages/cart';
 import '../../sass/app.css';
+
 
 function App() {
 
@@ -24,7 +26,8 @@ function App() {
    <Layout>
     <Routes>
      <Route path="/" element={<Homepage />} />
-     <Route path="/checkout" element={<Checkout />} />
+     <Route path="/cart/checkout" element={<Checkout />} />
+     <Route path="/cart" element={<Cart />} />
     </Routes>
    </Layout>
   </Router>

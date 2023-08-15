@@ -27,9 +27,13 @@
     "dependencies": {
         "@fontsource/dela-gothic-one": "^5.0.7",
         "@fontsource/montserrat": "^5.0.8",
+        "@fontsource/oxanium": "^5.0.8",
+        "@fontsource/space-grotesk": "^5.0.8",
         "normalize": "^0.3.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.15.0"
+        "react-helmet": "^6.1.0",
+        "react-router-dom": "^6.15.0",
+        "react-select-country-list": "^2.2.3"
     }
 }

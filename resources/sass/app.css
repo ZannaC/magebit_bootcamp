@@ -350,6 +350,10 @@ button[disabled] {
   outline: 1px solid black;
 }
 
+.container {
+  padding: 10px;
+}
+
 .flex-box {
   display: flex;
   flex-direction: row;
@@ -360,33 +364,88 @@ button[disabled] {
 
 .billing_details {
   padding-bottom: 15px;
+  padding-top: 30px;
 }
 
 .customer_details {
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
   justify-content: center;
-  gap: 15px;
   align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
 }
 
-.order_notes {
+.payment_method {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.order_notes_text {
-  padding-top: 30px;
+.payment_method_text {
+  max-width: 400px;
+  text-align: center;
 }
 
-.order_note {
-  max-width: 200px;
-  min-width: 200px;
-  max-height: 250px;
-  min-height: 250px;
+.place_order_btn {
+  padding: 7px 40px;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2A254B;
+  color: white;
+}
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+  .payment_method_text {
+    font-size: 14px;
+  }
+  .terms_and_conditions {
+    font-size: 14px;
+  }
+}
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .payment_method_text {
+    font-size: 12px;
+  }
+  .terms_and_conditions {
+    font-size: 12px;
+  }
+}
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .payment_method_text {
+    font-size: 10px;
+  }
+  .terms_and_conditions {
+    font-size: 10px;
+  }
+}
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+  .payment_method_text {
+    font-size: 8px;
+  }
+  .terms_and_conditions {
+    font-size: 8px;
+  }
+}
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+  .payment_method_text {
+    font-size: 8px;
+  }
+  .terms_and_conditions {
+    font-size: 14px;
+  }
+}
+.cart-wrapper {
+  padding: 100px 220px 0 220px;
 }
 
 /*# sourceMappingURL=app.css.map */
