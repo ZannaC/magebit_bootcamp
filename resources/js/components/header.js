@@ -1,9 +1,23 @@
 import React from "react";
+import { BrowserRouter as Link } from 'react-router-dom';
 
 function Header () {
     return (
         <>
-         <h1>Header</h1>
+         <h1 classname="header">Header</h1>
+         <nav>
+         <ul>
+            <li>
+                <Link to="/"></Link>
+            </li>
+            <li>
+                <Link to="/"></Link>
+            </li>
+            <li>
+                <Link to="/"></Link>
+            </li>
+         </ul>
+         </nav>
         </>
     )
 }
