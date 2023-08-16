@@ -10,6 +10,7 @@ import Cart from '../pages/cart';
 import { ProductProvider } from '../ProductContext';
 import '../../sass/app.css';
 
+
 function App() {
 
   const Layout = ({ children }) => {
