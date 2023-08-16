@@ -11,6 +11,7 @@ function Homepage() {
                     <div className="card">
                         <Link className="" to="/plp">PLP btn</Link>
                         <Link className="" to="/pdp">PLP btn</Link>
+                        <Link to="/cart">Cart</Link>
                     </div>
                 </div>
             </div>
