@@ -32,18 +32,6 @@ function Header () {
                     <li className="header__nav-list-elem">
                         <Link to ="/checkout">Checkout</Link>
                     </li>
-                    <li className="header__nav-list-elem">
-                        <Link to ="/">Homepage</Link>
-                    </li>
-                    <li className="header__nav-list-elem">
-                        <Link to ="/">Homepage</Link>
-                    </li>
-                    <li className="header__nav-list-elem">
-                        <Link to ="/">Homepage</Link>
-                    </li>
-                    <li className="header__nav-list-elem">
-                        <Link to ="/">Homepage</Link>
-                    </li>
                 </ul>
             </nav>
         </header>
