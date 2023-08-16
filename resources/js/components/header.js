@@ -1,24 +1,52 @@
 import React from "react";
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Search_svg from '../../img/header/search-svg.svg';
+import Cart_svg from '../../img/header/cart-svg.svg';
+import User_svg from '../../img/header/user-svg.svg';
 
 function Header () {
     return (
-        <>
-         <h1 classname="header">Header</h1>
-         <nav>
-         <ul>
-            <li>
-                <Link to="/"></Link>
-            </li>
-            <li>
-                <Link to="/"></Link>
-            </li>
-            <li>
-                <Link to="/"></Link>
-            </li>
-         </ul>
-         </nav>
-        </>
+        <header className="header">
+            <div className="header__top">
+                <button className="header__top-left-btn">
+                    <img src={Search_svg}></img>
+                </button>
+                <Link className="header__top-center-link" to="/">Avion</Link>
+                <div className="header__top-right-div">
+                    <button className="header__top-right-cart">
+                        <img src={Cart_svg}></img>
+                    </button>
+                    <button className="header__top-right-personal">
+                        <img src={User_svg}></img>
+                    </button>
+                </div>
+            </div>
+            <nav className="header__nav">
+                <ul className="header__nav-list">
+                    <li className="header__nav-list-elem">
+                        <Link to ="/">Homepage</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/plp">Product listing</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/checkout">Checkout</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/">Homepage</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/">Homepage</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/">Homepage</Link>
+                    </li>
+                    <li className="header__nav-list-elem">
+                        <Link to ="/">Homepage</Link>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     )
 }
 

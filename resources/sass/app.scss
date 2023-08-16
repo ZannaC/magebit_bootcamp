@@ -1,11 +1,15 @@
 //Normalize
 @import 'normalize.scss';
 
-// Variables
-@import 'global';
+// Global
+@import 'global.scss';
 
 //footer styles
 @import 'footer.scss';
 
-//header styles
+//Checkout style
+@import 'checkout.scss';
+
+// header styles
 @import 'header.scss';
+
