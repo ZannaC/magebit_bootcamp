@@ -44,6 +44,14 @@
                     color: #726E8D;
                     font-family: "Space Grotesk";
                     font-size: 16px;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: black;
+                    }
+                    &:active {
+                        color: #22202E;
+                        transition: none;
+                    }
                 }
             }
         }

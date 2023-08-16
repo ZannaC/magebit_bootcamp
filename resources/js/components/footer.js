@@ -80,22 +80,34 @@ function Footer () {
                     <p className="footer__bottom-p">Copyright 2022 Avion LTD</p>
                     <ul className="footer__bottom-list">
                         <li className="footer__bottom-list-item">
-                            <img src={LinkedIn_svg}></img>
+                            <a href="https://linkedin.com">
+                                <img src={LinkedIn_svg}></img>
+                            </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <img src={Twitter_svg}></img>
+                            <a href="https://twitter.com">
+                                <img src={Twitter_svg}></img>
+                            </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <img src={Facebook_svg}></img>
+                            <a href="https://facebook.com">
+                                <img src={Facebook_svg}></img>
+                            </a>
                         </li>
                         <li className="footer__bottom-list-item">
+                            <a href="https://instagram.com">
                             <img src={Instagram_svg}></img>
+                            </a>
                         </li>
                         <li className="footer__bottom-list-item">
+                            <a href="https://skype.com">
                             <img src={Skype_svg}></img>
+                            </a>
                         </li>
                         <li className="footer__bottom-list-item">
+                            <a href="https://pinterest.com">
                             <img src={Pinterest_svg}></img>
+                            </a>
                         </li>
                     </ul>
                 </div>
