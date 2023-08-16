@@ -9,7 +9,8 @@ function Homepage() {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <Link to="/plp">Page One</Link>
+                        <Link className="" to="/plp">PLP btn</Link>
+                        <Link className="" to="/pdp">PLP btn</Link>
                         <div className="card-header">Example Component</div>
                         <div className="header">I'm an example component!</div>
                         <div className="h1">I'm an example component!</div>

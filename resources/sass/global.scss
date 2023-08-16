@@ -1,8 +1,7 @@
-@import "@fontsource/montserrat/300.css";
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/400.css";
 
-@import "@fontsource/dela-gothic-one/400.css";
+@import "@fontsource/oxanium/400.css";
 
 
 input[disabled],
@@ -25,25 +24,8 @@ button[disabled] {
 }
 
 body {
- font-family: "Montserrat", sans-serif;
+ font-family: "Oxanium", sans-serif;
 }
-
-$blue-clr: #2B788B;
-$lightBlue-clr: #C3DCE3;
-$black-pink-clr: #945069;
-$pink-light-clr: #F2D4DC;
-$black-clr: #000000;
-$light-grey-clr: #F6F5F4;
-$medium-grey-clr: #E0E0E0;
-$grey-clr: #BABABA;
-$strong-grey-clr: #757575;
-$cyan-clr: #5996A5;
-$green: #639B6D;
-$pink-clr: #A15993;
-$red-clr: #A95151;
-$yellow: #A95151;
-$orange: #CB5B43;
-
 
 h1,
 h2,
@@ -65,8 +47,8 @@ button[disabled] {
 
 .container {
     box-sizing: border-box;
-  max-width: 1080px;
+  max-width: 1120px;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 80px;
   margin: 0 auto;
 }

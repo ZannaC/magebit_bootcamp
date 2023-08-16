@@ -5,10 +5,9 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import "@fontsource/montserrat/300.css";
-@import "@fontsource/montserrat/400.css";
-@import "@fontsource/montserrat/500.css";
-@import "@fontsource/dela-gothic-one/400.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/oxanium/400.css";
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -318,7 +317,7 @@ button[disabled] {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oxanium", sans-serif;
 }
 
 h1,
@@ -341,14 +340,148 @@ button[disabled] {
 
 .container {
   box-sizing: border-box;
-  max-width: 1080px;
+  max-width: 1120px;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 80px;
   margin: 0 auto;
 }
 
 .footer {
   outline: 1px solid black;
+}
+
+.border {
+  outline: 1px solid black;
+}
+
+.descr {
+  display: flex;
+}
+.descr__img {
+  max-width: 721px;
+  width: 100%;
+  min-height: 759px;
+}
+.descr__block {
+  max-width: 602px;
+  width: 100%;
+  margin: auto;
+  padding: 40px;
+}
+.descr__block-h1 {
+  font-family: "space-grotesk";
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 13px;
+  color: #2A254B;
+}
+.descr__block-price {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 54px;
+  color: #12131A;
+}
+.descr__block-inner-descr {
+  margin-bottom: 43px;
+}
+.descr__block-inner-descr-h2 {
+  font-family: "space-grotesk";
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  color: #2A254B;
+}
+.descr__block-inner-descr-p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #505977;
+  margin-bottom: 20px;
+}
+.descr__block-inner-descr-list {
+  margin: 0;
+  padding: 0;
+}
+.descr__block-inner-descr-list-item {
+  font-size: 16px;
+  line-height: 22px;
+  color: #505977;
+}
+.descr__block-inner-dimensions {
+  margin-bottom: 49px;
+}
+.descr__block-inner-dimensions-h2 {
+  font-family: "space-grotesk";
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  color: #2A254B;
+}
+.descr__block-inner-dimensions-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 241px;
+  width: 100%;
+}
+.descr__block-inner-dimensions-list-item {
+  display: flex;
+  flex-direction: column;
+}
+.descr__block-inner-dimensions-list-item-header {
+  font-family: "space-grotesk";
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 12px;
+  color: #2A254B;
+}
+.descr__block-inner-dimensions-list-item-span {
+  font-size: 16px;
+  line-height: 22px;
+  color: #505977;
+}
+.descr__block-inner-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.descr__block-inner-buttons-amount {
+  display: flex;
+  align-items: center;
+}
+.descr__block-inner-buttons-amount-p {
+  margin-right: 22px;
+}
+.descr__block-inner-buttons-amount-span {
+  display: flex;
+  min-height: 46px;
+  background-color: #F9F9F9;
+}
+.descr__block-inner-buttons-amount-span button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 40px;
+}
+.descr__block-inner-buttons-amount-span-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+.descr__block-inner-buttons-add {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px 16px 32px;
+  background-color: #2A254B;
+  color: white;
 }
 
 /*# sourceMappingURL=app.css.map */
