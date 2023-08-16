@@ -15,7 +15,9 @@ function App() {
     return (
       <>
         <Header/>
-        {children}
+            <main>
+                {children}
+            </main>
         <Footer />
       </>
     );

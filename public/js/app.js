@@ -4197,7 +4197,9 @@ function App() {
   var Layout = function Layout(_ref) {
     var children = _ref.children;
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), children, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("main", {
+        children: children
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
@@ -4256,13 +4258,149 @@ function Cart() {
         children: "Shopping cart"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
-      className: "cart",
+      className: "your_shopping_cart",
       children: "Your shopping cart"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-      children: "Product"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-      to: "checkout",
-      children: "Checkout"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      "class": "shopping-cart",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        "class": "column-labels",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-image",
+          children: "Image"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-details",
+          children: "Product"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-price",
+          children: "Price"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-quantity",
+          children: "Quantity"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-removal",
+          children: "Remove"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+          "class": "product-line-price",
+          children: "Total"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        "class": "product",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-image",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            src: "https://images.unsplash.com/photo-1523263889714-d345f8119047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "product-details",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "product-title",
+            children: "Graystone vase"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            "class": "product-description",
+            children: "A timeless ceramic vase with a tri color grey glaze."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-price",
+          children: "84.99"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-quantity",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            value: "1",
+            min: "1"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-removal",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            "class": "remove-product",
+            children: "Remove"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-line-price",
+          children: "84.99"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        "class": "product",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-image",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            src: "https://images.unsplash.com/photo-1523263889714-d345f8119047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "product-details",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "product-title",
+            children: "Basic white vase"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            "class": "product-description",
+            children: "Beautiful and simple this is one for the classics."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-price",
+          children: "74.99"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-quantity",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            value: "1",
+            min: "1"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-removal",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            "class": "remove-product",
+            children: "Remove"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          "class": "product-line-price",
+          children: "74.99"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        "class": "totals",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "totals-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            children: "Subtotal"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "totals-value",
+            id: "cart-subtotal",
+            children: "159.98"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "totals-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            children: "Tax (5%)"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "totals-value",
+            id: "cart-tax",
+            children: "7.99"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "totals-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            children: "Shipping"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "totals-value",
+            id: "cart-shipping",
+            children: "15.00"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          "class": "totals-item totals-item-total",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            children: "Grand Total"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            "class": "totals-value",
+            id: "cart-total",
+            children: "182.97"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+        to: "checkout",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          "class": "checkout",
+          children: "Checkout"
+        })
+      })]
     })]
   });
 }
@@ -5244,8 +5382,8 @@ function Homepage() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-            to: "/checkout",
-            children: "Checkout"
+            to: "/cart",
+            children: "Cart"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "card-header",
             children: "Example Component"
@@ -5420,7 +5558,7 @@ ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_fontsource_space_grotesk_400_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_fontsource_oxanium_400_css__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0;\n}\n\n/**\n * Render the `main` element consistently in IE.\n */\nmain {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box; /* 1 */\n  height: 0; /* 1 */\n  overflow: visible; /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent;\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none; /* 1 */\n  text-decoration: underline; /* 2 */\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted; /* 2 */\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none;\n}\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: 1.15; /* 1 */\n  margin: 0; /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput { /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect { /* 1 */\n  text-transform: none;\n}\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type=button],\n[type=reset],\n[type=submit] {\n  -webkit-appearance: button;\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=button]::-moz-focus-inner,\n[type=reset]::-moz-focus-inner,\n[type=submit]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=button]:-moz-focusring,\n[type=reset]:-moz-focusring,\n[type=submit]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box; /* 1 */\n  color: inherit; /* 2 */\n  display: table; /* 1 */\n  max-width: 100%; /* 1 */\n  padding: 0; /* 3 */\n  white-space: normal; /* 1 */\n}\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline;\n}\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type=checkbox],\n[type=radio] {\n  box-sizing: border-box; /* 1 */\n  padding: 0; /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=number]::-webkit-inner-spin-button,\n[type=number]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=search] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type=search]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item;\n}\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none;\n}\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none;\n}\n\ninput[disabled],\nbutton[disabled] {\n  opacity: 0.5;\n  cursor: unset;\n}\n\nbody {\n  font-family: \"Oxanium\", sans-serif;\n}\n\nh1,\nh2,\np {\n  margin: 0;\n}\n\ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\ninput[disabled],\nbutton[disabled] {\n  opacity: 0.5;\n  cursor: unset;\n}\n\n.container {\n  box-sizing: border-box;\n  max-width: 1120px;\n  width: 100%;\n  padding: 0 80px;\n  margin: 0 auto;\n}\n\n.footer {\n  outline: 1px solid black;\n}\n\n.container {\n  padding: 10px;\n}\n\n.flex-box {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n  align-items: center;\n}\n\n.billing_details {\n  padding-bottom: 15px;\n  padding-top: 30px;\n}\n\n.customer_details {\n  display: grid;\n  grid-auto-flow: row;\n  grid-template-columns: auto minmax(0, 1fr);\n  justify-content: center;\n  align-items: center;\n  gap: 1rem;\n  padding-bottom: 1rem;\n}\n\n.payment_method {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.payment_method_text {\n  max-width: 400px;\n  text-align: center;\n}\n\n.place_order_btn {\n  padding: 7px 40px;\n  display: inline-block;\n  font-size: 16px;\n  border: none;\n  border-radius: 30px;\n  background-color: #2A254B;\n  color: white;\n}\n\n/* For Desktop View */\n@media screen and (min-width: 1024px) {\n  .payment_method_text {\n    font-size: 14px;\n  }\n  .terms_and_conditions {\n    font-size: 14px;\n  }\n}\n/* For Tablet View */\n@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n  .payment_method_text {\n    font-size: 12px;\n  }\n  .terms_and_conditions {\n    font-size: 12px;\n  }\n}\n/* For Mobile Portrait View */\n@media screen and (max-device-width: 480px) and (orientation: portrait) {\n  .payment_method_text {\n    font-size: 10px;\n  }\n  .terms_and_conditions {\n    font-size: 10px;\n  }\n}\n/* For Mobile Landscape View */\n@media screen and (max-device-width: 640px) and (orientation: landscape) {\n  .payment_method_text {\n    font-size: 8px;\n  }\n  .terms_and_conditions {\n    font-size: 8px;\n  }\n}\n/* For Mobile Phones Portrait or Landscape View */\n@media screen and (max-device-width: 640px) {\n  .payment_method_text {\n    font-size: 8px;\n  }\n  .terms_and_conditions {\n    font-size: 14px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\nhtml {\n  line-height: 1.15; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers.\n */\nbody {\n  margin: 0;\n}\n\n/**\n * Render the `main` element consistently in IE.\n */\nmain {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box; /* 1 */\n  height: 0; /* 1 */\n  overflow: visible; /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * Remove the gray background on active links in IE 10.\n */\na {\n  background-color: transparent;\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none; /* 1 */\n  text-decoration: underline; /* 2 */\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted; /* 2 */\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10.\n */\nimg {\n  border-style: none;\n}\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: 1.15; /* 1 */\n  margin: 0; /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput { /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect { /* 1 */\n  text-transform: none;\n}\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\n[type=button],\n[type=reset],\n[type=submit] {\n  -webkit-appearance: button;\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=button]::-moz-focus-inner,\n[type=reset]::-moz-focus-inner,\n[type=submit]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=button]:-moz-focusring,\n[type=reset]:-moz-focusring,\n[type=submit]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box; /* 1 */\n  color: inherit; /* 2 */\n  display: table; /* 1 */\n  max-width: 100%; /* 1 */\n  padding: 0; /* 3 */\n  white-space: normal; /* 1 */\n}\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline;\n}\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n[type=checkbox],\n[type=radio] {\n  box-sizing: border-box; /* 1 */\n  padding: 0; /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=number]::-webkit-inner-spin-button,\n[type=number]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=search] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n[type=search]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\ndetails {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item;\n}\n\n/* Misc\n   ========================================================================== */\n/**\n * Add the correct display in IE 10+.\n */\ntemplate {\n  display: none;\n}\n\n/**\n * Add the correct display in IE 10.\n */\n[hidden] {\n  display: none;\n}\n\ninput[disabled],\nbutton[disabled] {\n  opacity: 0.5;\n  cursor: unset;\n}\n\nbody {\n  font-family: \"Oxanium\", sans-serif;\n}\n\nh1,\nh2,\np {\n  margin: 0;\n}\n\ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\ninput[disabled],\nbutton[disabled] {\n  opacity: 0.5;\n  cursor: unset;\n}\n\n.container {\n  box-sizing: border-box;\n  max-width: 1120px;\n  width: 100%;\n  padding: 0 80px;\n  margin: 0 auto;\n}\n\n.footer {\n  outline: 1px solid black;\n}\n\n.container {\n  padding: 10px;\n}\n\n.flex-box {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n  align-items: center;\n}\n\n.billing_details {\n  padding-bottom: 15px;\n  padding-top: 30px;\n}\n\n.customer_details {\n  display: grid;\n  grid-auto-flow: row;\n  grid-template-columns: auto minmax(0, 1fr);\n  justify-content: center;\n  align-items: center;\n  gap: 1rem;\n  padding-bottom: 1rem;\n}\n\n.payment_method {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.payment_method_text {\n  max-width: 400px;\n  text-align: center;\n}\n\n.place_order_btn {\n  padding: 7px 40px;\n  display: inline-block;\n  font-size: 16px;\n  border: none;\n  border-radius: 30px;\n  background-color: #2A254B;\n  color: white;\n}\n\n/* For Desktop View */\n@media screen and (min-width: 1024px) {\n  .payment_method_text {\n    font-size: 14px;\n  }\n  .terms_and_conditions {\n    font-size: 14px;\n  }\n}\n/* For Tablet View */\n@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n  .payment_method_text {\n    font-size: 12px;\n  }\n  .terms_and_conditions {\n    font-size: 12px;\n  }\n}\n/* For Mobile Portrait View */\n@media screen and (max-device-width: 480px) and (orientation: portrait) {\n  .payment_method_text {\n    font-size: 10px;\n  }\n  .terms_and_conditions {\n    font-size: 10px;\n  }\n}\n/* For Mobile Landscape View */\n@media screen and (max-device-width: 640px) and (orientation: landscape) {\n  .payment_method_text {\n    font-size: 8px;\n  }\n  .terms_and_conditions {\n    font-size: 8px;\n  }\n}\n/* For Mobile Phones Portrait or Landscape View */\n@media screen and (max-device-width: 640px) {\n  .payment_method_text {\n    font-size: 8px;\n  }\n  .terms_and_conditions {\n    font-size: 14px;\n  }\n}\n/* Global settings */\n/* Global \"table\" column settings */\n.product-image {\n  float: left;\n  width: 20%;\n}\n\n.product-details {\n  float: left;\n  width: 37%;\n}\n\n.product-price {\n  float: left;\n  width: 12%;\n}\n\n.product-quantity {\n  float: left;\n  width: 10%;\n}\n\n.product-removal {\n  float: left;\n  width: 9%;\n}\n\n.product-line-price {\n  float: left;\n  width: 12%;\n  text-align: right;\n}\n\n/* This is used as the traditional .clearfix class */\n.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,\n.group:after,\n.shopping-cart:after,\n.column-labels:after,\n.product:after,\n.totals-item:after {\n  content: \"\";\n  display: table;\n}\n\n.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {\n  clear: both;\n}\n\n.group, .shopping-cart, .column-labels, .product, .totals-item {\n  zoom: 1;\n}\n\n/* Apply clearfix in a few places */\n/* Apply dollar signs */\n.product .product-price:before, .product .product-line-price:before, .totals-value:before {\n  content: \"€\";\n}\n\n/* Body/Header stuff */\nbody {\n  padding: 0px 30px 30px 20px;\n  font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 100;\n}\n\nh1 {\n  font-weight: 100;\n}\n\nlabel {\n  color: #aaa;\n}\n\n.shopping-cart {\n  margin-top: -45px;\n}\n\n/* Column headers */\n.column-labels label {\n  padding-bottom: 15px;\n  margin-bottom: 15px;\n  border-bottom: 1px solid #eee;\n}\n.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {\n  text-indent: -9999px;\n}\n\n/* Product entries */\n.product {\n  margin-bottom: 20px;\n  padding-bottom: 10px;\n  border-bottom: 1px solid #eee;\n}\n.product .product-image {\n  text-align: center;\n}\n.product .product-image img {\n  width: 150px;\n}\n.product .product-details .product-title {\n  margin-right: 20px;\n  font-family: \"HelveticaNeue-Medium\", \"Helvetica Neue Medium\";\n}\n.product .product-details .product-description {\n  margin: 5px 20px 5px 0;\n  line-height: 1.4em;\n}\n.product .product-quantity input {\n  width: 40px;\n}\n.product .remove-product {\n  border: 0;\n  padding: 4px 8px;\n  background-color: #c66;\n  color: #fff;\n  font-family: \"HelveticaNeue-Medium\", \"Helvetica Neue Medium\";\n  font-size: 16px;\n  border-radius: 3px;\n}\n.product .remove-product:hover {\n  background-color: #a44;\n}\n\n/* Totals section */\n.totals .totals-item {\n  float: right;\n  clear: both;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.totals .totals-item label {\n  float: left;\n  clear: both;\n  width: 79%;\n  text-align: right;\n}\n.totals .totals-item .totals-value {\n  float: right;\n  width: 21%;\n  text-align: right;\n}\n.totals .totals-item-total {\n  font-family: \"HelveticaNeue-Medium\", \"Helvetica Neue Medium\";\n}\n\n.checkout {\n  float: right;\n  border: 0;\n  margin-top: 20px;\n  padding: 6px 25px;\n  background-color: #6b6;\n  color: #fff;\n  font-size: 25px;\n  border-radius: 3px;\n  text-decoration: none;\n}\n\n.checkout:hover {\n  background-color: #494;\n}\n\n/* Make adjustments for tablet */\n@media screen and (max-width: 650px) {\n  .shopping-cart {\n    margin: 0;\n    padding-top: 20px;\n    border-top: 1px solid #eee;\n  }\n  .column-labels {\n    display: none;\n  }\n  .product-image {\n    float: right;\n    width: auto;\n  }\n  .product-image img {\n    margin: 0 0 10px 10px;\n  }\n  .product-details {\n    float: none;\n    margin-bottom: 10px;\n    width: auto;\n  }\n  .product-price {\n    clear: both;\n    width: 70px;\n  }\n  .product-quantity {\n    width: 100px;\n  }\n  .product-quantity input {\n    margin-left: 20px;\n  }\n  .product-quantity:before {\n    content: \"x\";\n  }\n  .product-removal {\n    width: auto;\n  }\n  .product-line-price {\n    float: right;\n    width: 70px;\n  }\n}\n/* Make more adjustments for phone */\n@media screen and (max-width: 350px) {\n  .product-removal {\n    float: right;\n  }\n  .product-line-price {\n    float: right;\n    clear: left;\n    width: auto;\n    margin-top: 10px;\n  }\n  .product .product-line-price:before {\n    content: \"Item Total: $\";\n  }\n  .totals .totals-item label {\n    width: 60%;\n  }\n  .totals .totals-item .totals-value {\n    width: 40%;\n  }\n}\n.your_shopping_cart {\n  padding-bottom: 3rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
