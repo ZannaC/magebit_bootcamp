@@ -12,7 +12,7 @@ function Homepage() {
     return (
         <div>
             <section className="section1">
-                <div className="section1__container">
+                <div className="container section1__container">
                     <h1 className="section1__container-h1">
                         The furniture brand for the future, with timeless
                         designs
