@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 28px;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        &-left-btn {
+            @include btn-reset();
+        }
+        &-center-link {
+            text-decoration: none;
+            color: #22202E;
+            font-family: "Space Grotesk";
+            font-size: 24px;
+        }
+        &-right{
+            &-cart {
+                @include btn-reset();
+                margin-right: 16px;
+            }
+            &-personal {
+                @include btn-reset();
+            }
+        }
+
+    }
+    &__nav {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        &-list {
+            @include list-reset();
+            display: flex;
+            justify-content: space-between;
+            max-width: 675px;
+            width: 100%;
+            &-elem {
+                a {
+                    text-decoration: none;
+                    color: #726E8D;
+                    font-family: "Space Grotesk";
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

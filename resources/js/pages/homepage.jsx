@@ -5,7 +5,7 @@ import '../../sass/app.css';
 
 function Homepage() {
     return (
-        <div className="container">
+        <div className="container homepage">
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
