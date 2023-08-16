@@ -1,17 +1,21 @@
 //Normalize
 @import 'normalize.scss';
 
-// Variables
-@import 'global';
+// Global
+@import 'global.scss';
 
 //footer styles
 @import 'footer.scss';
-
-//Checout style
-@import 'checkout.scss';
 
 //pdp styles
 @import 'pdp.scss';
 
 //Cart style
 @import 'cart.scss';
+
+//Checkout style
+@import 'checkout.scss';
+
+// header styles
+@import 'header.scss';
+
