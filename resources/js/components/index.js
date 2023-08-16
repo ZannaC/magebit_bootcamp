@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import Homepage from '../pages/homepage';
-import Checkout from '../pages/checkout';
+import Pdp from '../pages/pdp';
 import Cart from '../pages/cart';
 import '../../sass/app.css';
-
+import { ProductProvider } from '../ProductContext';
 
 function App() {
 
@@ -24,15 +24,17 @@ function App() {
   };
 
   return (
+<ProductProvider>
   <Router>
    <Layout>
     <Routes>
      <Route path="/" element={<Homepage />} />
-     <Route path="/cart/checkout" element={<Checkout />} />
+     <Route path="/pdp" element={<Pdp />} />
      <Route path="/cart" element={<Cart />} />
     </Routes>
    </Layout>
   </Router>
+</ProductProvider>
   );
 }
 

@@ -6,9 +6,6 @@ import { Helmet } from "react-helmet";
 function Checkout() {
     return (
         <>
-            <Helmet>
-                <title>Checkout</title>
-            </Helmet>
             <div className="container">
                 <h2 className="flex-box">OnlineCourse</h2>
                 <form className="flex-box">
