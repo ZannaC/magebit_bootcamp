@@ -554,7 +554,10 @@ button[disabled] {
 }
 
 /* This is used as the traditional .clearfix class */
-.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:before, .shopping-cart:before,
+.column-labels:before,
+.product:before,
+.totals-item:before,
 .group:after,
 .shopping-cart:after,
 .column-labels:after,
@@ -564,17 +567,25 @@ button[disabled] {
   display: table;
 }
 
-.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
+.group:after, .shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
   clear: both;
 }
 
-.group, .shopping-cart, .column-labels, .product, .totals-item {
+.group, .shopping-cart,
+.column-labels,
+.product,
+.totals-item {
   zoom: 1;
 }
 
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
-.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
   content: "€";
 }
 
@@ -603,7 +614,9 @@ label {
   margin-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
-.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+.column-labels .product-image,
+.column-labels .product-details,
+.column-labels .product-removal {
   text-indent: -9999px;
 }
 
@@ -617,7 +630,7 @@ label {
   text-align: center;
 }
 .product .product-image img {
-  width: 150px;
+  width: 100px;
 }
 .product .product-details .product-title {
   margin-right: 20px;
@@ -629,6 +642,7 @@ label {
 }
 .product .product-quantity input {
   width: 40px;
+  display: flex;
 }
 .product .remove-product {
   border: 0;
