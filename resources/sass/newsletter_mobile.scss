@@ -1,0 +1,52 @@
+@media (width <= 765px) {
+  .newsletter_banner {
+    display: flex;
+    align-items: center;
+
+    &__background {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      width: 100%;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+      line-height: 1.4;
+    }
+
+    h2 + p {
+      width: 100%;
+      text-align: left;
+    }
+
+    &__content {
+      height: initial;
+      margin: 8% 7%;
+
+      h2 {
+        margin-bottom: 3%;
+      }
+
+      h2 + p {
+        margin-bottom: 6%;
+      }
+    }
+  }
+
+  .content__benefits {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    margin-bottom: 8%;
+  }
+
+  .content__sign_up {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
