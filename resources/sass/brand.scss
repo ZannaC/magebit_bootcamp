@@ -1,0 +1,49 @@
+.section2 {
+    max-width: 1440px;
+    padding: 60px 110px 86px 86px;
+}
+
+.section2 ul,
+.section2 li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.section2 li:last-child {
+    padding-bottom: 0;
+}
+
+.section2__container {
+    &-h3 {
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        margin: 0px;
+        padding-top: 16px;
+        padding-bottom: 8px;
+        margin: 0px;
+    }
+    &-h4 {
+        font-size: 16px;
+        margin: 0px;
+    }
+
+    &-infoBlock {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 59px;
+        justify-content: space-between;
+        align-content: space-between;
+        padding-top: 51px;
+    }
+
+    &-image-img {
+        max-width: 100%;
+        height: auto;
+    }
+}

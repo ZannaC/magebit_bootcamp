@@ -1,22 +1,26 @@
 //Normalize
-@import 'normalize.scss';
+@import "normalize.scss";
 
 // Global
-@import 'global.scss';
+@import "global.scss";
 
 //footer styles
-@import 'footer.scss';
+@import "footer.scss";
 
 //pdp styles
-@import 'pdp.scss';
+@import "pdp.scss";
 
 //Cart style
-@import 'cart.scss';
+@import "cart.scss";
 
 //Checkout style
-@import 'checkout.scss';
+@import "checkout.scss";
 
 // header styles
-@import 'header.scss';
+@import "header.scss";
 
-@import 'homePage.scss';
+// Home page styles
+@import "homePage.scss";
+
+// Brand styles
+@import "brand.scss";
