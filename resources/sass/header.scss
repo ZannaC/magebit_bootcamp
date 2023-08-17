@@ -21,6 +21,19 @@
             &-cart {
                 @include btn-reset();
                 margin-right: 16px;
+                position: relative;
+                &-link {
+                    &-img {
+                        &:active {
+                            transform: scale(0.9);
+                        }
+                        &-count {
+                            position: absolute;
+                            font-size: 12px;
+                            top: -5px;
+                        }
+                    }
+                }
             }
             &-personal {
                 @include btn-reset();
