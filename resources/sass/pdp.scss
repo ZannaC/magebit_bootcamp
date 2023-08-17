@@ -1,5 +1,6 @@
 .descr {
     display: flex;
+    margin-bottom: 80px;
     &__img {
         max-width: 721px;
         width: 100%;
@@ -116,6 +117,14 @@
                     padding: 16px 32px 16px 32px;
                     background-color: #2A254B;
                     color: white;
+                    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.05s ease-in-out;
+                    &:hover {
+                        background-color: #F9F9F9;
+                        color: #2A254B;
+                    }
+                    &:active {
+                        transform: scale(0.9);
+                    }
                 }
             }
         }
