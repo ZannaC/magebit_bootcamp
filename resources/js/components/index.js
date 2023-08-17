@@ -14,6 +14,7 @@ import Cart from "../pages/cart";
 import "../../sass/app.css";
 import { ProductProvider } from "../ProductContext";
 import Checkout from "../pages/checkout";
+import About from "../pages/about";
 
 function App() {
     const Layout = ({ children }) => {
@@ -35,6 +36,7 @@ function App() {
                         <Route path="/pdp" element={<Pdp />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/about" element={<About />} />
                     </Routes>
                 </Layout>
             </Router>
