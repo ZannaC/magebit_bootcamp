@@ -52,7 +52,7 @@ function Checkout() {
                                     *
                                 </font>
                             </label>
-                            <Countries />
+                            <Countries className="country_code" />
                             <label htmlFor="street_adress">
                                 Street adress
                                 <font color="red" required>
