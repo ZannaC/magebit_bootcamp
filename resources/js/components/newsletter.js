@@ -33,10 +33,10 @@ function Newsletter() {
                     </span>
                 </div>
 
-                <div className="content__sign_up">
-                    <input type="text" placeholder="your@email.com" />
-                    <button type="button">Sign up</button>
-                </div>
+                <form className="content__sign_up" action="" method="post">
+                    <input type="email" placeholder="your@email.com" required />
+                    <button type="submit">Sign up</button>
+                </form>
             </div>
         </section>
     );
