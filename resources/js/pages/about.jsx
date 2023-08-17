@@ -1,4 +1,5 @@
 import React from 'react';
+import Newsletter from '../components/newsletter';
 import '../../sass/app.css';
 
 function About() {
@@ -39,6 +40,8 @@ function About() {
                     </div>
                 </section>
             </article>
+
+            <Newsletter />
         </>
     );
 }
