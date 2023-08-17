@@ -68,6 +68,10 @@
       cursor: pointer;
       background-color: #ececec;
     }
+
+    &:active {
+      background-color: #e0e0e0;
+    }
   }
 }
 
