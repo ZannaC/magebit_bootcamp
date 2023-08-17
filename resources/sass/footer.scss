@@ -16,6 +16,18 @@
             justify-content: space-between;
             max-width: 264px;
             width: 100%;
+            &-item {
+                a {
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: #beb3ff;
+                    }
+                    &:active {
+                        color: #22202E;
+                        transition: none;
+                    }
+                }
+            }
         }
     }
     &__top {
@@ -63,6 +75,18 @@
                 &:not(:last-child) {
                 margin-bottom: 12px;
                     }
+                a {
+                    text-decoration: none;
+                    color: white;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: #beb3ff;
+                    }
+                    &:active {
+                        color: #22202E;
+                        transition: none;
+                    }
+                }
             }
             &-h3 {
                 color: white;
@@ -83,6 +107,18 @@
                 font-size: 14px;
                 &:not(:last-child) {
                 margin-bottom: 12px;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        transition: color 0.3s ease-in-out;
+                        &:hover {
+                            color: #beb3ff;
+                        }
+                        &:active {
+                            color: #22202E;
+                            transition: none;
+                        }
                     }
             }
             &-h3 {
@@ -106,6 +142,18 @@
                     &:not(:last-child) {
                         margin-bottom: 12px;
                     }
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        transition: color 0.3s ease-in-out;
+                        &:hover {
+                            color: #beb3ff;
+                        }
+                        &:active {
+                            color: #22202E;
+                            transition: none;
+                        }
+                    }
                 }
                 &-h3 {
                     color: white;
@@ -116,12 +164,18 @@
             }
             &-form {
                 &-input {
-                    color: white;
                     background: rgba(255, 255, 255, 0.15);
                     border: none;
                     outline: none;
                     max-width: 503px;
                     width: 100%;
+                    color: white;
+                    &::placeholder {
+                        color: white;
+                    }
+                    &:focus {
+                        border-bottom: 1px solid white;
+                    }
                 }
                 &-button {
                     height: 40px;
@@ -129,6 +183,10 @@
                     outline: none;
                     white-space: nowrap;
                     min-width: 100px;
+                    transition: transform 0.05s ease-in-out;
+                    &:active {
+                        transform: scale(0.9);
+                    }
                 }
                 &-h3 {
                     color: white;
