@@ -1,0 +1,149 @@
+.newsletter_banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 444px;
+  overflow: hidden;
+  color: #fff;
+
+  h2 {
+    margin-bottom: 12px;
+    font-size: 2.2em;
+    font-weight: 400;
+  }
+
+  h2 + p {
+    width: 470px;
+    margin-bottom: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__background {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.content__benefits {
+  display: flex;
+  justify-content: space-between;
+  width: 470px;
+  margin-bottom: 40px;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.content__sign_up {
+  display: flex;
+  justify-content: center;
+  width: 470px;
+  height: 56px;
+
+  input {
+    width: 472px;
+    padding: 0 32px;
+    font-family: 'Space Grotesk', sans-serif;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    transition: 0.05s ease-in-out;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px #353062;
+    }
+  }
+
+  button {
+    padding: 16px 32px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    background-color: #2a254b;
+    border: none;
+    transition: 0.05s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #353062;
+    }
+  }
+}
+
+@media (width <= 765px) {
+  .newsletter_banner {
+    display: flex;
+    align-items: center;
+
+    &__background {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      width: 100%;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+      line-height: 1.4;
+    }
+
+    h2 + p {
+      width: 100%;
+      text-align: left;
+    }
+
+    &__content {
+      height: initial;
+      margin: 8% 7%;
+
+      h2 {
+        margin-bottom: 3%;
+      }
+
+      h2 + p {
+        margin-bottom: 6%;
+      }
+    }
+  }
+
+  .content__benefits {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    margin-bottom: 8%;
+  }
+
+  .content__sign_up {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
