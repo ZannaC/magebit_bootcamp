@@ -1,4 +1,5 @@
-
+//collection
+@import 'collection_mobile.scss';
 
 // About page styles.
 @import 'about_mobile.scss';
@@ -9,7 +10,11 @@
 // checkout
 @import 'mobile_checkout.scss';
 
+// pdp
+@import 'pdp_mobile.scss';
 
-// checkout
-@import 'mobile_checkout.scss';
-
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+}

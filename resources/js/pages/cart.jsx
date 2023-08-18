@@ -3,10 +3,14 @@ import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import { Link, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useProduct } from "../ProductContext";
 import Productcard from "../components/cart_product/card";
 import Total from "../components/cart_product/total";
 
-function Cart({}) {
+function Cart() {
+    // our products from our productContext
+    const { products } = useProduct();
+
     return (
         <div className="container">
             <Helmet>
@@ -22,8 +26,14 @@ function Cart({}) {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                <Productcard></Productcard>
-                <Productcard></Productcard>
+                {products ? products.map((product) => (
+                    <Productcard key={product.id} product={product} />
+                ))
+                :
+                <div className="cart-empty">
+                    <h3>Cart is empty</h3>
+                </div>
+                }
                 <Total></Total>
                 <Link to="checkout">
                     <button className="checkout">Checkout</button>
