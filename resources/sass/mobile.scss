@@ -9,3 +9,12 @@
 
 // checkout
 @import 'mobile_checkout.scss';
+
+// pdp
+@import 'pdp_mobile.scss';
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+}

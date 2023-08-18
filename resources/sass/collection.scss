@@ -1,4 +1,5 @@
 .collection {
+    padding-bottom: 56px;
     &__h2 {
         font-family: "space-grotesk";
         font-size: 32px;
@@ -37,7 +38,7 @@
         justify-content: center;
         &-btn {
             @include btn-reset();
-            width: 170px;
+            min-width: 170px;
             height: 56px;
             display: flex;
             justify-content: center;
@@ -56,4 +57,9 @@
             }
         }
     }
+}
+
+.different {
+    min-height: 355px;
+    outline: 1px solid black;
 }
