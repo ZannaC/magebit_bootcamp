@@ -36,6 +36,10 @@
     &__button-block {
         display: flex;
         justify-content: center;
+        a {
+            text-decoration: none;
+            color: #2A254B;
+        }
         &-btn {
             @include btn-reset();
             min-width: 170px;
