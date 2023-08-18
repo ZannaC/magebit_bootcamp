@@ -98,13 +98,13 @@
                         background-color: #F9F9F9;
                         button {
                             @include btn-reset();
-                            width: 40px;
+                            min-width: 40px;
                         }
                         &-amount {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 40px;
+                            min-width: 40px;
                         }
                     }
                 }
