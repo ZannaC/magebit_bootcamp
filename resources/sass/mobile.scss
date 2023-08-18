@@ -1,17 +1,26 @@
 //collection
-@import 'collection_mobile.scss';
+@import "collection_mobile.scss";
 
 // About page styles.
-@import 'about_mobile.scss';
+@import "about_mobile.scss";
 
 // Newsletter styles.
-@import 'newsletter_mobile.scss';
+@import "newsletter_mobile.scss";
 
 // checkout
-@import 'mobile_checkout.scss';
+@import "mobile_checkout.scss";
 
 // pdp
-@import 'pdp_mobile.scss';
+@import "pdp_mobile.scss";
+
+// brand
+@import "brand_mobile.scss";
+
+// products
+@import "products_mobile.scss";
+
+// home page
+@import "home_mobile.scss";
 
 @media (max-width: 1200px) {
     .container {
