@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+     .header {
+        &__nav {
+            display: none;
+        }
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: none;
+            &-right {
+                &-personal {
+                    display: none;
+                }
+            }
+            &-left-btn {
+
+            }
+            &-center-link {
+
+            }
+        }
+     }
+}
