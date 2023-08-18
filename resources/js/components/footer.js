@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import LinkedIn_svg from "../../img/footer/footer-linkedin.svg";
-import Twitter_svg from "../../img/footer/footer-twitter.svg";
-import Facebook_svg from "../../img/footer/footer-facebook.svg";
-import Instagram_svg from "../../img/footer/footer-instagram.svg";
-import Skype_svg from "../../img/footer/footer-skype.svg";
-import Pinterest_svg from "../../img/footer/footer-pinterest.svg";
+import LinkedIn_svg from "../../img/footer/footer-linkedin.js";
+import Twitter_svg from "../../img/footer/footer-twitter.js";
+import Facebook_svg from "../../img/footer/footer-facebook.js";
+import Instagram_svg from "../../img/footer/footer-instagram.js";
+import Skype_svg from "../../img/footer/footer-skype.js";
+import Pinterest_svg from "../../img/footer/footer-pinterest.js";
 
 function Footer () {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -80,33 +82,33 @@ function Footer () {
                     <p className="footer__bottom-p">Copyright 2022 Avion LTD</p>
                     <ul className="footer__bottom-list">
                         <li className="footer__bottom-list-item">
-                            <a href="https://linkedin.com">
-                                <img src={LinkedIn_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://linkedin.com">
+                                <LinkedIn_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://twitter.com">
-                                <img src={Twitter_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://twitter.com">
+                                <Twitter_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://facebook.com">
-                                <img src={Facebook_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://facebook.com">
+                                <Facebook_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://instagram.com">
-                            <img src={Instagram_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://instagram.com">
+                                <Instagram_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://skype.com">
-                            <img src={Skype_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://skype.com">
+                                <Skype_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://pinterest.com">
-                            <img src={Pinterest_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://pinterest.com">
+                                <Pinterest_svg />
                             </a>
                         </li>
                     </ul>

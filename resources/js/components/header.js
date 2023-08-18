@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Search_svg from '../../img/header/search-svg.svg';
 import Cart_svg from '../../img/header/cart-svg.svg';
 import User_svg from '../../img/header/user-svg.svg';
+import { useProduct } from '../ProductContext';
 
 function Header () {
+
+    const { amount } = useProduct();
     return (
         <header className="header">
             <div className="header__top">
@@ -14,7 +17,12 @@ function Header () {
                 <Link className="header__top-center-link" to="/">Avion</Link>
                 <div className="header__top-right-div">
                     <button className="header__top-right-cart">
-                        <img src={Cart_svg}></img>
+                    <Link className="header__top-right-cart-link" to="cart">
+                        <img className="header__top-right-cart-link-img" src={Cart_svg}></img>
+                        <span className="header__top-right-cart-link-img-count">
+                            {amount}
+                        </span>
+                    </Link>
                     </button>
                     <button className="header__top-right-personal">
                         <img src={User_svg}></img>
@@ -30,7 +38,7 @@ function Header () {
                         <Link to ="/plp">Product listing</Link>
                     </li>
                     <li className="header__nav-list-elem">
-                        <Link to ="/checkout">Checkout</Link>
+                        <Link to ="/about">About</Link>
                     </li>
                 </ul>
             </nav>

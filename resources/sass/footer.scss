@@ -17,14 +17,82 @@
             max-width: 264px;
             width: 100%;
             &-item {
-                a {
-                    transition: color 0.3s ease-in-out;
-                    &:hover {
-                        color: #beb3ff;
+                &-linkedin {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #0077b5;
                     }
-                    &:active {
-                        color: #22202E;
-                        transition: none;
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
+                }
+                &-twitter {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #00acee;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
+                }
+                &-facebook {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #3b5998;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
+                }
+                &-instagram {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover #path1 {
+                        fill: #feda75;
+                    }
+                    &:hover #path2 {
+                        fill: #fa7e1e;
+                    }
+                    &:hover #path3 {
+                        fill: #d62976;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
+                }
+                &-skype {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #00aff0;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
+                }
+                &-pinterest {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #E60023;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
                     }
                 }
             }
@@ -83,7 +151,7 @@
                         color: #beb3ff;
                     }
                     &:active {
-                        color: #22202E;
+                        color: #413b64;
                         transition: none;
                     }
                 }
