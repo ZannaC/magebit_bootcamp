@@ -18,64 +18,82 @@
             width: 100%;
             &-item {
                 &-linkedin {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-linkedin:hover,
-                &-linkedin:focus{
-                    color: white;
-                }
-                &-linkedin:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #0077b5;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
                 &-twitter {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-twitter:hover,
-                &-twitter:focus{
-                    color: white;
-                }
-                &-twitter:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #00acee;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
                 &-facebook {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-facebook:hover,
-                &-facebook:focus{
-                    color: white;
-                }
-                &-facebook:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #3b5998;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
                 &-instagram {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-instagram:hover,
-                &-instagram:focus{
-                    color: white;
-                }
-                &-instagram:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover #path1 {
+                        fill: #feda75;
+                    }
+                    &:hover #path2 {
+                        fill: #fa7e1e;
+                    }
+                    &:hover #path3 {
+                        fill: #d62976;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
                 &-skype {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-skype:hover,
-                &-skype:focus{
-                    color: white;
-                }
-                &-skype:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #00aff0;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
                 &-pinterest {
-                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
-                }
-                &-pinterest:hover,
-                &-pinterest:focus{
-                    color: white;
-                }
-                &-pinterest:active{
-                    transform: scale(0.9);
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover path {
+                        fill: #E60023;
+                    }
+                    path {
+                        transition: fill 0.3s ease-in-out;
+                    }
                 }
             }
         }
