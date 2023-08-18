@@ -117,7 +117,7 @@ function Plp() {
     <div className="container collection__container">
         <h2 className="collection__h2">You might also like</h2>
     </div>
-    <CollectionSection />
+    <CollectionSection imgClass={'collection__list-item-img'} nameClass={'collection__list-item-h4'} priceClass={'collection__list-item-p'} howManyItems={4}/>
     </>
 
     const differentSection =
