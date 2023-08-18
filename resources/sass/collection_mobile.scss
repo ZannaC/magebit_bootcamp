@@ -1,9 +1,32 @@
 @media (max-width: 1390px) {
     .collection {
+        &__container {
+            max-width: 710px;
+        }
         &__list {
             display: grid;
             grid-template-columns: 1fr 1fr;
             justify-items: center;
+            max-width: 710px;
+            margin: 0 auto;
+            margin-bottom: 35px;
+            &-item {
+                max-width: 305px;
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 777px) {
+    .collection {
+        &__list {
+            &-item {
+                &-img {
+                    max-width: 163px;
+                    max-height: 201px;
+                }
+            }
         }
     }
 }
