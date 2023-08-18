@@ -81,32 +81,32 @@ function Footer () {
                     <ul className="footer__bottom-list">
                         <li className="footer__bottom-list-item">
                             <a href="https://linkedin.com">
-                                <img src={LinkedIn_svg}></img>
+                                <img className="footer__bottom-list-item-linkedin" src={LinkedIn_svg}></img>
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
                             <a href="https://twitter.com">
-                                <img src={Twitter_svg}></img>
+                                <img className="footer__bottom-list-item-twitter" src={Twitter_svg}></img>
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
                             <a href="https://facebook.com">
-                                <img src={Facebook_svg}></img>
+                                <img className="footer__bottom-list-item-facebook" src={Facebook_svg}></img>
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
                             <a href="https://instagram.com">
-                            <img src={Instagram_svg}></img>
+                            <img className="footer__bottom-list-item-instagram" src={Instagram_svg}></img>
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
                             <a href="https://skype.com">
-                            <img src={Skype_svg}></img>
+                            <img className="footer__bottom-list-item-skype" src={Skype_svg}></img>
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
                             <a href="https://pinterest.com">
-                            <img src={Pinterest_svg}></img>
+                            <img className="footer__bottom-list-item-pinterest" src={Pinterest_svg}></img>
                             </a>
                         </li>
                     </ul>

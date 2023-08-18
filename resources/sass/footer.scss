@@ -17,15 +17,65 @@
             max-width: 264px;
             width: 100%;
             &-item {
-                a {
-                    transition: color 0.3s ease-in-out;
-                    &:hover {
-                        color: #beb3ff;
-                    }
-                    &:active {
-                        color: #22202E;
-                        transition: none;
-                    }
+                &-linkedin {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-linkedin:hover,
+                &-linkedin:focus{
+                    color: white;
+                }
+                &-linkedin:active{
+                    transform: scale(0.9);
+                }
+                &-twitter {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-twitter:hover,
+                &-twitter:focus{
+                    color: white;
+                }
+                &-twitter:active{
+                    transform: scale(0.9);
+                }
+                &-facebook {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-facebook:hover,
+                &-facebook:focus{
+                    color: white;
+                }
+                &-facebook:active{
+                    transform: scale(0.9);
+                }
+                &-instagram {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-instagram:hover,
+                &-instagram:focus{
+                    color: white;
+                }
+                &-instagram:active{
+                    transform: scale(0.9);
+                }
+                &-skype {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-skype:hover,
+                &-skype:focus{
+                    color: white;
+                }
+                &-skype:active{
+                    transform: scale(0.9);
+                }
+                &-pinterest {
+                    transition: filter 0.2s ease-in-out, transform 0.05s ease-in-out;
+                }
+                &-pinterest:hover,
+                &-pinterest:focus{
+                    color: white;
+                }
+                &-pinterest:active{
+                    transform: scale(0.9);
                 }
             }
         }
@@ -83,7 +133,7 @@
                         color: #beb3ff;
                     }
                     &:active {
-                        color: #22202E;
+                        color: #413b64;
                         transition: none;
                     }
                 }
