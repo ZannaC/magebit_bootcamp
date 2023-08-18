@@ -2,7 +2,7 @@ import React from "react";
 import CollectionCard from "./CollectionCard";
 import { useProduct } from "../../ProductContext";
 
-function CollectionSection () {
+function CollectionSection ({ imgClass, nameClass, priceClass }) {
     const { allProducts } = useProduct();
 
     return (
@@ -11,7 +11,7 @@ function CollectionSection () {
                 <ul className="collection__list">
                     {allProducts.slice(0, 4).map(product => (
                         <li className="collection__list-item" key={product.id}>
-                            <CollectionCard img={product.image} name={product.name} price={product.price} />
+                            <CollectionCard img={product.image} name={product.name} price={product.price} imgClass={imgClass} nameClass={nameClass} priceClass={priceClass} />
                         </li>
                     ))}
                 </ul>

@@ -30,6 +30,78 @@ export const ProductProvider = ({ children }) => {
             price: 399,
             image: "https://chairish-prod.freetls.fastly.net/image/product/sized/40208db1-1aca-41eb-86dd-8efd835efe98/architect-task-desk-lamp-lucy-by-erco-germany-7866?aspect=fit&width=640&height=640",
         },
+        {
+            id: 5,
+            name: "Rustic Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 6,
+            name: "KOko Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 7,
+            name: "Lusa Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 8,
+            name: "Honda Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 9,
+            name: "Mercedes Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 10,
+            name: "Toyota Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 11,
+            name: "Bmw Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 12,
+            name: "Audi Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 13,
+            name: "Vw Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 14,
+            name: "Reno Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 15,
+            name: "Supra Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
+        {
+            id: 16,
+            name: "Porsche Vase Set",
+            price: 155,
+            image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
+        },
     ]);
 
     const updateProducts = (newProduct) => {
