@@ -1,0 +1,9 @@
+@media (max-width: 1390px) {
+    .collection {
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+        }
+    }
+}
