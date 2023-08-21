@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import { Helmet } from "react-helmet";
@@ -129,7 +129,8 @@ function Checkout() {
                                 id="password"
                                 value={password}
                                 onChange={handlePasswordChange}
-                                required
+                                placeholder="Enter password"
+                                // required
                             />
                             <label htmlFor="password_repeat">
                                 Repeat Password<font color="red"> *</font>
@@ -140,10 +141,15 @@ function Checkout() {
                                 id="password_repeat"
                                 value={repeatPassword}
                                 onChange={handleRepeatPasswordChange}
-                                required
+                                placeholder="Repeat password"
+                                // required
                             />
-                            {!passwordsMatch && <p>Passwords do not match.</p>}
                         </div>
+                        {!passwordsMatch && (
+                            <p className="pass_dont_match">
+                                Passwords do not match!
+                            </p>
+                        )}
                     </div>
                 </form>
                 <div className="payment_method">
