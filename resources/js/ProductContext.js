@@ -5,6 +5,7 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState(null);
     // VREMENNAJA DATA (DO BAZI DANNIH)
+
     const [allProducts, setAllProducts] = useState([
         {
             id: 1,
@@ -103,6 +104,7 @@ export const ProductProvider = ({ children }) => {
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
         },
     ]);
+
 
     const updateProducts = (newProduct) => {
         setProducts(newProduct);
