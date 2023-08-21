@@ -144,12 +144,13 @@ function Checkout() {
                                 placeholder="Repeat password"
                                 // required
                             />
+                            <div></div>
+                            {!passwordsMatch && (
+                                <p className="pass_dont_match">
+                                    Passwords do not match!
+                                </p>
+                            )}
                         </div>
-                        {!passwordsMatch && (
-                            <p className="pass_dont_match">
-                                Passwords do not match!
-                            </p>
-                        )}
                     </div>
                 </form>
                 <div className="payment_method">
