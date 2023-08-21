@@ -17,7 +17,9 @@ function Header () {
                         <img src={Cart_svg}></img>
                     </button>
                     <button className="header__top-right-personal">
+                    <Link className="header__top-center-link" to="/register">
                         <img src={User_svg}></img>
+                    </Link>
                     </button>
                 </div>
             </div>

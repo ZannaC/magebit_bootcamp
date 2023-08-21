@@ -16,6 +16,7 @@ import "../../sass/app.css";
 import { ProductProvider } from "../ProductContext";
 import Checkout from "../pages/checkout";
 import About from "../pages/about";
+import RegisterPage from "../pages/register";
 
 function App() {
     const Layout = ({ children }) => {
@@ -41,6 +42,7 @@ function App() {
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/register" element={<RegisterPage />} />
                     </Routes>
                 </Layout>
             </Router>
