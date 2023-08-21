@@ -22,7 +22,6 @@ function Plp() {
     // update products
 
     const setProducts = () => {
-        console.log("set products");
         updateProducts([
             {
                 id: 1,

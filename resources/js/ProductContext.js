@@ -4,6 +4,7 @@ const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false);
     // VREMENNAJA DATA (DO BAZI DANNIH)
 
     const [allProducts, setAllProducts] = useState([
@@ -111,7 +112,7 @@ export const ProductProvider = ({ children }) => {
 
     return (
         <ProductContext.Provider
-            value={{ products, allProducts, updateProducts }}
+            value={{ products, allProducts, updateProducts, loggedIn, setLoggedIn }}
         >
             {children}
         </ProductContext.Provider>

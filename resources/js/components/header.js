@@ -14,7 +14,6 @@ function Header () {
                 <button className="header__top-left-btn">
                     <img src={Search_svg}></img>
                 </button>
-                <Link className="header__top-center-link" to="/">Avion</Link>
                 <div className="header__top-right-div">
                     <button className="header__top-right-cart">
                     <Link className="header__top-right-cart-link" to="cart">
@@ -25,7 +24,7 @@ function Header () {
                     </Link>
                     </button>
                     <button className="header__top-right-personal">
-                    <Link className="header__top-center-link" to="/register">
+                    <Link className="header__top-center-link" to="/login">
                         <img src={User_svg}></img>
                     </Link>
                     </button>
