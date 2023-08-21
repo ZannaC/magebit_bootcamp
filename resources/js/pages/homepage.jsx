@@ -4,6 +4,9 @@ import "../../sass/app.css";
 import chair from "../../../resources/img/homePage/chair.png";
 import sofa from "../../../resources/img/homePage/sofa.png";
 import Brand from "./brand";
+import Newsletter from "../components/newsletter";
+import CollectionSection from "../components/view_collection/CollectionSection";
+import PopularProductsSection from "../components/popular_products/ProductsSection";
 
 function Homepage() {
     return (
@@ -29,16 +32,18 @@ function Homepage() {
                 </div>
             </section>
             <Brand />
-            <section className="section3">New ceramics</section>
-            <section className="section4">
-                <h2 className="section4__container-h2">Our popular products</h2>
-                {/* <div className="section4__container-infoBlock"> Data</div>
-                <button className="section4__container-button">
-                    View collection
-                </button> */}
+
+            <section className="section3">
+                <h2 className="section3__container-h2">New ceramics</h2>
+                <CollectionSection />
             </section>
+
+            <section className="section4">
+                <PopularProductsSection />
+            </section>
+
             <section className="section5">
-                Join the club and get the benefits
+                <Newsletter />
             </section>
 
             <section className="section6">

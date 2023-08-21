@@ -26,19 +26,25 @@
 @import "brand.scss";
 
 // collection styles
-@import 'collection.scss';
+@import "collection.scss";
 
 // homepage
-@import 'homePage.scss';
+@import "homePage.scss";
+
+// products styles
+@import "products.scss";
 
 // About page styles.
-@import 'about.scss';
+@import "about.scss";
 
 // Newsletter styles.
-@import 'newsletter.scss';
+@import "newsletter.scss";
+
+// plp styles
+@import 'plp.scss';
 
 // plp styles
 @import 'plp.scss';
 
 // Mobile styles.
-@import 'mobile.scss';
+@import "mobile.scss";

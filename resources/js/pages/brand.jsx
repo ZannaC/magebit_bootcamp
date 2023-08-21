@@ -8,10 +8,10 @@ import sprout from "../../../resources/img/homePage/icons/Sprout.svg";
 function Brand() {
     return (
         <section className="section2">
+            <h2 className="section2__container-h2">
+                What makes our brand different
+            </h2>
             <div className="section2__container">
-                <h2 className="section2__container-h2">
-                    What makes our brand different
-                </h2>
                 <div className="section2__container-infoBlock">
                     <ul>
                         <li>

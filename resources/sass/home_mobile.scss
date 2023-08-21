@@ -1,0 +1,36 @@
+@media (max-width: 1390px) {
+    .section1 {
+        &__container {
+            &-h2 {
+                text-align: justify;
+                padding-top: 14.4%;
+            }
+        }
+    }
+
+    .section6 {
+        &__container {
+            padding-top: 42px;
+
+            &-button {
+                margin-top: 19.7%;
+                margin-bottom: 8.2%;
+            }
+
+            &-h3 {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+// @media (max-width: 777px) {
+//     .section1 {
+//         display: grid;
+//         grid-template-columns: 1fr;
+
+//         &__image {
+//             display: none;
+//         }
+//     }
+// }
