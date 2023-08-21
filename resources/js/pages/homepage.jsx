@@ -1,12 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import chair from "../../../resources/img/homePage/chair.png";
 import sofa from "../../../resources/img/homePage/sofa.png";
 import Brand from "./brand";
 import Newsletter from "../components/newsletter";
 import CollectionSection from "../components/view_collection/CollectionSection";
-import PopularProductsSection from "../components/popular_products/ProductsSection";
 
 function Homepage() {
     return (
@@ -35,11 +33,22 @@ function Homepage() {
 
             <section className="section3">
                 <h2 className="section3__container-h2">New ceramics</h2>
-                <CollectionSection />
+                <CollectionSection
+                    imgClass={"collection__list-item-img"}
+                    nameClass={"collection__list-item-h4"}
+                    priceClass={"collection__list-item-p"}
+                    howManyItems={4}
+                />
             </section>
 
             <section className="section4">
-                <PopularProductsSection />
+                <h2 className="section4__container-h2">Our popular products</h2>
+                <CollectionSection
+                    imgClass={"collection__list-item-img"}
+                    nameClass={"collection__list-item-h4"}
+                    priceClass={"collection__list-item-p"}
+                    howManyItems={3}
+                />
             </section>
 
             <section className="section5">
