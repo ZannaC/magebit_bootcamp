@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../sass/app.css";
-import { Helmet } from "react-helmet";
 import Countries from "../components/checkout/countries";
 import PhoneNum from "../components/checkout/PhoneNum";
 
@@ -105,12 +104,6 @@ function Checkout() {
                                 Phone<font color="red"> *</font>
                             </label>
                             <PhoneNum />
-                            {/* <input
-                                type="number"
-                                name="phone_number"
-                                id="phone_number"
-                                required
-                            /> */}
                             <label htmlFor="email_adress">
                                 Email<font color="red"> *</font>
                             </label>
@@ -130,7 +123,7 @@ function Checkout() {
                                 value={password}
                                 onChange={handlePasswordChange}
                                 placeholder="Enter password"
-                                // required
+                                required
                             />
                             <label htmlFor="password_repeat">
                                 Repeat Password<font color="red"> *</font>
@@ -142,7 +135,7 @@ function Checkout() {
                                 value={repeatPassword}
                                 onChange={handleRepeatPasswordChange}
                                 placeholder="Repeat password"
-                                // required
+                                required
                             />
                             <div></div>
                             {!passwordsMatch && (
