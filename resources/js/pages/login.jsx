@@ -1,48 +1,71 @@
-import React, { useState } from 'react';
-import '../../sass/app.css';
+import React, { useState, useEffect } from "react";
+import { useProduct } from "../ProductContext";
+import "../../sass/app.css";
 
 function Login() {
+    const { setLoggedIn, loggedIn } = useProduct();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [response, setResponse] = useState("");
 
     const changeEmail = (e) => {
         setEmail(e.target.value);
-    }
+    };
 
     const changePassword = (e) => {
         setPassword(e.target.value);
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const obj = {
-            name: email,
-            password: password
-        }
-        fetch('api/login', {
-            method: 'POST',
+            email: email,
+            password: password,
+        };
+        fetch("/api/login", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
+                "Content-Type": "application/json",
+                // 'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
             },
-            body: JSON.stringify(obj)
-            })
-            .then(response => response.json())
+            body: JSON.stringify(obj),
+        })
+            .then((response) => response.json())
 
-            .then(response => setResponse(Boolean(response)))
-            console.log(response)
-    }
+            .then((response) => {
+                setResponse(response);
+            });
+    };
 
+    useEffect(() => {
+        if (response.userExists === 'est') {
+            setLoggedIn(true);
+        }
+        console.log (loggedIn);
+    }, [response]);
 
     return (
         <section className="login__container">
             <div className="login">
                 <h2>Log in to Avion</h2>
                 <form className="login__form" method="POST">
-                    <input onChange={changeEmail} name="email" type="email" placeholder="enter your email" required />
-                    <input onChange={changePassword} name="password" type="password" placeholder="password" required />
-                    <button onClick={handleSubmit} type="submit">Log in</button>
+                    <input
+                        onChange={changeEmail}
+                        name="email"
+                        type="email"
+                        placeholder="enter your email"
+                        required
+                    />
+                    <input
+                        onChange={changePassword}
+                        name="password"
+                        type="password"
+                        placeholder="password"
+                        required
+                    />
+                    <button onClick={handleSubmit} type="submit">
+                        Log in
+                    </button>
                 </form>
                 <p className="login__create_account">
                     New to Avion?&nbsp;

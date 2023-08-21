@@ -20,11 +20,13 @@ class UserController extends Controller
     }
 
     public function login (Request $request) {
-        $isUser = User::where('email', $request->post('email'))->firstOrFail();
-        if ($isUser) {
-            return true;
+
+        $user = User::where('email', $request->post('email'))->first();
+
+        if ($user) {
+            return ['userExists' => 'est', 'user' => $user];
         } else {
-            return false;
+            return ['userExists' => 'net'];
         }
     }
 }
