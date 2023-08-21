@@ -39,7 +39,7 @@ function Plp() {
 
     return (
         <>
-            <section className="plp__background"></section>
+            {/* <section className="plp__background"></section> */}
             <div className="plp">
                 {filtersSection}
                 {listSection}
