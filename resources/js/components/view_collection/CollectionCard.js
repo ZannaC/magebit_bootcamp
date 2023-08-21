@@ -1,12 +1,12 @@
 import React from "react";
 
-function CollectionCard ({img, name, price}) {
+function CollectionCard ({img, name, price, imgClass , nameClass, priceClass}) {
 
     return (
         <>
-            <img className="collection__list-item-img" src={img}></img>
-            <h4 className="collection__list-item-h4">{name}</h4>
-            <p className="collection__list-item-p">£{price}</p>
+            <img className={imgClass} src={img}></img>
+            <h4 className={nameClass}>{name}</h4>
+            <p className={priceClass}>£{price}</p>
         </>
     )
 }

@@ -1,0 +1,62 @@
+.plp {
+    display: flex;
+    &__background {
+        background-image: url('../img/plp/background.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 209px;
+        margin-bottom: 36px;
+    }
+    &__filters {
+        min-width: 485px;
+        outline: 1px solid black;
+        min-height: 100vh;
+        margin-right: 20px;
+    }
+    &__list-section {
+        outline: 1px solid black;
+        width: 100%;
+        min-height: 100vh;
+        padding-right: 78px;
+        padding-bottom: 36px;
+        &-btn-block {
+            display: flex;
+            justify-content: center;
+            &-btn {
+                @include btn-reset();
+                min-width: 140px;
+                height: 56px;
+                background-color: #F9F9F9;
+                font-size: 16px;
+                line-height: 24px;
+                color: #2A254B;
+            }
+        }
+    }
+    &__list {
+        @include list-reset();
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Три столбца в каждом ряду */
+        gap: 20px;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            &-img {
+                max-width: 305px;
+                min-height: 375px;
+            }
+            &-h4 {
+                font-family: "space-grotesk";
+                font-size: 20px;
+                line-height: 28px;
+            }
+            &-price {
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+    }
+}

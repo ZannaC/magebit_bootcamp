@@ -1,22 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CollectionCard from "./CollectionCard";
 import { useProduct } from "../../ProductContext";
 
-function CollectionSection () {
+function CollectionSection ({ imgClass, nameClass, priceClass, howManyItems }) {
     const { allProducts } = useProduct();
 
     return (
         <section className="collection">
             <div className="container collection__container">
                 <ul className="collection__list">
-                    {allProducts.slice(0, 4).map(product => (
+                    {allProducts.slice(0, howManyItems).map(product => (
                         <li className="collection__list-item" key={product.id}>
-                            <CollectionCard img={product.image} name={product.name} price={product.price} />
+                            <CollectionCard
+                            img={product.image}
+                            name={product.name}
+                            price={product.price}
+                            imgClass={imgClass}
+                            nameClass={nameClass}
+                            priceClass={priceClass} />
                         </li>
                     ))}
                 </ul>
                 <div className="collection__button-block">
-                    <button className="collection__button-block-btn">View collection</button>
+                    <Link to="/plp">
+                        <button className="collection__button-block-btn">View collection</button>
+                    </Link>
                 </div>
             </div>
         </section>
