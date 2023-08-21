@@ -6,6 +6,20 @@ import Countries from "../components/checkout/countries";
 import PhoneNum from "../components/checkout/PhoneNum";
 
 function Checkout() {
+    const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
+    const [passwordsMatch, setPasswordsMatch] = useState(true);
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+        setPasswordsMatch(event.target.value === repeatPassword);
+    };
+
+    const handleRepeatPasswordChange = (event) => {
+        setRepeatPassword(event.target.value);
+        setPasswordsMatch(event.target.value === password);
+    };
+
     return (
         <>
             <div className="container">
@@ -106,6 +120,29 @@ function Checkout() {
                                 id="email_adress"
                                 required
                             />
+                            <label htmlFor="password">
+                                Password<font color="red"> *</font>
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                value={password}
+                                onChange={handlePasswordChange}
+                                required
+                            />
+                            <label htmlFor="password_repeat">
+                                Repeat Password<font color="red"> *</font>
+                            </label>
+                            <input
+                                type="password"
+                                name="password_repeat"
+                                id="password_repeat"
+                                value={repeatPassword}
+                                onChange={handleRepeatPasswordChange}
+                                required
+                            />
+                            {!passwordsMatch && <p>Passwords do not match.</p>}
                         </div>
                     </div>
                 </form>
@@ -136,6 +173,7 @@ function Checkout() {
                         form="form"
                         value="Place order"
                         className="place_order_btn"
+                        disabled={!passwordsMatch}
                     >
                         PLACE ORDER
                     </button>
