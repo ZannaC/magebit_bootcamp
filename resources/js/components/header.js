@@ -25,7 +25,9 @@ function Header () {
                     </Link>
                     </button>
                     <button className="header__top-right-personal">
+                    <Link className="header__top-center-link" to="/register">
                         <img src={User_svg}></img>
+                    </Link>
                     </button>
                 </div>
             </div>
