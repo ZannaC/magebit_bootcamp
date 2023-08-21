@@ -46,3 +46,10 @@
 .terms_and_conditions {
     margin-top: 1rem;
 }
+
+.pass_dont_match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
