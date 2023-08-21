@@ -8,6 +8,25 @@
         }
     }
 
+    .section3 {
+        &__container {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    .section4 {
+        &__container {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .collection__list {
+            display: flex;
+            // flex-wrap: wrap;
+            max-width: 710px;
+        }
+    }
+
     .section6 {
         &__container {
             padding-top: 42px;
@@ -33,6 +52,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-left: 24px;
+            padding-right: 24px;
             &-h1 {
                 order: 1;
             }
@@ -59,6 +80,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0px;
+            padding-left: 24px;
+            padding-right: 24px;
+            &-h3 {
+                text-align: justify;
+            }
 
             &-button {
                 margin-top: 10.7%;
