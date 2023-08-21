@@ -105,7 +105,6 @@ export const ProductProvider = ({ children }) => {
         },
     ]);
 
-
     const updateProducts = (newProduct) => {
         setProducts(newProduct);
     };
