@@ -1,13 +1,13 @@
 .section1 {
     max-width: 1440px;
-    margin: 60px 80px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: rgba(42, 37, 75, 1);
     color: #ffffff;
 
     &__container {
-        padding-left: 60px;
+        padding: 0px 60px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -40,7 +40,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: stretch;
-        max-width: 520px;
+        max-width: 720px;
         width: 100%;
 
         &-img {
@@ -50,17 +50,47 @@
     }
 }
 
+.section3 {
+    max-width: 1280px;
+    margin: 0 auto;
+    &__container {
+        &-h2 {
+            font-family: "Space Grotesk";
+            font-size: 32px;
+            padding-top: 6.25%;
+            padding-bottom: 2.6%;
+        }
+    }
+}
+
+.section4 {
+    max-width: 1280px;
+    margin: 0 auto;
+    &__container {
+        &-h2 {
+            font-family: "Space Grotesk";
+            font-size: 32px;
+            padding-top: 6.25%;
+            padding-bottom: 2.6%;
+        }
+    }
+}
+
 .section6 {
     max-width: 1440px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: rgba(255, 255, 255, 1);
 
     &__container {
         padding-top: 72px;
-        padding-left: 84px;
-        padding-right: 100px;
-
+        margin-left: 8.4%;
+        margin-right: 13.9%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
         &-button {
             font-size: 16px;
             max-width: 170px;
@@ -68,15 +98,17 @@
             border-color: #f9f9f9;
             background-color: rgba(249, 249, 249, 1);
             color: rgba(42, 37, 75, 1);
-            margin-top: 196px;
-            margin-bottom: 54px;
+            margin-top: 29.7%;
+            margin-bottom: 8.2%;
         }
         &-h2 {
+            max-width: 536px;
             font-family: "Space Grotesk";
             font-size: 24px;
             padding-bottom: 25px;
         }
         &-h3 {
+            max-width: 536px;
             font-size: 16px;
             padding-bottom: 25px;
             line-height: 21.6px;

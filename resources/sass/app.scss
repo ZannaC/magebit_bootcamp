@@ -25,17 +25,32 @@
 // Brand styles
 @import "brand.scss";
 
+// collection styles
+@import "collection.scss";
+
 // homepage
-@import 'homePage.scss';
+@import "homePage.scss";
+
+// products styles
+@import "products.scss";
 
 // About page styles.
-@import 'about.scss';
+@import "about.scss";
 
 // Newsletter styles.
-@import 'newsletter.scss';
+@import "newsletter.scss";
+
+// Login page styles.
+@import 'login.scss';
+
+// plp styles
+@import 'plp.scss';
+
+// plp styles
+@import 'plp.scss';
 
 // burger menu styles
 @import 'menu.scss';
 
 // Mobile styles.
-@import 'mobile.scss';
+@import "mobile.scss";

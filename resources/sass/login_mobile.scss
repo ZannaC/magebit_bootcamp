@@ -1,0 +1,15 @@
+@media (width <= 765px) {
+  .login {
+    width: 100%;
+  }
+}
+
+@media (width > 765px) {
+  .login {
+    min-width: 350px;
+
+    button {
+      min-width: 100%;
+    }
+  }
+}

@@ -1,13 +1,7 @@
-.container {
-    padding: 10px;
-}
-
 .flex-box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    align-items: center;
 }
 
 .billing_details {
@@ -30,9 +24,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .payment_method_text {
+    padding-top: 1rem;
     max-width: 400px;
     text-align: center;
 }
@@ -45,4 +41,15 @@
     border-radius: 30px;
     background-color: #2a254b;
     color: white;
+}
+
+.terms_and_conditions {
+    margin-top: 1rem;
+}
+
+.pass_dont_match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
 }
