@@ -115,7 +115,7 @@ function Login() {
                 </form>
                 <p className="login__create_account">
                     New to Avion?&nbsp;
-                    <a href="/">Create an account.</a>
+                    <a href="/signup">Create an account.</a>
                 </p>
             </div>
         </section>
