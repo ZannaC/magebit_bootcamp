@@ -1,21 +1,47 @@
-// header styles
-@import 'header_mobile.scss';
+//Normalize
+@import "normalize.scss";
 
-// footer styles
-@import 'footer_mobile.scss';
+// Global
+@import "global.scss";
+
+//footer styles
+@import "footer.scss";
+
+//pdp styles
+@import "pdp.scss";
+
+//Cart style
+@import "cart.scss";
+
+//Checkout style
+@import "checkout.scss";
+
+// header styles
+@import "header.scss";
+
+// Home page styles
+@import "homePage.scss";
+
+// Brand styles
+@import "brand.scss";
+
+// homepage
+@import 'homePage.scss';
 
 // About page styles.
-@import 'about_mobile.scss';
+@import 'about.scss';
 
 // Newsletter styles.
-@import 'newsletter_mobile.scss';
+@import 'newsletter.scss';
 
-// checkout
-@import 'mobile_checkout.scss';
+// burger menu styles
+@import 'menu.scss';
 
+// Mobile styles.
+@import 'mobile.scss';
 
-// checkout
-@import 'mobile_checkout.scss';
-
-
-
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+}

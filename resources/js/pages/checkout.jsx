@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../sass/app.css";
-import { Helmet } from "react-helmet";
 import Countries from "../components/checkout/countries";
+import PhoneNum from "../components/checkout/PhoneNum";
 
 function Checkout() {
+    const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
+    const [passwordsMatch, setPasswordsMatch] = useState(true);
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+        setPasswordsMatch(event.target.value === repeatPassword);
+    };
+
+    const handleRepeatPasswordChange = (event) => {
+        setRepeatPassword(event.target.value);
+        setPasswordsMatch(event.target.value === password);
+    };
+
     return (
         <>
             <div className="container">
@@ -89,12 +103,7 @@ function Checkout() {
                             <label htmlFor="phone_number">
                                 Phone<font color="red"> *</font>
                             </label>
-                            <input
-                                type="number"
-                                name="phone_number"
-                                id="phone_number"
-                                required
-                            />
+                            <PhoneNum />
                             <label htmlFor="email_adress">
                                 Email<font color="red"> *</font>
                             </label>
@@ -104,6 +113,36 @@ function Checkout() {
                                 id="email_adress"
                                 required
                             />
+                            <label htmlFor="password">
+                                Password<font color="red"> *</font>
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                value={password}
+                                onChange={handlePasswordChange}
+                                placeholder="Enter password"
+                                required
+                            />
+                            <label htmlFor="password_repeat">
+                                Repeat Password<font color="red"> *</font>
+                            </label>
+                            <input
+                                type="password"
+                                name="password_repeat"
+                                id="password_repeat"
+                                value={repeatPassword}
+                                onChange={handleRepeatPasswordChange}
+                                placeholder="Repeat password"
+                                required
+                            />
+                            <div></div>
+                            {!passwordsMatch && (
+                                <p className="pass_dont_match">
+                                    Passwords do not match!
+                                </p>
+                            )}
                         </div>
                     </div>
                 </form>
@@ -134,6 +173,7 @@ function Checkout() {
                         form="form"
                         value="Place order"
                         className="place_order_btn"
+                        disabled={!passwordsMatch}
                     >
                         PLACE ORDER
                     </button>
