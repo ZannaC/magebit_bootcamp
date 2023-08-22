@@ -1,0 +1,16 @@
+@media (width <= 765px) {
+  .sign_up {
+    width: 100%;
+  }
+}
+
+@media (width > 765px) {
+  .sign_up {
+    min-width: 350px;
+    max-width: 350px;
+
+    button {
+      min-width: 100%;
+    }
+  }
+}
