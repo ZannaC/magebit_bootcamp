@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Search_svg from '../../img/header/search-svg.svg';
 import Cart_svg from '../../img/header/cart-svg.svg';
 import User_svg from '../../img/header/user-svg.svg';
 import Menu from "./menu";
 import { useProduct } from '../ProductContext';
+import { useUserContext } from '../UserContext';
 
 function Header () {
 
@@ -28,33 +29,33 @@ function Header () {
             }
         };
 
-        handleResize();
 
-        window.addEventListener("resize", handleResize);
+    const { setLogin, loggedIn } = useProduct();
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    const savedLogin = useUserContext()
 
+    const { amount } = useProduct();
     return (
         <header className="header">
             <div className="header__top">
                 <button className="header__top-left-btn">
-                    <img src={Search_svg} alt="Search"></img>
+                    <img src={Search_svg}></img>
                 </button>
                 <Link className="header__top-center-link" to="/">Avion</Link>
                 <div className="header__top-right-div">
                     <button className="header__top-right-cart">
                     <Link className="header__top-right-cart-link" to="cart">
-                        <img className="header__top-right-cart-link-img" src={Cart_svg} alt="Cart"></img>
+                        <img className="header__top-right-cart-link-img" src={Cart_svg}></img>
                         <span className="header__top-right-cart-link-img-count">
                             {amount}
                         </span>
                     </Link>
                     </button>
                     <button className="header__top-right-personal">
-                        <img src={User_svg} alt="User"></img>
+                    {loggedIn ?
+                    <Link className="header__top-right-personal-link" to="/personal"><img src={User_svg} /></Link>
+                    :
+                    <Link className="header__top-center-link" to="/login"><img src={User_svg}/></Link>}
                     </button>
                     <nav className="app__burger">
                         <div className="app__burger-btn" onClick={handleMenuButton}>
@@ -78,7 +79,7 @@ function Header () {
                 </ul>
             </nav>
         </header>
-    );
+    )
 }
 
 export default Header;

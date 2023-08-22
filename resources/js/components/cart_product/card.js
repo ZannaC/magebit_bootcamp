@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useProduct } from "../../ProductContext";
 
 function Productcard({product}) {
-    const [amount, setAmount] = useState(1);
+    const { subtotal, setSubtotal } = useProduct();
+    console.log (product)
+    // quantity
+    const [amount, setAmount] = useState(product.amount);
+    // total price
+    useEffect(() => {
+        setSubtotal(subtotal + product.price * amount);
+    }, [amount]);
 
     const handleAmountIncrease = () => {
         setAmount(amount + 1);
@@ -18,7 +26,7 @@ function Productcard({product}) {
         <>
             <div className="product">
                 <div className="product-image">
-                    <img src="https://images.unsplash.com/photo-1523263889714-d345f8119047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80"></img>
+                    <img src={product.image}></img>
                 </div>
                 <div className="product-details">
                     <div className="product-title">{product.name}</div>
@@ -38,7 +46,7 @@ function Productcard({product}) {
                         </button>
                         <span className="descr__block-inner-buttons-amount-span-amount">
                             {" "}
-                            {product.amount}{" "}
+                            {amount}{" "}
                         </span>
                         <button
                             className="descr__block-inner-buttons-amount-span-increase"
@@ -52,7 +60,7 @@ function Productcard({product}) {
                 <div className="product-removal">
                     <button className="remove-product">Remove</button>
                 </div>
-                <div className="product-line-price">84.99</div>
+                <div className="product-line-price">{product.price * amount}</div>
             </div>
         </>
     );

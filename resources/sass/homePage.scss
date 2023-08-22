@@ -21,11 +21,21 @@
 
         &-button {
             font-size: 16px;
-            max-width: 170px;
+            min-width: 170px;
+            width: 100%;
             height: 56px;
-
             background-color: rgb(52, 48, 83);
             color: #ffffff;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #474072;
+                color: white;
+            }
+            &:active {
+                transform: scale(0.9);
+            }
         }
         &-h2 {
             color: #ffffff;
@@ -61,6 +71,28 @@
             padding-bottom: 2.6%;
         }
     }
+    .collection__button {
+        @include btn-reset();
+        width: 100%;
+        min-width: 170px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        font-size: 16px;
+        line-height: 24px;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+            transform 0.05s ease-in-out;
+        &:hover {
+            background-color: #2a254b;
+            color: white;
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
 }
 
 .section4 {
@@ -72,6 +104,28 @@
             font-size: 32px;
             padding-top: 6.25%;
             padding-bottom: 2.6%;
+        }
+    }
+    .collection__button {
+        @include btn-reset();
+        width: 100%;
+        min-width: 170px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        font-size: 16px;
+        line-height: 24px;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+            transform 0.05s ease-in-out;
+        &:hover {
+            background-color: #2a254b;
+            color: white;
+        }
+        &:active {
+            transform: scale(0.9);
         }
     }
 }
@@ -93,13 +147,24 @@
         align-items: stretch;
         &-button {
             font-size: 16px;
-            max-width: 170px;
+            min-width: 170px;
+            width: 100%;
             height: 56px;
             border-color: #f9f9f9;
             background-color: rgba(249, 249, 249, 1);
             color: rgba(42, 37, 75, 1);
             margin-top: 29.7%;
             margin-bottom: 8.2%;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #2a254b;
+                color: white;
+            }
+            &:active {
+                transform: scale(0.9);
+            }
         }
         &-h2 {
             max-width: 536px;

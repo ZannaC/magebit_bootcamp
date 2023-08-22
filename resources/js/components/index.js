@@ -18,8 +18,14 @@ import Checkout from "../pages/checkout";
 import About from "../pages/about";
 import Login from "../pages/login";
 import RegisterPage from "../pages/register";
+import Personal from "../pages/pesronal";
+import { UserProvider } from "../UserContext";
+import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 
 function App() {
+    // login state
+    const savedLogin = localStorage.getItem('login');
+    // layout for project
     const Layout = ({ children }) => {
         return (
             <>
@@ -33,23 +39,25 @@ function App() {
     };
 
     return (
-        <ProductProvider>
-            <Router>
-                <Layout>
-                    <Routes>
-                        <Route path="/" element={<Homepage />} />
-                        <Route path="/plp" element={<Plp />} />
-                        <Route path="/pdp" element={<Pdp />} />
-                        <Route path="/plp" element={<Plp />} />
-                        <Route path="/cart" element={<Cart />} />
-                        <Route path="/checkout" element={<Checkout />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<RegisterPage />} />
-                    </Routes>
-                </Layout>
-            </Router>
-        </ProductProvider>
+        <Router>
+            <UserProvider login={savedLogin}>
+                <ProductProvider>
+                        <Layout>
+                            <Routes>
+                                <Route path="/" element={<Homepage />} />
+                                <Route path="/plp" element={<Plp />} />
+                                <Route path="/pdp" element={<Pdp />} />
+                                <Route path="/cart" element={<Cart />} />
+                                <Route path="/checkout" element={<Checkout />} />
+                                <Route path="/about" element={<About />} />
+                                {savedLogin && <Route path="/login" element={<AlreadyLoggedIn />} />}
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<RegisterPage />} />
+                            </Routes>
+                        </Layout>
+                </ProductProvider>
+            </UserProvider>
+        </Router>
     );
 }
 

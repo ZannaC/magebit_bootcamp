@@ -1,38 +1,32 @@
-//Normalize
-@import "normalize.scss";
-
-// Global
-@import "global.scss";
-
-//footer styles
-@import "footer.scss";
-
-//pdp styles
-@import "pdp.scss";
-
-//Cart style
-@import "cart.scss";
-
-//Checkout style
-@import "checkout.scss";
-
-// header styles
-@import "header.scss";
-
-// Home page styles
-@import "homePage.scss";
-
-// Brand styles
-@import "brand.scss";
-
-// homepage
-@import 'homePage.scss';
+//collection
+@import "collection_mobile.scss";
 
 // About page styles.
-@import 'about.scss';
+@import "about_mobile.scss";
 
 // Newsletter styles.
-@import 'newsletter.scss';
+@import "newsletter_mobile.scss";
+
+// Login page styles.
+@import 'login_mobile.scss';
+
+// Sign up styles.
+@import 'signup_mobile.scss';
+
+// checkout
+@import "mobile_checkout.scss";
+
+// pdp
+@import "pdp_mobile.scss";
+
+// brand
+@import "brand_mobile.scss";
+
+// home page
+@import "home_mobile.scss";
+
+// cart mobile
+@import "cart_mobile.scss";
 
 // burger menu styles
 @import 'menu.scss';
