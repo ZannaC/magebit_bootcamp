@@ -31,9 +31,6 @@
 // homepage
 @import "homePage.scss";
 
-// products styles
-@import "products.scss";
-
 // About page styles.
 @import "about.scss";
 
@@ -41,13 +38,19 @@
 @import "newsletter.scss";
 
 // Login page styles.
-@import 'login.scss';
+@import "login.scss";
+
+// Sign up page styles.
+@import 'signup.scss';
 
 // plp styles
-@import 'plp.scss';
+@import "plp.scss";
 
 // plp styles
-@import 'plp.scss';
+@import "plp.scss";
 
 // Mobile styles.
 @import "mobile.scss";
+
+// Search styles.
+@import "search.scss";

@@ -10,6 +10,9 @@
 // Login page styles.
 @import 'login_mobile.scss';
 
+// Sign up styles.
+@import 'signup_mobile.scss';
+
 // checkout
 @import "mobile_checkout.scss";
 
@@ -19,11 +22,11 @@
 // brand
 @import "brand_mobile.scss";
 
-// products
-@import "products_mobile.scss";
-
 // home page
 @import "home_mobile.scss";
+
+// cart mobile
+@import "cart_mobile.scss";
 
 @media (max-width: 1200px) {
     .container {

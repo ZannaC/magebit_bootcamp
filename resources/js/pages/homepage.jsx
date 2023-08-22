@@ -1,18 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import chair from "../../../resources/img/homePage/chair.png";
 import sofa from "../../../resources/img/homePage/sofa.png";
 import Brand from "./brand";
 import Newsletter from "../components/newsletter";
 import CollectionSection from "../components/view_collection/CollectionSection";
-import PopularProductsSection from "../components/popular_products/ProductsSection";
 
 function Homepage() {
     return (
         <div>
             <section className="section1">
-                <div className="container section1__container">
+                <div className="section1__container">
                     <h1 className="section1__container-h1">
                         The furniture brand for the future, with timeless
                         designs
@@ -28,18 +26,42 @@ function Homepage() {
                     </h2>
                 </div>
                 <div className="section1__image">
-                    <img className="section1__image-img" src={chair} alt="" />
+                    <img
+                        className="section1__image-img"
+                        src={chair}
+                        alt="chair image"
+                    />
                 </div>
             </section>
             <Brand />
 
             <section className="section3">
-                <h2 className="section3__container-h2">New ceramics</h2>
-                <CollectionSection />
+                <div className="section3__container">
+                    <h2 className="section3__container-h2">New ceramics</h2>
+                    <CollectionSection
+                        imgClass={"collection__list-item-img"}
+                        nameClass={"collection__list-item-h4"}
+                        priceClass={"collection__list-item-p"}
+                        howManyItems={4}
+                        buttonClass={"collection__button"}
+                    />
+                </div>
             </section>
 
             <section className="section4">
-                <PopularProductsSection />
+                <div className="section4__container">
+                    <h2 className="section4__container-h2">
+                        Our popular products
+                    </h2>
+                    <CollectionSection
+                        className="collection"
+                        imgClass={"collection__list-item-img"}
+                        nameClass={"collection__list-item-h4"}
+                        priceClass={"collection__list-item-p"}
+                        howManyItems={2}
+                        buttonClass={"collection__button"}
+                    />
+                </div>
             </section>
 
             <section className="section5">

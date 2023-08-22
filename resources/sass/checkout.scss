@@ -24,7 +24,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 }
 
 .payment_method_text {
@@ -45,4 +44,23 @@
 
 .terms_and_conditions {
     margin-top: 1rem;
+}
+
+.pass_dont_match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+.accepted span:only-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 2rem;
+}
+
+.accepted span img{
+    width: 3rem;
 }

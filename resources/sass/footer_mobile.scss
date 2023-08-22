@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+    .footer {
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+        &__top {
+            display: flex;
+            flex-direction: column;
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        &-list {
+            display: none;
+        }
+        &-p {
+            text-align: center;
+        }
+        }
+    }
+}
