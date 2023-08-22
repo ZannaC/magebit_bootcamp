@@ -26,15 +26,16 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {products ? products.map((product) => (
-                    <Productcard key={product.id} product={product} />
-                ))
-                :
-                <div className="cart-empty">
-                    <h3>Cart is empty</h3>
-                </div>
-                }
-                <Total></Total>
+                {products ? (
+                    products.map((product) => (
+                        <Productcard key={product.id} product={product} />
+                    ))
+                ) : (
+                    <div className="cart-empty">
+                        <h3>Cart is empty</h3>
+                    </div>
+                )}
+
                 <Link to="checkout">
                     <button className="checkout">Checkout</button>
                 </Link>
