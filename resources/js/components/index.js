@@ -18,15 +18,14 @@ import Checkout from "../pages/checkout";
 import About from "../pages/about";
 import Login from "../pages/login";
 import RegisterPage from "../pages/register";
+import Search from "../pages/search";
 
 function App() {
     const Layout = ({ children }) => {
         return (
             <>
                 <Header />
-                    <main>
-                        {children}
-                    </main>
+                <main>{children}</main>
                 <Footer />
             </>
         );
@@ -45,6 +44,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<RegisterPage />} />
+                        <Route path="/search" element={<Search />} />
                     </Routes>
                 </Layout>
             </Router>

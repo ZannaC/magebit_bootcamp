@@ -3,29 +3,28 @@
 
 @import "@fontsource/oxanium/400.css";
 
-
 input[disabled],
 button[disabled] {
-  opacity: 0.5;
- cursor: unset;
+    opacity: 0.5;
+    cursor: unset;
 }
 
-@mixin list-reset () {
- margin: 0;
- padding: 0;
- list-style: none;
+@mixin list-reset() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-@mixin btn-reset () {
- padding: 0;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+@mixin btn-reset() {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 body {
- font-family: "Oxanium", sans-serif;
- min-width: 390px;
+    font-family: "Oxanium", sans-serif;
+    min-width: 390px;
 }
 
 main {
@@ -37,25 +36,25 @@ h2,
 h3,
 h4,
 p {
- margin: 0;
+    margin: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[disabled],
 button[disabled] {
-  opacity: 0.5;
- cursor: unset;
+    opacity: 0.5;
+    cursor: unset;
 }
 
 .container {
     box-sizing: border-box;
-  max-width: 1280px;
-  width: 100%;
-  padding: 0 80px;
-  margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 80px;
+    margin: 0 auto;
 }
