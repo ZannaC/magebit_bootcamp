@@ -27,7 +27,7 @@ function Homepage() {
                 </div>
                 <div className="section1__image">
                     <img
-                        className="section5__image-img"
+                        className="section1__image-img"
                         src={chair}
                         alt="chair image"
                     />
@@ -43,6 +43,7 @@ function Homepage() {
                         nameClass={"collection__list-item-h4"}
                         priceClass={"collection__list-item-p"}
                         howManyItems={4}
+                        buttonClass={"collection__button"}
                     />
                 </div>
             </section>
@@ -58,6 +59,7 @@ function Homepage() {
                         nameClass={"collection__list-item-h4"}
                         priceClass={"collection__list-item-p"}
                         howManyItems={2}
+                        buttonClass={"collection__button"}
                     />
                 </div>
             </section>
