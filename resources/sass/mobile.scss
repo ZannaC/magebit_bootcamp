@@ -25,6 +25,9 @@
 // home page
 @import "home_mobile.scss";
 
+// cart mobile
+@import "cart_mobile.scss";
+
 @media (max-width: 1200px) {
     .container {
         padding: 0 20px;
