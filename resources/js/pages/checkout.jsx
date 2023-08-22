@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../sass/app.css";
 import Countries from "../components/checkout/countries";
 import PhoneNum from "../components/checkout/PhoneNum";
+import Payment from "../components/checkout/payment";
 
 function Checkout() {
     const [password, setPassword] = useState("");
@@ -49,6 +50,7 @@ function Checkout() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        console.log(value);
         setFormData((prevData) => ({
             ...prevData,
             [name]: value,
@@ -220,13 +222,13 @@ function Checkout() {
                                 Phone<font color="red"> *</font>
                             </label>
                             <PhoneNum required />
-                            <label htmlFor="email_adress">
+                            <label htmlFor="email">
                                 Email<font color="red"> *</font>
                             </label>
                             <input
                                 type="email"
-                                name="email_adress"
-                                id="email_adress"
+                                name="email"
+                                id="email"
                                 required
                                 onChange={handleChange}
                                 style={{
@@ -246,6 +248,11 @@ function Checkout() {
                                 onChange={handlePasswordChange}
                                 placeholder="Enter password"
                                 required
+                                style={{
+                                    borderColor: formErrors.email
+                                        ? "red"
+                                        : "initial",
+                                }}
                             />
                             <label htmlFor="password_repeat">
                                 Repeat Password<font color="red"> *</font>
@@ -258,6 +265,11 @@ function Checkout() {
                                 onChange={handleRepeatPasswordChange}
                                 placeholder="Repeat password"
                                 required
+                                style={{
+                                    borderColor: formErrors.email
+                                        ? "red"
+                                        : "initial",
+                                }}
                             />
                             <div></div>
                             {!passwordsMatch && (
@@ -270,6 +282,8 @@ function Checkout() {
                 </form>
                 <div className="payment_method">
                     <h3 className="payment_method">Payment method</h3>
+
+                    <Payment />
                     <h4 className="payment_method_text">
                         Your personal data will be used to process your order,
                         support your experience throughout this website, and for
@@ -291,7 +305,7 @@ function Checkout() {
                     </div>
                     <br></br>
 
-                    {handleSubmit.isValid ? (
+                    {formData.l_name && formData.f_name && formData.email ? (
                         <h2>Order</h2>
                     ) : (
                         <h4>Cart is empty</h4>
