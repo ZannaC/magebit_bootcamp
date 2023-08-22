@@ -17,6 +17,7 @@ import { ProductProvider } from "../ProductContext";
 import Checkout from "../pages/checkout";
 import About from "../pages/about";
 import Login from "../pages/login";
+import Signup from "../pages/signup";
 import RegisterPage from "../pages/register";
 import Search from "../pages/search";
 
@@ -43,6 +44,7 @@ function App() {
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<Signup />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route path="/search" element={<Search />} />
                     </Routes>
