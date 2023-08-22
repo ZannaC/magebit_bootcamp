@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import { Link, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useProduct } from "../ProductContext";
 import Productcard from "../components/cart_product/card";
 import Total from "../components/cart_product/total";
+import Checkout from "./checkout";
 
 function Cart() {
     // our products from our productContext
@@ -35,10 +35,16 @@ function Cart() {
                         <h3>Cart is empty</h3>
                     </div>
                 )}
-
-                <Link to="checkout">
-                    <button className="checkout">Checkout</button>
-                </Link>
+                ,
+                {products ? (
+                    <>
+                        <Link to="/checkout">
+                            <button className="checkout">Checkout</button>
+                        </Link>
+                    </>
+                ) : (
+                    <h4>Cart is empty</h4>
+                )}
             </div>
         </div>
     );
