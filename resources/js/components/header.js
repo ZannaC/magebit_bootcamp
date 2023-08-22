@@ -3,14 +3,21 @@ import { Link } from "react-router-dom";
 import Search_svg from '../../img/header/search-svg.svg';
 import Cart_svg from '../../img/header/cart-svg.svg';
 import User_svg from '../../img/header/user-svg.svg';
-import Menu_svg from '../../img/header/menu-svg.svg';
-import Menu  from "./menu";
+import Menu from "./menu";
 import { useProduct } from '../ProductContext';
 
 function Header () {
 
     const { amount } = useProduct();
+
+    const [menuActive, setMenuActive] = useState(false);
+    const items = [{value:"Homepage", href:"/"}, {value:"Product listing", href:"/plp"}, {value:"About", href:"/about"}]
     const [showHamburger, setShowHamburger] = useState(false);
+
+    const handleMenuButton = () => {
+        setMenuActive(!menuActive);
+    }
+    menuActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,7 +39,6 @@ function Header () {
 
     return (
         <header className="header">
-            <Menu divClass={'div__class'}/>
             <div className="header__top">
                 <button className="header__top-left-btn">
                     <img src={Search_svg} alt="Search"></img>
@@ -50,6 +56,12 @@ function Header () {
                     <button className="header__top-right-personal">
                         <img src={User_svg} alt="User"></img>
                     </button>
+                    <nav className="app__burger">
+                        <div className="app__burger-btn" onClick={handleMenuButton}>
+                            <span className="app__burger-btn-span"/>
+                        </div>
+                    </nav>
+                    <Menu header={"Menu"} items={items} active={menuActive} setActive={setMenuActive}/>
                 </div>
             </div>
             <nav className="header__nav">

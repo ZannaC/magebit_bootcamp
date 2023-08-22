@@ -10,6 +10,7 @@ import Header from "./header";
 import Footer from "./footer";
 import Homepage from "../pages/homepage";
 import Pdp from "../pages/pdp";
+import Plp from "../pages/plp";
 import Cart from "../pages/cart";
 import "../../sass/app.css";
 import { ProductProvider } from "../ProductContext";
@@ -34,6 +35,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Homepage />} />
                         <Route path="/pdp" element={<Pdp />} />
+                        <Route path="/plp" element={<Plp />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/about" element={<About />} />
