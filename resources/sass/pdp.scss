@@ -1,5 +1,6 @@
 .descr {
     margin-bottom: 80px;
+    padding: 50px 0;
     &__inner {
         display: flex;
         max-width: 1280px;
@@ -7,9 +8,9 @@
     }
     &__img {
         width: 100%;
-        max-width: 721px;
+        max-width: 607px;
         height: auto;
-        max-height: 759px;
+        max-height: 661px;
     }
     &__block {
         max-width: 602px;

@@ -3,7 +3,7 @@ import { useProduct } from "../ProductContext";
 import "../../sass/app.css";
 
 function Login() {
-    const { setLoggedIn, loggedIn } = useProduct();
+    const { setLogin, loggedIn } = useProduct();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [response, setResponse] = useState("");
@@ -39,9 +39,8 @@ function Login() {
 
     useEffect(() => {
         if (response.userExists === 'est') {
-            setLoggedIn(true);
+            setLogin();
         }
-        console.log (loggedIn);
     }, [response]);
 
     return (

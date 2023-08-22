@@ -22,7 +22,7 @@ function Register () {
             },
             body: JSON.stringify(obj)
             })
-            .then(response => response.json())
+            .then(response => console.log(response))
 
             .then(response => setResponse(Boolean(response)))
             // console.log(response)
