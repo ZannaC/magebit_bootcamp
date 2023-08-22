@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import "../../sass/app.css";
 import { Link, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useProduct } from "../ProductContext";
 import Productcard from "../components/cart_product/card";
 import Total from "../components/cart_product/total";
-import Checkout from "./checkout";
 
 function Cart() {
-    // our products from our productContext
-    const { products } = useProduct();
+    // our product from our productContext
+    const { products, setSubtotal } = useProduct();
+    const [totalAmount, setTotalAmount] = useState(0);
+
+    useEffect(() => {
+        let total = 0;
+        products && products.forEach((product) => {
+            total += Number(product.price) * Number(product.amount);
+        });
+        console.log (typeof total)
+        setTotalAmount(total);
+    }, [products]);
 
     return (
         <div className="container">
@@ -26,25 +36,18 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {products ? (
-                    products.map((product) => (
-                        <Productcard key={product.id} product={product} />
-                    ))
-                ) : (
-                    <div className="cart-empty">
-                        <h3>Cart is empty</h3>
-                    </div>
-                )}
-                ,
-                {products ? (
-                    <>
-                        <Link to="/checkout">
-                            <button className="checkout">Checkout</button>
-                        </Link>
-                    </>
-                ) : (
-                    <h4>Cart is empty</h4>
-                )}
+                {products ? products.map((product) => (
+                    <Productcard key={product.id} product={product} />
+                ))
+                :
+                <div className="cart-empty">
+                    <h3>Cart is empty</h3>
+                </div>
+                }
+                <Total subtotal={totalAmount} />
+                <Link to="checkout">
+                    <button className="checkout">Checkout</button>
+                </Link>
             </div>
         </div>
     );
