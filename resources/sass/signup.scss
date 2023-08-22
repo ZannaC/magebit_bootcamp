@@ -83,6 +83,19 @@
     &:active {
       background-color: #3f3975;
     }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+
+      &:hover {
+        background-color: #2a254b;
+      }
+
+      &:active {
+        background-color: #2a254b;
+      }
+    }
   }
 
   .input_message {

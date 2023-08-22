@@ -17,6 +17,9 @@ function Signup() {
         const passwordFieldMessage = document.getElementById('signUpPasswordMessage');
         const passwordConfirmField = document.getElementById('signUpConfirmPassword');
         const passwordConfirmFieldMessage = document.getElementById('signUpConfirmPasswordMessage');
+        const submitButton = document.getElementById('submitButton');
+
+        submitButton.disabled = false;
 
         if (inputField === 'email') {
             setEmail(event.target.value);
@@ -48,6 +51,7 @@ function Signup() {
         const passwordConfirmField = document.getElementById('signUpConfirmPassword');
         const passwordConfirmFieldMessage = document.getElementById('signUpConfirmPasswordMessage');
         const emptyFieldMessage = 'This is a required field.';
+        const submitButton = document.getElementById('submitButton');
 
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userData.email)) {
             isValid = false;
@@ -88,6 +92,9 @@ function Signup() {
         if (isValid) {
             return true;
         }
+
+        submitButton.disabled = true;
+
         return false;
     };
 
@@ -166,6 +173,7 @@ function Signup() {
                     </label>
 
                     <button
+                        id="submitButton"
                         type="submit"
                         onClick={handleSubmit}
                     >
