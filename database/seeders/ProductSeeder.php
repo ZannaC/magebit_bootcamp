@@ -23,6 +23,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Furniture',
             ],
             [
                 'name' => "Rustic Vase Set",
@@ -32,6 +33,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Furniture',
             ],
             [
                 'name' => "The Silky Vase",
@@ -41,6 +43,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Sofas',
             ],
             [
                 'name' => "The Lucy Lamp",
@@ -50,6 +53,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Sofas',
             ],
             [
                 'name' => "Rustic Vase Set",
@@ -59,6 +63,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Sofas',
             ],
             [
                 'name' => "KOko Vase Set",
@@ -68,6 +73,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Furniture',
             ],
             [
                 'name' => "Lusa Vase Set",
@@ -77,6 +83,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Furniture',
             ],
             [
                 'name' => "Honda Vase Set",
@@ -86,6 +93,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Sofas',
             ],
             [
                 'name' => "Mercedes Vase Set",
@@ -95,6 +103,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Homeware',
             ],
             [
                 'name' => "Toyota Vase Set",
@@ -104,6 +113,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Light fittings',
             ],
             [
                 'name' => "Bmw Vase Set",
@@ -113,6 +123,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Accessories',
             ],
             [
                 'name' => "Audi Vase Set",
@@ -122,6 +133,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Accessories',
             ],
             [
                 'name' => "Vw Vase Set",
@@ -131,6 +143,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Light fittings',
             ],
             [
                 'name' => "Reno Vase Set",
@@ -140,6 +153,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Light fittings',
             ],
             [
                 'name' => "Supra Vase Set",
@@ -149,6 +163,7 @@ class ProductSeeder extends Seeder
                 'height' => '100cm',
                 'width'=> '75cm',
                 'depth'=> '45cm',
+                'type' => 'Homeware',
             ],
         ]);
     }
