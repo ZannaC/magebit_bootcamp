@@ -16,8 +16,8 @@ class UserController extends Controller
             'password' => 'required|max:255',
         ]);
 
-        User::create($validated);
-        return ['userReg' => 'success'];
+        $newUser = User::create($validated);
+        return ['userReg' => 'success', 'userId' => $newUser->id];
     } catch (\Illuminate\Validation\ValidationException $e) {
         // Обработка ошибок валидации
         return ['userReg' => 'false', 'errors' => $e->errors()];
@@ -32,9 +32,9 @@ class UserController extends Controller
         $user = User::where('email', $request->post('email'))->first();
 
         if ($user) {
-            return ['userExists' => 'est', 'user' => $user];
+            return ['userExists' => 'success', 'userId' => $user->id];
         } else {
-            return ['userExists' => 'net'];
+            return ['userExists' => 'error'];
         }
     }
 }

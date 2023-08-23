@@ -2,19 +2,17 @@ import React, { useState, useEffect } from "react";
 import CollectionCard from "../components/view_collection/CollectionCard";
 import { useProduct } from "../ProductContext";
 import { useNavigate } from 'react-router-dom';
-import getAllProducts from "../utils/getAllProducts";
+import ProductsRequest from "../utils/ProductsRequest";
 
 function Plp() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     // all products request
     useEffect(()=> {
-        getAllProducts('products')
+        ProductsRequest('products')
         .then(response => setData(response));
     }, [])
 
-    // all products
-    const { allProducts } = useProduct();
     // number of rendered products
     const [renderedProducts, setRenderedProducts] = useState(9);
 

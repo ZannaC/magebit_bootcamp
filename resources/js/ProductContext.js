@@ -178,9 +178,9 @@ export const ProductProvider = ({ children }) => {
         },
     ]);
 
-    const setLogin = () => {
+    const setLogin = (id) => {
         setLoggedIn(true);
-        localStorage.setItem('login', true);
+        localStorage.setItem('login', JSON.stringify({isLoggedIn: true, userId: id}));
     }
 
 

@@ -1,4 +1,4 @@
-function getAllProducts (url, body = {}) {
+function ProductsRequest (url, body = {}) {
     return fetch(`/api/${url}`, {
         method: 'POST',
         headers: {
@@ -10,4 +10,4 @@ function getAllProducts (url, body = {}) {
         .then(response => response.json())
 }
 
-export default getAllProducts;
+export default ProductsRequest;
