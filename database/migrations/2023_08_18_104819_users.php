@@ -10,15 +10,10 @@ class Users extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('f_name');
-            $table->string('l_name');
-            $table->string('country');
-            $table->string('st_adress');
-            $table->string('town_city');
-            $table->string('zip_code');
-            $table->string('phone');
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('products');
             $table->timestamps();
         });
     }
