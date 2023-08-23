@@ -1,19 +1,40 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Search_svg from '../../img/header/search-svg.svg';
 import Cart_svg from '../../img/header/cart-svg.svg';
 import User_svg from '../../img/header/user-svg.svg';
+import Menu from "./menu";
 import { useProduct } from '../ProductContext';
 import { useUserContext } from '../UserContext';
 
 function Header () {
+
+    const { amount } = useProduct();
+
+    const [menuActive, setMenuActive] = useState(false);
+    const items = [{value:"Homepage", href:"/"}, {value:"Product listing", href:"/plp"}, {value:"About", href:"/about"}]
+    const [showHamburger, setShowHamburger] = useState(false);
+
+    const handleMenuButton = () => {
+        setMenuActive(!menuActive);
+    }
+    menuActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setShowHamburger(true);
+            } else {
+                setShowHamburger(false);
+            }
+        };
+    }, []);
 
 
     const { setLogin, loggedIn } = useProduct();
 
     const savedLogin = useUserContext()
 
-    const { amount } = useProduct();
     return (
         <header className="header">
             <div className="header__top">
@@ -36,6 +57,12 @@ function Header () {
                     :
                     <Link className="header__top-center-link" to="/login"><img src={User_svg}/></Link>}
                     </button>
+                    <nav className="app__burger">
+                        <div className="app__burger-btn" onClick={handleMenuButton}>
+                            <span className="app__burger-btn-span"/>
+                        </div>
+                    </nav>
+                    <Menu header={"Menu"} items={items} active={menuActive} setActive={setMenuActive}/>
                 </div>
             </div>
             <nav className="header__nav">
