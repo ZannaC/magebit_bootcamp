@@ -54,6 +54,8 @@ function Login() {
         emailField.current.classList.add('--invalid');
         passwordField.current.classList.add('--invalid');
         passwordFieldMessage.current.innerText = 'Incorrect username or password.';
+        emailField.current.value = '';
+        passwordField.current.value = '';
     };
 
     const handleSubmit = (event) => {
