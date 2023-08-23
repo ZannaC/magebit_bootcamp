@@ -111,7 +111,18 @@ function Signup() {
         }
     };
 
-    useEffect(() => {}, [fetchResponse]);
+    const showUserInvalidMessage = () => {
+        emailField.current.classList.add('--invalid');
+        emailFieldMessage.current.innerText = 'Email has already been taken.';
+    };
+
+    useEffect(() => {
+        if (fetchResponse !== '') {
+            if (typeof fetchResponse.errors.email !== 'undefined') {
+                showUserInvalidMessage();
+            }
+        }
+    }, [fetchResponse]);
 
     return (
         <section className="sign_up__container">
