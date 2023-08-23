@@ -19,6 +19,7 @@ import About from "../pages/about";
 import Login from "../pages/login";
 import RegisterPage from "../pages/register";
 import Search from "../pages/search";
+import Account from "../pages/account";
 
 function App() {
     const Layout = ({ children }) => {
@@ -45,6 +46,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route path="/search" element={<Search />} />
+                        <Route path="/account" element={<Account />} />
                     </Routes>
                 </Layout>
             </Router>
