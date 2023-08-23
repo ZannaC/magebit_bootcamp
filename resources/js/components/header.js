@@ -12,7 +12,7 @@ function Header () {
     const { amount } = useProduct();
 
     const [menuActive, setMenuActive] = useState(false);
-    const items = [{value:"Homepage", href:"/"}, {value:"Product listing", href:"/plp"}, {value:"About", href:"/about"}]
+    const items = [{value:"Login", href:"/login"}, {value:"Homepage", href:"/"}, {value:"About", href:"/about"}, {value:"Products", href:"/plp"}, {value:"Cart", href:"/cart"}, {value:"Checkout", href:"/checkout"}]
     const [showHamburger, setShowHamburger] = useState(false);
 
     const handleMenuButton = () => {
@@ -62,7 +62,7 @@ function Header () {
                             <span className="app__burger-btn-span"/>
                         </div>
                     </nav>
-                    <Menu header={"Menu"} items={items} active={menuActive} setActive={setMenuActive}/>
+                    <Menu header={"Avion"} items={items} active={menuActive} setActive={setMenuActive}/>
                 </div>
             </div>
             <nav className="header__nav">
