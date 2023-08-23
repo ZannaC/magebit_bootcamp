@@ -9,17 +9,20 @@ class UserController extends Controller
 { // register function
     public function register(Request $request)
 {
-    $validated = $request->validate([
-        'name' => 'required|max:255',
-        'email' => 'required|email|unique:users|max:255',
-        'password' => 'required|max:255',
-    ]);
-
     try {
-        $user = User::create($validated);
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|max:255',
+        ]);
+
+        User::create($validated);
         return ['userReg' => 'success'];
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        // Обработка ошибок валидации
+        return ['userReg' => 'false', 'errors' => $e->errors()];
     } catch (\Exception $e) {
-        // Information about mistakes:
+        // Обработка других ошибок при создании пользователя
         return ['userReg' => 'false', 'error' => $e->getMessage()];
     }
 }

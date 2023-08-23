@@ -13,6 +13,7 @@
         &-list {
             @include list-reset();
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             max-width: 264px;
             width: 100%;

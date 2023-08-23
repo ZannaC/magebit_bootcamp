@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../sass/app.css";
 import Countries from "../components/checkout/countries";
 import PhoneNum from "../components/checkout/PhoneNum";
-import Payment from "../components/checkout/payment";
+// import Payment from "../components/checkout/payment";
 
 function Checkout() {
     const [password, setPassword] = useState("");
@@ -283,7 +283,6 @@ function Checkout() {
                 <div className="payment_method">
                     <h3 className="payment_method">Payment method</h3>
                     <Payment />
-
                     <h4 className="payment_method_text">
                         Your personal data will be used to process your order,
                         support your experience throughout this website, and for
