@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{path?}', function () {
-    return view('search');
+    return view('welcome');
 })->where('path', '.*');
 
 Route::get('/dashboard', function () {
