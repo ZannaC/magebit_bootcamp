@@ -6,7 +6,7 @@ function Account() {
     return (
         <div className="account__container">
             <section className="account__container-title">
-                <h2>Home / My account</h2>
+                <h2>My account</h2>
                 <h2>Welcome! </h2>
             </section>
 
@@ -35,8 +35,10 @@ function Account() {
                     My Wishlist<Link to="/login"></Link>
                 </h3>
             </section>
-            <section className="account__container-user-data">
-                <div>Edit Your Profile</div>
+            <section className="account__form">
+                <div>
+                    <h3 className="account__form-title">Edit Your Profile</h3>
+                </div>
                 <form className="user__form">
                     <section className="user__form-profile">
                         First Name
@@ -69,7 +71,9 @@ function Account() {
                         />
                     </section>
                     <section className="user__form-password">
-                        Password Changes
+                        <h3 className="user__form-password-title">
+                            Password Changes
+                        </h3>
                         <input
                             name="name"
                             type="name"
