@@ -23,8 +23,12 @@ import Personal from "../pages/pesronal";
 import { UserProvider } from "../UserContext";
 import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
+
+import Account from "../pages/account";
+
 import OrderCompleted from "../pages/ordercompleted";
 import Menu from "../components/menu";
+
 
 function App() {
     // login state
@@ -41,6 +45,7 @@ function App() {
     };
 
     return (
+
         <Router>
             <UserProvider login={savedLogin}>
                 <ProductProvider>
@@ -73,11 +78,13 @@ function App() {
                                 element={<OrderCompleted />}
                             />
                             <Route path="/menu" element={<Menu />} />
+                               <Route path="/account" element={<Account />} />
                         </Routes>
                     </Layout>
                 </ProductProvider>
             </UserProvider>
         </Router>
+
     );
 }
 
