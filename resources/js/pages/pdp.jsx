@@ -4,6 +4,7 @@ import { useProduct } from "../ProductContext";
 import testImg from "../../img/pdp/testImg.png";
 import { useLocation } from 'react-router-dom';
 import CollectionSection from "../components/view_collection/CollectionSection";
+import ProductsRequest from "../utils/ProductsRequest";
 
 function Pdp(props) {
     const location = useLocation();
@@ -29,16 +30,14 @@ function Pdp(props) {
     // update products
 
     const setProducts = () => {
-        updateProducts(
-            {
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image: product.image,
-                description: product.description,
-                amount: productAmount,
-            },
-        );
+        const userId = JSON.parse(localStorage.getItem('login'))?.userId;
+        const obj = {
+            productId: product.id,
+            userId: userId,
+            quantity: productAmount,
+        }
+        ProductsRequest('cart-update', obj)
+        .then(res => {console.log(res)})
         setSubtotal(subtotal + product.price * productAmount);
     };
 

@@ -6,20 +6,27 @@ import { Helmet } from "react-helmet";
 import { useProduct } from "../ProductContext";
 import Productcard from "../components/cart_product/card";
 import Total from "../components/cart_product/total";
+import ProductsRequest from "../utils/ProductsRequest";
 
 function Cart() {
     // our product from our productContext
     const { products, setSubtotal } = useProduct();
     const [totalAmount, setTotalAmount] = useState(0);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        let total = 0;
-        products && products.forEach((product) => {
-            total += Number(product.price) * Number(product.amount);
-        });
-        console.log (typeof total)
-        setTotalAmount(total);
-    }, [products]);
+        ProductsRequest('get-cart-items', {userId: JSON.parse(localStorage.getItem('login'))?.userId})
+        .then(response => setData(response.products));
+    }, [])
+
+    // useEffect(() => {
+    //     let total = 0;
+    //     products && products.forEach((product) => {
+    //         total += Number(product.price) * Number(product.amount);
+    //     });
+    //     console.log (typeof total)
+    //     setTotalAmount(total);
+    // }, [products]);
 
     return (
         <div className="container">
@@ -36,7 +43,7 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {products ? products.map((product) => (
+                {data ? data.map((product) => (
                     <Productcard key={product.id} product={product} />
                 ))
                 :

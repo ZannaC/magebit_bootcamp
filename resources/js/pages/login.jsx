@@ -56,9 +56,9 @@ function Login() {
     };
 
     useEffect(() => {
-        if (response.userExists === 'est') {
-            setLogin();
-        } else if (response.userExists === 'net') {
+        if (response.userExists === 'success') {
+            setLogin(response.userId);
+        } else if (response.userExists === 'error') {
             console.log (response)
             setNoUserError(true);
         }

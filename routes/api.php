@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 
 
 /*
@@ -20,6 +21,9 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/get-cart-items', [CartController::class, 'getItems']);
+
+Route::post('/cart-update', [CartController::class, 'update']);
 
 Route::post('/products', [ProductController::class, 'index']);
 
