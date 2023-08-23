@@ -1,0 +1,162 @@
+.account__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f9f9f9;
+    min-height: inherit;
+
+    &-title {
+        margin: 0 auto;
+        background: url("../img/homePage/accountBackground.png");
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: white;
+
+        & h2 {
+            max-width: 1440px;
+            padding-left: 50px;
+            padding-bottom: 10px;
+            font-family: Oxanium, sans-serif;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: #f9f9f9;
+        }
+    }
+
+    &-list {
+        margin: 3%;
+        display: flex;
+        flex-direction: column;
+        max-width: 1394px;
+        width: 100%;
+        padding-left: 10%;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-bottom: 5px;
+    }
+
+    &-list-title {
+        font-family: Oxanium, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+    }
+
+    &-list-links,
+    &-list-links a {
+        font-family: Oxanium, sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        color: rgb(100, 97, 114);
+        text-decoration: none;
+        cursor: pointer;
+
+        &-active {
+            color: red;
+        }
+    }
+}
+
+.account__form {
+    &-title {
+        padding-left: 50px;
+        color: red;
+    }
+
+    .user__form {
+        padding-left: 50px;
+        padding-right: 50px;
+        input {
+            max-width: 1024px;
+            padding: 16px 32px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 17px;
+            color: rgb(100, 97, 114);
+            border: none;
+            border-radius: 0;
+            outline: none;
+            transition: 0.05s ease-in-out;
+
+            &::placeholder {
+                opacity: 0.5;
+            }
+
+            &:focus {
+                box-shadow: inset 0 -4px 0 -2px #3f3975;
+            }
+        }
+
+        &-profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 5%;
+            row-gap: 10px;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &-password {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+            padding-bottom: 10px;
+            &-title {
+                padding-bottom: 10px;
+            }
+        }
+
+        &-button-block {
+            max-width: 100%;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+            button {
+                margin-left: 2%;
+                padding: 16px 32px;
+                min-width: 170px;
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 1em;
+                color: #fff;
+                background-color: #2a254b;
+                border: none;
+                transition: 0.05s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #474072;
+                }
+
+                &:active {
+                    background-color: #3f3975;
+                }
+            }
+        }
+
+        .cancel {
+            background-color: white;
+            color: #2a254b;
+            border-color: #2a254b;
+            border: 0.5px;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            &:active {
+                color: white;
+            }
+        }
+    }
+}

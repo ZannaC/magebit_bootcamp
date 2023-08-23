@@ -31,3 +31,6 @@ Route::post('/login', [UserController::class, 'login']);
 
 Route::post('/register', [UserController::class, 'register']);
 
+Route::post('/account', [UserController::class, 'account']);
+
+
