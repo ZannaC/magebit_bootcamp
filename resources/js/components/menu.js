@@ -8,8 +8,8 @@ const Menu = ({header, items, active, setActive}) => {
             <div className="menu__content" onClick={e => e.stopPropagation()}>
                 <div className="menu__header">{header}</div>
                 <ul>
-                    {items.map((item) =>
-                        <li>
+                    {items.map((item, key) =>
+                        <li key={key}>
                             <Link to={item.href}>{item.value}</Link>
                             <span className="material-icons">{item.icon}</span>
                         </li>

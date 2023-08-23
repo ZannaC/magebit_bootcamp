@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Search_svg from '../../img/header/search-svg.svg';
 import Cart_svg from '../../img/header/cart-svg.svg';
@@ -28,13 +28,13 @@ function Header () {
                 setShowHamburger(false);
             }
         };
+    }, []);
 
 
     const { setLogin, loggedIn } = useProduct();
 
     const savedLogin = useUserContext()
 
-    const { amount } = useProduct();
     return (
         <header className="header">
             <div className="header__top">
