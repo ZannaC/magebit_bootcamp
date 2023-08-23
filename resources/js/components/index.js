@@ -23,6 +23,7 @@ import Personal from "../pages/pesronal";
 import { UserProvider } from "../UserContext";
 import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
+import OrderCompleted from "../pages/ordercompleted";
 
 function App() {
     // login state
@@ -62,6 +63,10 @@ function App() {
                                 element={<RegisterPage />}
                             />
                             <Route path="/search" element={<Search />} />
+                            <Route
+                                path="/ordercompleted"
+                                element={<OrderCompleted />}
+                            />
                         </Routes>
                     </Layout>
                 </ProductProvider>

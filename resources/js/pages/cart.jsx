@@ -14,10 +14,11 @@ function Cart() {
 
     useEffect(() => {
         let total = 0;
-        products && products.forEach((product) => {
-            total += Number(product.price) * Number(product.amount);
-        });
-        console.log (typeof total)
+        products &&
+            products.forEach((product) => {
+                total += Number(product.price) * Number(product.amount);
+            });
+        console.log(typeof total);
         setTotalAmount(total);
     }, [products]);
 
@@ -36,16 +37,17 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {products ? products.map((product) => (
-                    <Productcard key={product.id} product={product} />
-                ))
-                :
-                <div className="cart-empty">
-                    <h3>Cart is empty</h3>
-                </div>
-                }
+                {products ? (
+                    products.map((product) => (
+                        <Productcard key={product.id} product={product} />
+                    ))
+                ) : (
+                    <div className="cart-empty">
+                        <h3>Cart is empty</h3>
+                    </div>
+                )}
                 <Total subtotal={totalAmount} />
-                <Link to="checkout">
+                <Link to="/checkout">
                     <button className="checkout">Checkout</button>
                 </Link>
             </div>
