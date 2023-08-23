@@ -282,8 +282,7 @@ function Checkout() {
                 </form>
                 <div className="payment_method">
                     <h3 className="payment_method">Payment method</h3>
-
-                    {/* <Payment /> */}
+                    <Payment />
                     <h4 className="payment_method_text">
                         Your personal data will be used to process your order,
                         support your experience throughout this website, and for

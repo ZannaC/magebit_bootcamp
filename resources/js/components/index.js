@@ -17,22 +17,22 @@ import { ProductProvider } from "../ProductContext";
 import Checkout from "../pages/checkout";
 import About from "../pages/about";
 import Login from "../pages/login";
+import Signup from "../pages/signup";
 import RegisterPage from "../pages/register";
 import Personal from "../pages/pesronal";
 import { UserProvider } from "../UserContext";
 import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
+import Search from "../pages/search";
 
 function App() {
     // login state
-    const savedLogin = localStorage.getItem('login');
+    const savedLogin = localStorage.getItem("login");
     // layout for project
     const Layout = ({ children }) => {
         return (
             <>
                 <Header />
-                    <main>
-                        {children}
-                    </main>
+                <main>{children}</main>
                 <Footer />
             </>
         );
@@ -42,19 +42,28 @@ function App() {
         <Router>
             <UserProvider login={savedLogin}>
                 <ProductProvider>
-                        <Layout>
-                            <Routes>
-                                <Route path="/" element={<Homepage />} />
-                                <Route path="/plp" element={<Plp />} />
-                                <Route path="/pdp" element={<Pdp />} />
-                                <Route path="/cart" element={<Cart />} />
-                                <Route path="/checkout" element={<Checkout />} />
-                                <Route path="/about" element={<About />} />
-                                {savedLogin && <Route path="/login" element={<AlreadyLoggedIn />} />}
-                                <Route path="/login" element={<Login />} />
-                                <Route path="/register" element={<RegisterPage />} />
-                            </Routes>
-                        </Layout>
+                    <Layout>
+                        <Routes>
+                            <Route path="/" element={<Homepage />} />
+                            <Route path="/plp" element={<Plp />} />
+                            <Route path="/pdp" element={<Pdp />} />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/checkout" element={<Checkout />} />
+                            <Route path="/about" element={<About />} />
+                            {savedLogin && (
+                                <Route
+                                    path="/login"
+                                    element={<AlreadyLoggedIn />}
+                                />
+                            )}
+                            <Route path="/login" element={<Login />} />
+                            <Route
+                                path="/register"
+                                element={<RegisterPage />}
+                            />
+                            <Route path="/search" element={<Search />} />
+                        </Routes>
+                    </Layout>
                 </ProductProvider>
             </UserProvider>
         </Router>

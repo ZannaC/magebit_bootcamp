@@ -21,9 +21,9 @@ class Orders extends Migration
         // });
     }
 
-    public function down()
-    {
-        Schema::dropIfExists('orders');
-    }
+    // public function down()
+    // {
+    //     Schema::dropIfExists('orders');
+    // }
 }
 
