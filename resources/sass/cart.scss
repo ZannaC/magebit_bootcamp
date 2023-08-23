@@ -55,6 +55,11 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     @extend .group;
 }
 
+.product {
+    display: flex;
+    align-items: center;
+}
+
 /* Apply dollar signs */
 .product .product-price:before,
 .product .product-line-price:before,

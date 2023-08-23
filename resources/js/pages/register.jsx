@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import getAllProducts from "../utils/getAllProducts";
 
 function Register () {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [response, setResponse] = useState("");
+
+    useEffect(() => {
+        console.log(response);
+    }, [response])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,17 +19,8 @@ function Register () {
             password: password
         }
         // console.log(document.querySelector('[name="csrf-token"]'))
-        fetch('/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify(obj)
-            })
-            .then(response => response.json())
-
-            .then(response => setResponse(Boolean(response)))
+        getAllProducts('register', obj)
+        .then(response => setResponse(response))
             // console.log(response)
     }
 

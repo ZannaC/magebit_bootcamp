@@ -7,8 +7,17 @@
 // Newsletter styles.
 @import "newsletter_mobile.scss";
 
+// header mobile styles
+@import "header_mobile.scss";
+
+// footer mobile styles
+@import "footer_mobile.scss";
+
 // Login page styles.
-// @import 'login_mobile.scss';
+@import 'login_mobile.scss';
+
+// Sign up styles.
+@import 'signup_mobile.scss';
 
 // checkout
 @import "mobile_checkout.scss";
@@ -22,8 +31,16 @@
 // home page
 @import "home_mobile.scss";
 
+
 // account page
 @import "account_mobile.scss";
+
+// cart mobile
+@import "cart_mobile.scss";
+
+// burger menu styles
+@import 'menu.scss';
+
 
 @media (max-width: 1200px) {
     .container {
