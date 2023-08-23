@@ -1,104 +1,123 @@
-import React, { useState, useEffect } from "react";
-import { useProduct } from "../ProductContext";
-import "../../sass/app.css";
+import React, { useState, useEffect, useRef } from 'react';
+import { useProduct } from '../ProductContext';
+import '../../sass/app.css';
 
 function Login() {
-    const { setLogin, loggedIn } = useProduct();
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const [response, setResponse] = useState("");
-    // validation states
-    const [noUserError, setNoUserError] = useState(false);
-    const [emptyEmail, setEmptyEmail] = useState(false);
-    const [emptyPassword, setEmptyPassword] = useState(false);
+    const { setLoggedIn, loggedIn } = useProduct();
+    const [fetchResponse, setFetchResponse] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        if (email === "") {
-            setEmptyEmail(true);
-        } else {
-            setEmptyEmail(false);
-        }
-        if (password === "") {
-            setEmptyPassword(true);
-        } else {
-            setEmptyPassword(false);
-        }
-    }, [email, password])
+    const emailField = useRef(null);
+    const emailFieldMessage = useRef(null);
+    const passwordField = useRef(null);
+    const passwordFieldMessage = useRef(null);
 
-    const changeEmail = (e) => {
-        setEmail(e.target.value);
-        setNoUserError(false);
+    // Sets user typed data and removes field styling and error messages on input.
+    const updateValue = (inputField, event) => {
+        if (inputField === 'email') {
+            setEmail(event.target.value);
+            emailField.current.classList.remove('--invalid');
+            emailFieldMessage.current.innerText = '';
+        } else if (inputField === 'password') {
+            setPassword(event.target.value);
+            passwordField.current.classList.remove('--invalid');
+            passwordFieldMessage.current.innerText = '';
+        }
     };
 
-    const changePassword = (e) => {
-        setPassword(e.target.value);
+    // Returns true if input fields are not empty and displays error messages if they are.
+    const isUserDataValid = (userData) => {
+        let isValid = true;
+        const emptyFieldMessage = 'This is a required field.';
+
+        if (userData.email === '') {
+            isValid = false;
+            emailField.current.classList.add('--invalid');
+            emailFieldMessage.current.innerText = emptyFieldMessage;
+        }
+
+        if (userData.password === '') {
+            isValid = false;
+            passwordField.current.classList.add('--invalid');
+            passwordFieldMessage.current.innerText = emptyFieldMessage;
+        }
+
+        if (isValid) {
+            return true;
+        }
+
+        return false;
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const obj = {
-            email: email,
-            password: password,
+    const showUserInvalidMessage = () => {
+        emailField.current.classList.add('--invalid');
+        passwordField.current.classList.add('--invalid');
+        passwordFieldMessage.current.innerText = 'Incorrect username or password.';
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const userData = {
+            email,
+            password,
         };
-        fetch("/api/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify(obj),
-        })
-            .then((response) => response.json())
 
-            .then((response) => {
-                setResponse(response);
-            });
+        if (isUserDataValid(userData)) {
+            fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content'),
+                },
+                body: JSON.stringify(userData),
+            })
+                .then((response) => response.json())
+                .then((response) => setFetchResponse(response));
+        }
     };
 
     useEffect(() => {
-        if (response.userExists === 'est') {
-            setLogin();
-        } else if (response.userExists === 'net') {
-            console.log (response)
-            setNoUserError(true);
+        if (fetchResponse.userExists === 'est') {
+            setLoggedIn();
+        } else if (fetchResponse.userExists === 'net') {
+            showUserInvalidMessage();
         }
-    }, [response]);
+    }, [fetchResponse]);
 
     return (
         <section className="login__container">
             <div className="login">
                 <h2>Log in to Avion</h2>
-                <form className='login__form' method="POST">
-                    <div className="login__form-input-email-block">
-                        <span className={noUserError ? 'login__form-input-email-block-span-error' : 'login__form-input-email-block-span'}>Wrong email</span>
-                        <input
-                            onChange={changeEmail}
-                            className={noUserError ?
-                             'login__form-input-error'
-                             :
-                             'login__form-input'
-                            }
-                            name="email"
-                            type="email"
-                            placeholder="enter your email"
-                            required
-                        />
-                    </div>
+                <form className="login__form" method="POST">
                     <input
-                        onChange={changePassword}
-                        className='login__form-input'
+                        ref={emailField}
+                        onChange={(event) => updateValue('email', event)}
+                        name="email"
+                        type="email"
+                        placeholder="email"
+                        required
+                    />
+                    <p ref={emailFieldMessage} className="input_message" />
+                    <input
+                        ref={passwordField}
+                        onChange={(event) => updateValue('password', event)}
                         name="password"
                         type="password"
                         placeholder="password"
                         required
                     />
-                    <button onClick={handleSubmit} type="submit">
+                    <p ref={passwordFieldMessage} className="input_message" />
+                    <button
+                        onClick={handleSubmit}
+                        type="submit"
+                    >
                         Log in
                     </button>
                 </form>
                 <p className="login__create_account">
                     New to Avion?&nbsp;
-                    <a href="/">Create an account.</a>
+                    <a href="/signup">Create an account.</a>
                 </p>
             </div>
         </section>
