@@ -7,6 +7,11 @@
         &__top {
             display: flex;
             flex-direction: column;
+            &-left {
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
         }
         &__bottom {
             display: flex;
@@ -18,6 +23,46 @@
         &-p {
             text-align: center;
         }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .footer {
+        &__top {
+            &-left {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                max-width: 100%;
+                width: 100%;
+                &-list {
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            &-center {
+                &-list {
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            &-right {
+                &-form {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &__bottom {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 25px;
+
+            &-list {
+                max-width: none;
+            }
         }
     }
 }

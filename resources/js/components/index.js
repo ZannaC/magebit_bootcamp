@@ -17,6 +17,7 @@ import { ProductProvider } from "../ProductContext";
 import Checkout from "../pages/checkout";
 import About from "../pages/about";
 import Login from "../pages/login";
+import Signup from "../pages/signup";
 import RegisterPage from "../pages/register";
 import Personal from "../pages/pesronal";
 import { UserProvider } from "../UserContext";

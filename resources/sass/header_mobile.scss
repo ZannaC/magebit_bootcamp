@@ -1,17 +1,14 @@
 @media (max-width: 768px) {
     .header {
         display: flex;
-
-        &__hamburger {
-            @include btn-reset();
-            display: block;
-            order: 3;
-        }
         &__nav {
             display: none;
         }
         &__top {
             border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             &-right {
                 &-personal, &-cart {
                     display: none;
@@ -21,7 +18,57 @@
                 order: 2;
             }
             &-center-link {
-                order: -1;
+                display: none;
+            }
+        }
+    }
+    .app {
+        &__burger {
+            height: 100%;
+            width: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &-btn {
+                width: 20px;
+                height: 20px;
+                margin-right: 20px;
+                cursor: pointer;
+
+                &-span {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 20px;
+                    background-color: black;
+                    height: 2px;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    width: 20px;
+                    background-color: black;
+                    height: 2px;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 20px;
+                    background-color: black;
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 769px) {
+        .app {
+            &__burger {
+                display: none;
             }
         }
     }

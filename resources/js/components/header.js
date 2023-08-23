@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Search_svg from "../../img/header/search-svg.svg";
 import Cart_svg from "../../img/header/cart-svg.svg";
@@ -7,12 +7,35 @@ import { useProduct } from "../ProductContext";
 import { useUserContext } from "../UserContext";
 import Search from "../pages/search";
 
+    
+
+
 function Header() {
     const { setLogin, loggedIn } = useProduct();
+  
+    const { amount } = useProduct();
+
+    const [menuActive, setMenuActive] = useState(false);
+    const items = [{value:"Login", href:"/login"}, {value:"Homepage", href:"/"}, {value:"About", href:"/about"}, {value:"Products", href:"/plp"}, {value:"Cart", href:"/cart"}, {value:"Checkout", href:"/checkout"}]
+    const [showHamburger, setShowHamburger] = useState(false);
+
+    const handleMenuButton = () => {
+        setMenuActive(!menuActive);
+    }
+    menuActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setShowHamburger(true);
+            } else {
+                setShowHamburger(false);
+            }
+        };
+    }, []);
 
     const savedLogin = useUserContext();
 
-    const { amount } = useProduct();
     return (
         <header className="header">
             <div className="header__top">
@@ -53,6 +76,12 @@ function Header() {
                             </Link>
                         )}
                     </button>
+                    <nav className="app__burger">
+                        <div className="app__burger-btn" onClick={handleMenuButton}>
+                            <span className="app__burger-btn-span"/>
+                        </div>
+                    </nav>
+                    <Menu header={"Avion"} items={items} active={menuActive} setActive={setMenuActive}/>
                 </div>
             </div>
             <nav className="header__nav">

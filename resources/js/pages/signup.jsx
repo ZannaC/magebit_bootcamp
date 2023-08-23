@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../../sass/app.css';
 
 function Signup() {
@@ -7,93 +7,84 @@ function Signup() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
+    const emailField = useRef(null);
+    const emailFieldMessage = useRef(null);
+    const nameField = useRef(null);
+    const nameFieldMessage = useRef(null);
+    const passwordField = useRef(null);
+    const passwordFieldMessage = useRef(null);
+    const passwordConfirmField = useRef(null);
+    const passwordConfirmFieldMessage = useRef(null);
+    const submitButton = useRef(null);
+
     // Sets user typed data and removes field styling and error messages on input.
     const updateValue = (inputField, event) => {
-        const emailField = document.getElementById('signUpEmail');
-        const emailFieldMessage = document.getElementById('signUpEmailMessage');
-        const nameField = document.getElementById('signUpName');
-        const nameFieldMessage = document.getElementById('signUpNameMessage');
-        const passwordField = document.getElementById('signUpPassword');
-        const passwordFieldMessage = document.getElementById('signUpPasswordMessage');
-        const passwordConfirmField = document.getElementById('signUpConfirmPassword');
-        const passwordConfirmFieldMessage = document.getElementById('signUpConfirmPasswordMessage');
-        const submitButton = document.getElementById('submitButton');
-
-        submitButton.disabled = false;
+        submitButton.current.disabled = false;
 
         if (inputField === 'email') {
             setEmail(event.target.value);
-            emailField.classList.remove('--invalid');
-            emailFieldMessage.innerText = '';
+            emailField.current.classList.remove('--invalid');
+            emailFieldMessage.current.innerText = '';
         } else if (inputField === 'name') {
             setName(event.target.value);
-            nameField.classList.remove('--invalid');
-            nameFieldMessage.innerText = '';
+            nameField.current.classList.remove('--invalid');
+            nameFieldMessage.current.innerText = '';
         } else if (inputField === 'password') {
             setPassword(event.target.value);
-            passwordField.classList.remove('--invalid');
-            passwordFieldMessage.innerText = '';
+            passwordField.current.classList.remove('--invalid');
+            passwordFieldMessage.current.innerText = '';
         } else if (inputField === 'password_confirm') {
-            passwordConfirmField.classList.remove('--invalid');
-            passwordConfirmFieldMessage.innerText = '';
+            passwordConfirmField.current.classList.remove('--invalid');
+            passwordConfirmFieldMessage.current.innerText = '';
         }
     };
 
     // Returns true if user typed data is valid and displays error message if not.
     const isUserDataValid = (userData) => {
         let isValid = true;
-        const emailField = document.getElementById('signUpEmail');
-        const emailFieldMessage = document.getElementById('signUpEmailMessage');
-        const nameField = document.getElementById('signUpName');
-        const nameFieldMessage = document.getElementById('signUpNameMessage');
-        const passwordField = document.getElementById('signUpPassword');
-        const passwordFieldMessage = document.getElementById('signUpPasswordMessage');
-        const passwordConfirmField = document.getElementById('signUpConfirmPassword');
-        const passwordConfirmFieldMessage = document.getElementById('signUpConfirmPasswordMessage');
         const emptyFieldMessage = 'This is a required field.';
-        const submitButton = document.getElementById('submitButton');
 
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(userData.email)) {
             isValid = false;
-            emailField.classList.add('--invalid');
-            emailFieldMessage.innerText = 'This is not a valid email.';
+            emailField.current.classList.add('--invalid');
+            emailFieldMessage.current.innerText = 'This is not a valid email.';
         }
 
         if (userData.email === '') {
             isValid = false;
-            emailField.classList.add('--invalid');
-            emailFieldMessage.innerText = emptyFieldMessage;
+            emailField.current.classList.add('--invalid');
+            emailFieldMessage.current.innerText = emptyFieldMessage;
         }
 
         if (userData.name === '') {
             isValid = false;
-            nameField.classList.add('--invalid');
-            nameFieldMessage.innerText = emptyFieldMessage;
+            nameField.current.classList.add('--invalid');
+            nameFieldMessage.current.innerText = emptyFieldMessage;
         }
 
-        if (userData.password !== passwordConfirmField.value) {
+        if (userData.password !== passwordConfirmField.current.value) {
             isValid = false;
-            passwordConfirmField.classList.add('--invalid');
-            passwordConfirmFieldMessage.innerText = 'Passwords don\'t match.';
+            passwordConfirmField.current.classList.add('--invalid');
+            passwordConfirmFieldMessage.current.innerText = 'Passwords don\'t match.';
         }
 
         if (userData.password === '') {
             isValid = false;
-            passwordField.classList.add('--invalid');
-            passwordFieldMessage.innerText = emptyFieldMessage;
+            passwordField.current.classList.add('--invalid');
+            passwordFieldMessage.current.innerText = emptyFieldMessage;
         }
 
-        if (passwordConfirmField.value === '') {
+        if (passwordConfirmField.current.value === '') {
             isValid = false;
-            passwordConfirmField.classList.add('--invalid');
-            passwordConfirmFieldMessage.innerText = emptyFieldMessage;
+            passwordConfirmField.current.classList.add('--invalid');
+            passwordConfirmFieldMessage.current.innerText = emptyFieldMessage;
         }
 
         if (isValid) {
             return true;
         }
 
-        submitButton.disabled = true;
+        submitButton.current.disabled = true;
 
         return false;
     };
@@ -120,7 +111,18 @@ function Signup() {
         }
     };
 
-    useEffect(() => {}, [fetchResponse]);
+    const showUserInvalidMessage = () => {
+        emailField.current.classList.add('--invalid');
+        emailFieldMessage.current.innerText = 'Email has already been taken.';
+    };
+
+    useEffect(() => {
+        if (fetchResponse !== '') {
+            if (typeof fetchResponse.errors.email !== 'undefined') {
+                showUserInvalidMessage();
+            }
+        }
+    }, [fetchResponse]);
 
     return (
         <section className="sign_up__container">
@@ -132,48 +134,52 @@ function Signup() {
                         Email:
                         <input
                             id="signUpEmail"
+                            ref={emailField}
                             type="email"
                             name="email"
                             onChange={(event) => updateValue('email', event)}
                         />
-                        <p id="signUpEmailMessage" className="input_message" />
+                        <p ref={emailFieldMessage} className="input_message" />
                     </label>
 
                     <label htmlFor="signUpName">
                         Name:
                         <input
                             id="signUpName"
+                            ref={nameField}
                             type="text"
                             name="name"
                             onChange={(event) => updateValue('name', event)}
                         />
-                        <p id="signUpNameMessage" className="input_message" />
+                        <p ref={nameFieldMessage} className="input_message" />
                     </label>
 
                     <label htmlFor="signUpPassword">
                         Password:
                         <input
                             id="signUpPassword"
+                            ref={passwordField}
                             type="password"
                             name="password"
                             onChange={(event) => updateValue('password', event)}
                         />
-                        <p id="signUpPasswordMessage" className="input_message" />
+                        <p ref={passwordFieldMessage} className="input_message" />
                     </label>
 
                     <label htmlFor="signUpConfirmPassword">
                         Confirm password:
                         <input
                             id="signUpConfirmPassword"
+                            ref={passwordConfirmField}
                             type="password"
                             name="password"
                             onChange={(event) => updateValue('password_confirm', event)}
                         />
-                        <p id="signUpConfirmPasswordMessage" className="input_message" />
+                        <p ref={passwordConfirmFieldMessage} className="input_message" />
                     </label>
 
                     <button
-                        id="submitButton"
+                        ref={submitButton}
                         type="submit"
                         onClick={handleSubmit}
                     >

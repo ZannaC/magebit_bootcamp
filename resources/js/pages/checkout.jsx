@@ -3,6 +3,7 @@ import "../../sass/app.css";
 import PaymentPage from "../components/checkout/payment";
 import CheckoutPage from "../components/checkout/checkoutPage";
 
+
 function Checkout() {
     // const [formData, setFormData] = useState({
     //     f_name: "",
@@ -75,6 +76,7 @@ function Checkout() {
     // };
 
     return (
+
         <div className="myContainer">
             <CheckoutPage />
             <PaymentPage />
@@ -83,6 +85,7 @@ function Checkout() {
 }
 
 export default Checkout;
+
 
 {
     /* <Payment />
