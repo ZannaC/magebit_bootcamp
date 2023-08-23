@@ -24,6 +24,7 @@ import { UserProvider } from "../UserContext";
 import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
 import OrderCompleted from "../pages/ordercompleted";
+import Menu from "../components/menu";
 
 function App() {
     // login state
@@ -67,6 +68,7 @@ function App() {
                                 path="/ordercompleted"
                                 element={<OrderCompleted />}
                             />
+                            <Route path="/menu" element={<Menu />} />
                         </Routes>
                     </Layout>
                 </ProductProvider>
