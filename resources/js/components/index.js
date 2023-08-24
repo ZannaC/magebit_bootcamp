@@ -25,6 +25,7 @@ import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
 
 import Account from "../pages/account";
+import UserWishlist from "../pages/userWishlist";
 
 import OrderCompleted from "../pages/ordercompleted";
 import Menu from "../components/menu";
@@ -82,6 +83,12 @@ function App() {
                             />
                             <Route path="/menu" element={<Menu />} />
                             <Route path="/account" element={<Account />} />
+
+                            <Route
+                                path="/wishlist"
+                                element={<UserWishlist />}
+                            />
+
                         </Routes>
                     </Layout>
                 </ProductProvider>

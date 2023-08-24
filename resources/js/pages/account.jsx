@@ -6,7 +6,7 @@ function Account() {
     const [name, setName] = useState("Ella");
     const [surname, setSurname] = useState("Walsh");
     const [email, setEmail] = useState("ella@example.com");
-    const [address, setAddress] = useState("Abbey Road 45, London, UK");
+    const [address, setAddress] = useState("Abbey Road 45, London");
 
     const [existingPassword, setExistingPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -121,17 +121,17 @@ function Account() {
 
     const handleCancel = () => {
         // Reset fields to their initial values
-        setName("Kate");
+        setName("Ella");
         setSurname("Parker");
-        setEmail("kate@example.com");
-        setAddress("Abbey Road 45, London, UK");
+        setEmail("Ella@example.com");
+        setAddress("Abbey Road 45, London");
     };
 
     return (
         <div className="account__container">
             <section className="account__container-title">
                 <h2>My account</h2>
-                <h2>Welcome, {submitted ? name : "Kate"}! </h2>
+                <h2>Welcome, {submitted ? name : "Ella"}! </h2>
             </section>
 
             <section className="account__container-list">
@@ -143,21 +143,21 @@ function Account() {
                         My Profile
                     </li>
                     <li>
-                        <Link to="/register">My Payment</Link>
+                        <Link to="">My Payment</Link>
                     </li>
                 </ul>
                 <h3 className="account__container-list-title">My orders</h3>
                 <ul className="account__container-list-links">
                     <li>
-                        <Link to="/login">My returns</Link>
+                        <Link to="/pdp">My returns</Link>
                     </li>
                     <li>
-                        <Link to="/register">My Cancellations</Link>
+                        <Link to="/plp">My Cancellations</Link>
+                    </li>
+                    <li>
+                        <Link to="/wishlist">My Wishlist</Link>
                     </li>
                 </ul>
-                <h3 className="account__container-list-title">
-                    My Wishlist<Link to="/login"></Link>
-                </h3>
             </section>
             <section className="account__form">
                 <div>
