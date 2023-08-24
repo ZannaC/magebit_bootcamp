@@ -54,6 +54,14 @@ function App() {
                             <Route path="/plp" element={<Plp />} />
                             <Route path="/pdp" element={<Pdp />} />
                             <Route path="/cart" element={<Cart />} />
+                            {savedLogin ? (
+                                <Route
+                                    path="/checkout"
+                                    element={<Checkout />}
+                                />
+                            ) : (
+                                <Route path="/checkout" element={<Login />} />
+                            )}
                             <Route path="/checkout" element={<Checkout />} />
                             <Route path="/about" element={<About />} />
                             {savedLogin && (
@@ -75,10 +83,12 @@ function App() {
                             />
                             <Route path="/menu" element={<Menu />} />
                             <Route path="/account" element={<Account />} />
+
                             <Route
                                 path="/wishlist"
                                 element={<UserWishlist />}
                             />
+
                         </Routes>
                     </Layout>
                 </ProductProvider>

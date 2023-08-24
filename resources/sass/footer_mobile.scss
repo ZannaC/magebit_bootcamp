@@ -7,9 +7,10 @@
         &__top {
             display: flex;
             flex-direction: column;
+            padding-bottom: 4px;
             &-left {
                 &:not(:last-child) {
-                    margin-bottom: 20px;
+                    margin-bottom: 40px;
                 }
             }
         }
@@ -46,11 +47,6 @@
                     &:not(:last-child) {
                         margin-bottom: 20px;
                     }
-                }
-            }
-            &-right {
-                &-form {
-                    margin-top: 20px;
                 }
             }
         }

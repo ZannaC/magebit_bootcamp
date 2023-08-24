@@ -9,25 +9,18 @@ import Total from "../components/cart_product/total";
 import ProductsRequest from "../utils/ProductsRequest";
 
 function Cart() {
-    // our product from our productContext
-    const { products, setSubtotal } = useProduct();
-    const [totalAmount, setTotalAmount] = useState(0);
+    const [subTotal, setSubTotal] = useState(0);
     const [data, setData] = useState([]);
-
+    // getting products and subtotal from db
     useEffect(() => {
-        ProductsRequest('get-cart-items', {userId: JSON.parse(localStorage.getItem('login'))?.userId})
-        .then(response => setData(response.products));
-    }, [])
+        ProductsRequest("get-cart-items", {
+            userId: JSON.parse(localStorage.getItem("login"))?.userId,
+        }).then((response) => setData(response.products));
 
-    // useEffect(() => {
-    //     let total = 0;
-    //     products && products.forEach((product) => {
-    //         total += Number(product.price) * Number(product.amount);
-    //     });
-    //     console.log (typeof total)
-    //     setTotalAmount(total);
-    // }, [products]);
-
+        ProductsRequest("get-subtotal", {
+            userId: JSON.parse(localStorage.getItem("login"))?.userId,
+        }).then((response) => setSubTotal(response));
+    }, []);
     return (
         <div className="container">
             <Helmet>
@@ -43,16 +36,21 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {data ? data.map((product) => (
-                    <Productcard key={product.id} product={product} />
-                ))
-                :
-                <div className="cart-empty">
-                    <h3>Cart is empty</h3>
-                </div>
-                }
-                <Total subtotal={totalAmount} />
-                <Link to="checkout">
+                {data ? (
+                    data.map((product) => (
+                        <Productcard
+                            key={product.id}
+                            product={product}
+                            setSubTotal={setSubTotal}
+                        />
+                    ))
+                ) : (
+                    <div className="cart-empty">
+                        <h3>Cart is empty</h3>
+                    </div>
+                )}
+                <Total subtotal={subTotal} />
+                <Link to="/checkout">
                     <button className="checkout">Checkout</button>
                 </Link>
             </div>
