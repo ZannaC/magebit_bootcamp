@@ -42,3 +42,5 @@ Route::post('/newsletter-subscribe', [UserController::class, 'newsletterSubscrib
 Route::post('/productFilter', [ProductFilterController::class, 'productFilter']);
 
 Route::post('/checkout-save', [CheckoutController::class, 'store']);
+
+Route::post('/search', [ProductController::class, 'search']);
