@@ -15,9 +15,10 @@ function Cart() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        ProductsRequest('get-cart-items', {userId: JSON.parse(localStorage.getItem('login'))?.userId})
-        .then(response => setData(response.products));
-    }, [])
+        ProductsRequest("get-cart-items", {
+            userId: JSON.parse(localStorage.getItem("login"))?.userId,
+        }).then((response) => setData(response.products));
+    }, []);
 
     // useEffect(() => {
     //     let total = 0;
@@ -43,16 +44,17 @@ function Cart() {
                     <label className="product-removal">Remove</label>
                     <label className="product-line-price">Total</label>
                 </div>
-                {data ? data.map((product) => (
-                    <Productcard key={product.id} product={product} />
-                ))
-                :
-                <div className="cart-empty">
-                    <h3>Cart is empty</h3>
-                </div>
-                }
+                {data ? (
+                    data.map((product) => (
+                        <Productcard key={product.id} product={product} />
+                    ))
+                ) : (
+                    <div className="cart-empty">
+                        <h3>Cart is empty</h3>
+                    </div>
+                )}
                 <Total subtotal={totalAmount} />
-                <Link to="checkout">
+                <Link to="/checkout">
                     <button className="checkout">Checkout</button>
                 </Link>
             </div>
