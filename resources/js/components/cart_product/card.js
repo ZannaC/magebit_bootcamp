@@ -1,25 +1,54 @@
 import React, { useState, useEffect } from "react";
-import { useProduct } from "../../ProductContext";
+import ProductsRequest from "../../utils/ProductsRequest";
+// import { debounce } from "lodash";
 
-function Productcard({product}) {
-    const { subtotal, setSubtotal } = useProduct();
-    console.log (product)
+function Productcard({product, setSubTotal}) {
+    const userId = JSON.parse(localStorage.getItem('login'))?.userId;
+    const productId = product.id;
     // quantity
-    const [amount, setAmount] = useState(product.amount);
-    // total price
+    const [clickAmount, setClickAmount] = useState(0);
+    // product quantity
+    const [productQuantity, setProductQuantity] = useState(product.quantity);
+
+    function debounce(func, timeout = 300){
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+      }
+
+    const debouncedUpdateCart = () => {
+        const obj = {
+            productId: productId,
+            quantity: clickAmount,
+            userId: userId,
+        };
+        ProductsRequest('cart-update', obj)
+        .then((res) => {
+            setSubTotal(res.subTotal);
+            setProductQuantity(res.productQuantity);
+        })
+    }; // 300 milliseconds debounce delay
+
     useEffect(() => {
-        setSubtotal(subtotal + product.price * amount);
-    }, [amount]);
+        if (clickAmount !== 0) {
+            const delayedUpdateCart = debounce(debouncedUpdateCart, 50);
+            delayedUpdateCart(); // Вызываем созданную задержанную функцию сразу
+            setClickAmount(0); // Очищаем количество кликов на 0
+            return delayedUpdateCart.cancel; // Возвращаем функцию для отмены таймера при размонтировании
+        }
+    }, [clickAmount]);
 
     const handleAmountIncrease = () => {
-        setAmount(amount + 1);
+        setClickAmount(clickAmount + 1);
     };
 
     const handleAmountDecrease = () => {
-        if (amount <= 1) {
+        if (productQuantity <= 1) {
             return;
         }
-        setAmount(amount - 1);
+        setClickAmount(clickAmount - 1);
     };
 
     return (
@@ -46,7 +75,7 @@ function Productcard({product}) {
                         </button>
                         <span className="descr__block-inner-buttons-amount-span-amount">
                             {" "}
-                            {amount}{" "}
+                            {productQuantity}{" "}
                         </span>
                         <button
                             className="descr__block-inner-buttons-amount-span-increase"
@@ -60,7 +89,7 @@ function Productcard({product}) {
                 <div className="product-removal">
                     <button className="remove-product">Remove</button>
                 </div>
-                <div className="product-line-price">{product.price * amount}</div>
+                <div className="product-line-price">{productQuantity * product.price}</div>
             </div>
         </>
     );

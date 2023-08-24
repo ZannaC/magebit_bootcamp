@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductFilterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 
 /*
@@ -21,6 +23,13 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/place-order', [CartController::class, 'placeOrder']);
+
+Route::post('/get-subtotal', [CartController::class, 'getSubtotal']);
+
+Route::post('/get-cart-items', [CartController::class, 'getItems']);
+
+Route::post('/cart-update', [CartController::class, 'update']);
 
 Route::post('/products', [ProductController::class, 'index']);
 
@@ -30,3 +39,4 @@ Route::post('/register', [UserController::class, 'register']);
 
 Route::post('/productFilter', [ProductFilterController::class, 'productFilter']);
 
+Route::post('/checkout-save', [CheckoutController::class, 'store']);

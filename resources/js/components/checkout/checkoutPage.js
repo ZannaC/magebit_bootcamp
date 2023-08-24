@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import "../../../sass/app.css";
 
-const CheckoutPage = () => {
+const CheckoutPage = ({ checkoutData, setCheckoutData, myRef }) => {
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
     const [passwordsMatch, setPasswordsMatch] = useState(true);
@@ -21,20 +21,11 @@ const CheckoutPage = () => {
         <>
             <div className="formikContainer">
                 <Formik
-                    initialValues={{
-                        firstName: "",
-                        lastName: "",
-                        email: "",
-                        country: "",
-                        cityTown: "",
-                        zipCode: "",
-                        phoneNumber: "",
-                        password: "",
-                        repeatPassword: "",
-                    }}
+                    enableReinitialize
+                    initialValues={checkoutData}
                     onSubmit={async (values) => {
-                        await new Promise((r) => setTimeout(r, 500));
-                        alert(JSON.stringify(values, null, 2));
+                        console.log(values);
+                        setCheckoutData(values);
                     }}
                 >
                     <Form className="formBox">
@@ -103,8 +94,8 @@ const CheckoutPage = () => {
                                 id="password"
                                 name="password"
                                 type="password"
-                                value={password}
-                                onChange={handlePasswordChange}
+                                // value={password}
+                                // onChange={handlePasswordChange}
                             />
                         </div>
 
@@ -116,16 +107,25 @@ const CheckoutPage = () => {
                                 id="repeatPassword"
                                 name="repeatPassword"
                                 type="password"
-                                value={repeatPassword}
-                                onChange={handleRepeatPasswordChange}
+                                // value={repeatPassword}
+                                // onChange={handleRepeatPasswordChange}
                             />
                         </div>
 
-                        {!passwordsMatch && (
+                        {/* {!passwordsMatch && (
                             <p className="pass_dont_match">
                                 Passwords do not match!
                             </p>
-                        )}
+                        )} */}
+
+                        <button
+                            type="submit"
+                            className="submitButton"
+                            hidden
+                            ref={myRef}
+                        >
+                            Submit
+                        </button>
                     </Form>
                 </Formik>
             </div>

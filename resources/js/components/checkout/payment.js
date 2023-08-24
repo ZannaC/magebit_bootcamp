@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function PaymentPage() {
+function PaymentPage({ isPaymentChecked, setIsPaymentChecked }) {
     return (
         <div>
             <div className="payment_method">
@@ -18,6 +18,8 @@ function PaymentPage() {
                         type="checkbox"
                         name="term_and_conditions"
                         id="term_and_conditions"
+                        checked={isPaymentChecked}
+                        onChange={(e) => setIsPaymentChecked(e.target.checked)}
                     />
                     <label htmlFor="term_and_conditions">
                         {" "}
@@ -26,14 +28,6 @@ function PaymentPage() {
                         <font color="red"> *</font>
                     </label>
                 </div>
-                <button
-                    type="submit"
-                    form="form"
-                    value="Place order"
-                    className="place_order_btn"
-                >
-                    <Link to="/ordercompleted">Place order</Link>
-                </button>
             </div>
         </div>
     );

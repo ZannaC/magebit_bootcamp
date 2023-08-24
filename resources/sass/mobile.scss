@@ -31,11 +31,16 @@
 // home page
 @import "home_mobile.scss";
 
+
+// account page
+@import "account_mobile.scss";
+
 // cart mobile
 @import "cart_mobile.scss";
 
 // burger menu styles
 @import 'menu.scss';
+
 
 @media (max-width: 1200px) {
     .container {

@@ -3,23 +3,19 @@ import { Link } from "react-router-dom";
 import Search_svg from "../../img/header/search-svg.svg";
 import Cart_svg from "../../img/header/cart-svg.svg";
 import User_svg from "../../img/header/user-svg.svg";
+import Menu from "./menu";
 import { useProduct } from "../ProductContext";
-import { useUserContext } from "../UserContext";
-import Search from "../pages/search";
 
 function Header() {
-    const { setLogin, loggedIn } = useProduct();
+    const loggedIn = localStorage.getItem("login");
 
     const { amount } = useProduct();
 
     const [menuActive, setMenuActive] = useState(false);
     const items = [
-        { value: "Login", href: "/login" },
         { value: "Homepage", href: "/" },
+        { value: "Product listing", href: "/plp" },
         { value: "About", href: "/about" },
-        { value: "Products", href: "/plp" },
-        { value: "Cart", href: "/cart" },
-        { value: "Checkout", href: "/checkout" },
     ];
     const [showHamburger, setShowHamburger] = useState(false);
 
@@ -40,8 +36,6 @@ function Header() {
         };
     }, []);
 
-    const savedLogin = useUserContext();
-
     return (
         <header className="header">
             <div className="header__top">
@@ -55,15 +49,30 @@ function Header() {
                 </Link>
                 <div className="header__top-right-div">
                     <button className="header__top-right-cart">
-                        <Link className="header__top-right-cart-link" to="cart">
-                            <img
-                                className="header__top-right-cart-link-img"
-                                src={Cart_svg}
-                            ></img>
-                            <span className="header__top-right-cart-link-img-count">
-                                {amount}
-                            </span>
-                        </Link>
+                        {loggedIn ? (
+                            <Link
+                                className="header__top-right-cart-link"
+                                to="/cart"
+                            >
+                                <img
+                                    className="header__top-right-cart-link-img"
+                                    src={Cart_svg}
+                                ></img>
+                                <span className="header__top-right-cart-link-img-count">
+                                    {amount}
+                                </span>
+                            </Link>
+                        ) : (
+                            <Link
+                                className="header__top-right-cart-link"
+                                to="/login"
+                            >
+                                <img
+                                    className="header__top-right-cart-link-img"
+                                    src={Cart_svg}
+                                ></img>
+                            </Link>
+                        )}
                     </button>
                     <button className="header__top-right-personal">
                         {loggedIn ? (
@@ -90,12 +99,12 @@ function Header() {
                             <span className="app__burger-btn-span" />
                         </div>
                     </nav>
-                    {/* <Menu
-                        header={"Avion"}
+                    <Menu
+                        header={"Menu"}
                         items={items}
                         active={menuActive}
                         setActive={setMenuActive}
-                    /> */}
+                    />
                 </div>
             </div>
             <nav className="header__nav">
