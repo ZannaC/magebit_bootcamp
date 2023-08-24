@@ -21,6 +21,8 @@ use App\Http\Controllers\CartController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/get-subtotal', [CartController::class, 'getSubtotal']);
+
 Route::post('/get-cart-items', [CartController::class, 'getItems']);
 
 Route::post('/cart-update', [CartController::class, 'update']);
