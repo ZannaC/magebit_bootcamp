@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductFilterController;
 use App\Http\Controllers\UserController;
 
 
@@ -26,4 +27,6 @@ Route::post('/products', [ProductController::class, 'index']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::post('/register', [UserController::class, 'register']);
+
+Route::post('/productFilter', [ProductFilterController::class, 'productFilter']);
 
