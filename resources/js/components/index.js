@@ -29,7 +29,6 @@ import Account from "../pages/account";
 import OrderCompleted from "../pages/ordercompleted";
 import Menu from "../components/menu";
 
-
 function App() {
     // login state
     const savedLogin = localStorage.getItem("login");
@@ -45,7 +44,6 @@ function App() {
     };
 
     return (
-
         <Router>
             <UserProvider login={savedLogin}>
                 <ProductProvider>
@@ -55,6 +53,14 @@ function App() {
                             <Route path="/plp" element={<Plp />} />
                             <Route path="/pdp" element={<Pdp />} />
                             <Route path="/cart" element={<Cart />} />
+                            {savedLogin ? (
+                                <Route
+                                    path="/checkout"
+                                    element={<Checkout />}
+                                />
+                            ) : (
+                                <Route path="/checkout" element={<Login />} />
+                            )}
                             <Route path="/checkout" element={<Checkout />} />
                             <Route path="/about" element={<About />} />
                             {savedLogin && (
@@ -64,10 +70,7 @@ function App() {
                                 />
                             )}
                             <Route path="/login" element={<Login />} />
-                            <Route
-                                path="/signup"
-                                element={<Signup />}
-                            />
+                            <Route path="/signup" element={<Signup />} />
                             <Route
                                 path="/register"
                                 element={<RegisterPage />}
@@ -78,13 +81,12 @@ function App() {
                                 element={<OrderCompleted />}
                             />
                             <Route path="/menu" element={<Menu />} />
-                               <Route path="/account" element={<Account />} />
+                            <Route path="/account" element={<Account />} />
                         </Routes>
                     </Layout>
                 </ProductProvider>
             </UserProvider>
         </Router>
-
     );
 }
 
