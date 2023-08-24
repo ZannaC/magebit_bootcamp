@@ -37,6 +37,8 @@ Route::post('/login', [UserController::class, 'login']);
 
 Route::post('/register', [UserController::class, 'register']);
 
+Route::post('/newsletter-subscribe', [UserController::class, 'newsletterSubscribe']);
+
 Route::post('/productFilter', [ProductFilterController::class, 'productFilter']);
 
 Route::post('/checkout-save', [CheckoutController::class, 'store']);
