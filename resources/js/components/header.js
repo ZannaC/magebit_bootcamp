@@ -40,7 +40,9 @@ function Header() {
         <header className="header">
             <div className="header__top">
                 <button className="header__top-left-btn">
-                    <img src={Search_svg}></img>
+                    <Link to="/search">
+                        <img src={Search_svg}></img>
+                    </Link>
                 </button>
                 <Link className="header__top-center-link" to="/">
                     Avion
