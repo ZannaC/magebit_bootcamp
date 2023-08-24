@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -36,5 +37,13 @@ class UserController extends Controller
         } else {
             return ['userExists' => 'net'];
         }
+    }
+
+    public function newsletterSubscribe(Request $request) {
+        $email = $request->post('email');
+        $newsletterRecord=new Newsletter([
+            'email' => $email
+        ]);
+        $newsletterRecord->save();
     }
 }

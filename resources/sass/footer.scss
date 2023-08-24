@@ -102,7 +102,11 @@
     &__top {
         display: flex;
         justify-content: space-between;
-        padding: 50px 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &-error {
+            color: white;
+        }
         &-right {
             display: flex;
             flex-direction: column;
@@ -114,6 +118,7 @@
             &-form {
                 display: flex;
                 flex-direction: row;
+                margin-bottom: 19px;
             }
             &-button {
                 color: #2A254B;

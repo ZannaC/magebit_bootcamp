@@ -8,8 +8,29 @@ import Skype_svg from "../../img/footer/footer-skype.js";
 import Pinterest_svg from "../../img/footer/footer-pinterest.js";
 
 function Footer () {
-    const [isHovered, setIsHovered] = useState(false);
 
+const [emailError, setEmailError] = useState("");
+const [email, setEmail] = useState("");
+function handleEmailSubmit () {
+    const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+    const regex = regexExp.test(email);
+    if (regex) {
+        setEmailError('');
+        fetch ('/api/newsletter-subscribe',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({email: email})
+            })
+    }   else {
+        setEmailError('Invalid email format');
+    }
+}
+function handleEmailChange (event) {
+    setEmail(event.target.value);
+}
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -72,10 +93,13 @@ function Footer () {
                     </div>
                     <div className="footer__top-right">
                         <h3 className="footer__top-right-form-h3">Join our mailing list</h3>
-                        <form className="footer__top-right-form">
-                            <input className="footer__top-right-form-input" type="text" id="fname" name="fname" placeholder="your@email.com" />
-                            <button className="footer__top-right-form-button">Sign up</button>
-                        </form>
+                        <div className="footer__top-right-form">
+                            <input className="footer__top-right-form-input" type="email" name="email" placeholder="your@email.com" value={email} onChange={handleEmailChange}/>
+                            <button className="footer__top-right-form-button" onClick={handleEmailSubmit}>Sign up</button>
+                        </div>
+                    {emailError && <div className="footer__top-error">
+                        {emailError}
+                    </div>}
                     </div>
                 </div>
                 <div className="footer__bottom">
