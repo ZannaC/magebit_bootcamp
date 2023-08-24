@@ -24,6 +24,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:0 0.5rem 0 0.5rem;
+    // background-color: #ebeff5;
+    padding: 0.5rem;
 }
 
 .payment_method_text {
@@ -40,6 +43,14 @@
     border-radius: 30px;
     background-color: #2a254b;
     color: white;
+    margin-top: 1rem;
+
+}
+
+.place_order_btn a{
+    color: white;
+    text-decoration: none;
+
 }
 
 .terms_and_conditions {
@@ -63,4 +74,55 @@
 
 .accepted span img{
     width: 3rem;
+}
+
+.formikContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.myContainer {
+    box-sizing: border-box;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    flex-wrap: wrap;
+    margin: 0 0.5rem 0 0.5rem;
+    // background-color: #ebeff5;
+    padding: 0.5rem;
+}
+
+.formBox label {
+    color: #000;
+}
+
+.formBox div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.formBox div input {
+    width: 13rem;
+}
+
+.ordercompleted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    flex-direction: column;
+}
+
+.ordercompleted p {
+    margin: 2rem 1rem 0 1rem;
+    text-align: center;
 }

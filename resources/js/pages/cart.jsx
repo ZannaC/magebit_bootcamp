@@ -9,11 +9,9 @@ import Total from "../components/cart_product/total";
 import ProductsRequest from "../utils/ProductsRequest";
 
 function Cart() {
-    // our product from our productContext
-    const { products, setSubtotal } = useProduct();
     const [subTotal, setSubTotal] = useState(0);
     const [data, setData] = useState([]);
-
+    // getting products and subtotal from db
     useEffect(() => {
         ProductsRequest('get-cart-items', {userId: JSON.parse(localStorage.getItem('login'))?.userId})
         .then(response => setData(response.products));
