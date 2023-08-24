@@ -21,7 +21,7 @@ const Menu = ({header, items, active, setActive, onCloseMenu}) => {
                                 {item.value}
                             </Link>
                         </li>
-                    ))}
+                    )}
                 </ul>
             </div>
         </div>
