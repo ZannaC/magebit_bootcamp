@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const ProductContext = createContext();
 
@@ -9,8 +9,8 @@ export const ProductProvider = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        loggedIn && navigate('/')
-    }, [loggedIn])
+        loggedIn && navigate("/");
+    }, [loggedIn]);
     // VREMENNAJA DATA (DO BAZI DANNIH)
 
     const [subtotal, setSubtotal] = useState(0);
@@ -22,9 +22,9 @@ export const ProductProvider = ({ children }) => {
             price: 250,
             image: "https://www.ikea.com/us/en/images/products/stefan-chair-brown-black__0727320_pe735593_s5.jpg?f=xl",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 2,
@@ -32,9 +32,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 3,
@@ -42,9 +42,9 @@ export const ProductProvider = ({ children }) => {
             price: 125,
             image: "https://silkyfactory.com/wp-content/uploads/2021/10/vaas5.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 4,
@@ -52,9 +52,9 @@ export const ProductProvider = ({ children }) => {
             price: 399,
             image: "https://chairish-prod.freetls.fastly.net/image/product/sized/40208db1-1aca-41eb-86dd-8efd835efe98/architect-task-desk-lamp-lucy-by-erco-germany-7866?aspect=fit&width=640&height=640",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 5,
@@ -62,9 +62,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 6,
@@ -72,9 +72,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 7,
@@ -82,9 +82,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 8,
@@ -92,9 +92,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 9,
@@ -102,9 +102,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 10,
@@ -112,9 +112,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 11,
@@ -122,9 +122,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 12,
@@ -132,9 +132,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 13,
@@ -142,9 +142,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 14,
@@ -152,9 +152,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 15,
@@ -162,9 +162,9 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
         {
             id: 16,
@@ -172,17 +172,19 @@ export const ProductProvider = ({ children }) => {
             price: 155,
             image: "https://m.media-amazon.com/images/I/61JxVujQN3L._AC_UF894,1000_QL80_.jpg",
             description: "NICE PRODUCT",
-            height: '100cm',
-            width: '75cm',
-            depth: '45cm'
+            height: "100cm",
+            width: "75cm",
+            depth: "45cm",
         },
     ]);
 
     const setLogin = (id) => {
         setLoggedIn(true);
-        localStorage.setItem('login', JSON.stringify({isLoggedIn: true, userId: id}));
-    }
-
+        localStorage.setItem(
+            "login",
+            JSON.stringify({ isLoggedIn: true, userId: id })
+        );
+    };
 
     const updateProducts = (newProduct) => {
         setProducts([...products, newProduct]);
@@ -190,7 +192,15 @@ export const ProductProvider = ({ children }) => {
 
     return (
         <ProductContext.Provider
-            value={{ products, allProducts, updateProducts, loggedIn, setLogin, subtotal, setSubtotal}}
+            value={{
+                products,
+                allProducts,
+                updateProducts,
+                loggedIn,
+                setLogin,
+                subtotal,
+                setSubtotal,
+            }}
         >
             {children}
         </ProductContext.Provider>

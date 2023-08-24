@@ -20,12 +20,15 @@ class CheckoutController extends Controller
 
             return response()->json(['message' => 'User created successfully', 'user' => $userData], 201);
     }
+        $userData->lastname = $checkoutData['lastName'];
+        $userData->country = $checkoutData['country'];
+        $userData->city_town = $checkoutData['city_town'];
+        $userData->zip_code = $checkoutData['zip_code'];
+        $userData->phone_number = $checkoutData['phone_number'];
+        $userData->save();
+    }
 
-    $userData->lastname = $checkoutData['lastName'];
-    $userData->country = $checkoutData['country'];
-    $userData->city_town = $checkoutData['city_town'];
-    $userData->zip_code = $checkoutData['zip_code'];
-    $userData->phone_number = $checkoutData['phone_number'];
-    $userData->save();
-}
+    public function replace(Request $request) {
+
+    }
 }

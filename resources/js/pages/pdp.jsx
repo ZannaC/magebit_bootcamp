@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useProduct } from "../ProductContext";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import CollectionSection from "../components/view_collection/CollectionSection";
 import ProductsRequest from "../utils/ProductsRequest";
 
 function Pdp() {
     // login
-    const { loggedIn } = useProduct();
+    const loggedIn = localStorage.getItem("login");
     // location with our product
     const location = useLocation();
     const { product } = location.state;
@@ -33,17 +33,17 @@ function Pdp() {
     // update products
 
     const setProducts = () => {
-        const userId = JSON.parse(localStorage.getItem('login'))?.userId;
+        const userId = JSON.parse(localStorage.getItem("login"))?.userId;
         const obj = {
             productId: product.id,
             userId: userId,
             quantity: productAmount,
-        }
-        ProductsRequest('cart-update', obj)
-        .then(res => {console.log(res)})
+        };
+        ProductsRequest("cart-update", obj).then((res) => {
+            console.log(res);
+        });
         setSubtotal(subtotal + product.price * productAmount);
     };
-
 
     // SECTIONS
 
@@ -53,9 +53,11 @@ function Pdp() {
                 <img className="descr__img" src={product.image}></img>
                 <div className="descr__block">
                     <h1 className="descr__block-h1">{product.name}</h1>
-                    <p className="descr__block-price">{'£' + product.price}</p>
+                    <p className="descr__block-price">{"£" + product.price}</p>
                     <div className="descr__block-inner-descr">
-                        <h2 className="descr__block-inner-descr-h2">Description</h2>
+                        <h2 className="descr__block-inner-descr-h2">
+                            Description
+                        </h2>
                         <p className="descr__block-inner-descr-p">
                             {product.description}
                         </p>
@@ -125,36 +127,42 @@ function Pdp() {
                                 </button>
                             </span>
                         </div>
-                        {loggedIn ?
-                        <Link
-                            onClick={setProducts}
-                            className="descr__block-inner-buttons-add"
-                            to="/cart"
-                        >
-                            Add to cart
-                        </Link>
-                        :
-                        <Link
-                        onClick={setProducts}
-                        className="descr__block-inner-buttons-add"
-                        to="/login"
-                        >
-                            Login
-                        </Link>
-                        }
+                        {loggedIn ? (
+                            <Link
+                                onClick={setProducts}
+                                className="descr__block-inner-buttons-add"
+                                to="/cart"
+                            >
+                                Add to cart
+                            </Link>
+                        ) : (
+                            <Link
+                                onClick={setProducts}
+                                className="descr__block-inner-buttons-add"
+                                to="/login"
+                            >
+                                Login
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>
         </section>
     );
 
-    const collectionSection =
-    <>
-    <div className="container collection__container">
-        <h2 className="collection__h2">You might also like</h2>
-    </div>
-    <CollectionSection imgClass={'collection__list-item-img'} nameClass={'collection__list-item-h4'} priceClass={'collection__list-item-p'} howManyItems={4}/>
-    </>
+    const collectionSection = (
+        <>
+            <div className="container collection__container">
+                <h2 className="collection__h2">You might also like</h2>
+            </div>
+            <CollectionSection
+                imgClass={"collection__list-item-img"}
+                nameClass={"collection__list-item-h4"}
+                priceClass={"collection__list-item-p"}
+                howManyItems={4}
+            />
+        </>
+    );
 
     const differentSection = <section className="different"></section>;
 
