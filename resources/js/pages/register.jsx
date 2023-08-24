@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductsRequest from "../utils/ProductsRequest";
+import requests from "../utils/requests";
 import { useProduct } from "../ProductContext";
 
 function Register () {
@@ -21,8 +21,10 @@ function Register () {
             password: password
         }
         // console.log(document.querySelector('[name="csrf-token"]'))
-        ProductsRequest('register', obj)
+        
+        requests('register', obj)
         .then(response => setResponse(response));
+
     }
 
     return (

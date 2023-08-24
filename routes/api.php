@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductFilterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -36,5 +37,6 @@ Route::post('/login', [UserController::class, 'login']);
 
 Route::post('/register', [UserController::class, 'register']);
 
-Route::post('/checkout-save', [CheckoutController::class, 'store']);
+Route::post('/productFilter', [ProductFilterController::class, 'productFilter']);
 
+Route::post('/checkout-save', [CheckoutController::class, 'store']);
