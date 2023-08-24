@@ -1,0 +1,115 @@
+@media (max-width: 992px) {
+    .account__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .account__form {
+            padding-left: 50px;
+            padding-right: 50px;
+            .user__form {
+                &-profile {
+                    column-gap: 1%;
+                }
+
+                &-password {
+                    grid-template-columns: 100%;
+                }
+
+                &-button-block {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: space-around;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .account__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .account__form {
+            padding-left: 0px;
+            padding-right: 0px;
+            .user__form {
+                input {
+                    padding: 16px 16px;
+
+                    font-size: 17px;
+                }
+
+                &-profile {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &-password {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 100%;
+                }
+
+                &-button-block {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+
+                    button {
+                        margin: 0px;
+                        padding: 10px 5px;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .account__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .account__form {
+            padding-left: 0px;
+            padding-right: 0px;
+            .user__form {
+                input {
+                    padding: 16px 16px;
+                }
+
+                &-profile {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                &-password {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 100%;
+                }
+
+                &-button-block {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    button {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        padding: 10px 5px;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Search_svg from "../../img/header/search-svg.svg";
 import Cart_svg from "../../img/header/cart-svg.svg";
@@ -11,21 +11,22 @@ import Cart_Menu_svg from '../../img/header/cart-menu-svg.svg';
 import { useProduct } from "../ProductContext";
 import { useUserContext } from "../UserContext";
 import Search from "../pages/search";
-
-
-
+import Menu from "./menu";
 
 function Header() {
     const { amount } = useProduct();
-
+    const loggedIn = localStorage.getItem("login");
     const [menuActive, setMenuActive] = useState(false);
     const items = [{value:"Login", href:"/login", icon: Login_svg}, {value:"Homepage", href:"/", icon: Homepage_svg}, {value:"About", href:"/about", icon: About_svg}, {value:"Products", href:"/plp", icon: Products_svg}, {value:"Cart", href:"/cart", icon: Cart_Menu_svg}]
+
     const [showHamburger, setShowHamburger] = useState(false);
 
     const handleMenuButton = () => {
         setMenuActive(!menuActive);
-    }
-    menuActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
+    };
+    menuActive
+        ? (document.body.style.overflow = "hidden")
+        : (document.body.style.overflow = "unset");
 
     const closeMenu = () => {
         setMenuActive(false);
@@ -42,8 +43,6 @@ function Header() {
         };
     }, []);
 
-    const savedLogin = useUserContext();
-
     return (
         <header className="header">
             <div className="header__top">
@@ -57,15 +56,30 @@ function Header() {
                 </Link>
                 <div className="header__top-right-div">
                     <button className="header__top-right-cart">
-                        <Link className="header__top-right-cart-link" to="cart">
-                            <img
-                                className="header__top-right-cart-link-img"
-                                src={Cart_svg}
-                            ></img>
-                            <span className="header__top-right-cart-link-img-count">
-                                {amount}
-                            </span>
-                        </Link>
+                        {loggedIn ? (
+                            <Link
+                                className="header__top-right-cart-link"
+                                to="/cart"
+                            >
+                                <img
+                                    className="header__top-right-cart-link-img"
+                                    src={Cart_svg}
+                                ></img>
+                                <span className="header__top-right-cart-link-img-count">
+                                    {amount}
+                                </span>
+                            </Link>
+                        ) : (
+                            <Link
+                                className="header__top-right-cart-link"
+                                to="/login"
+                            >
+                                <img
+                                    className="header__top-right-cart-link-img"
+                                    src={Cart_svg}
+                                ></img>
+                            </Link>
+                        )}
                     </button>
                     <button className="header__top-right-personal">
                         {loggedIn ? (
@@ -85,11 +99,15 @@ function Header() {
                         )}
                     </button>
                     <nav className="app__burger">
-                        <div className="app__burger-btn" onClick={handleMenuButton}>
-                            <span className="app__burger-btn-span"/>
+                        <div
+                            className="app__burger-btn"
+                            onClick={handleMenuButton}
+                        >
+                            <span className="app__burger-btn-span" />
                         </div>
                     </nav>
                     <Menu header={"Avion"} items={items} active={menuActive} setActive={setMenuActive} onCloseMenu={closeMenu}/>
+
                 </div>
             </div>
             <nav className="header__nav">

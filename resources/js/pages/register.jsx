@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import getAllProducts from "../utils/getAllProducts";
+import requests from "../utils/requests";
+import { useProduct } from "../ProductContext";
 
 function Register () {
+    const { setLogin } = useProduct();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [response, setResponse] = useState("");
 
     useEffect(() => {
-        console.log(response);
+        response.userReg === 'success' && setLogin(response.userId);
     }, [response])
 
     const handleSubmit = (e) => {
@@ -19,9 +21,10 @@ function Register () {
             password: password
         }
         // console.log(document.querySelector('[name="csrf-token"]'))
-        getAllProducts('register', obj)
-        .then(response => setResponse(response))
-            // console.log(response)
+        
+        requests('register', obj)
+        .then(response => setResponse(response));
+
     }
 
     return (
