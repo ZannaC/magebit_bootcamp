@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\DB;
 class CartController extends Controller
 {
     public function update(Request $request){
+        // checking if we have the cart
         $userCart = Cart::where('user_id', $request->post('userId'))->first();
-        if (!$userCart) {
+        if (!$userCart) { // if no we creating it
             $userCart = new Cart([
                 'user_id' => $request['userId'],
                 'subtotal' => 0
@@ -20,8 +21,9 @@ class CartController extends Controller
             $userCart->save();
         }
         $userCartId = $userCart->id;
+        // check if we have the product in the cart
         $cartProduct = CartProduct::where('cart_id', $userCartId)->where('product_id', $request->post('productId'))->first();
-        if (!$cartProduct) {
+        if (!$cartProduct) { // if no we creating it
             $cartProduct = new CartProduct([
                 'cart_id' => $userCartId,
                 'product_id' => $request->post('productId'),
@@ -29,12 +31,29 @@ class CartController extends Controller
                 ]);
 
             $cartProduct->save();
-        } else {
+        } else { // if yes we updating it
             $cartProduct->quantity = $cartProduct->quantity + $request->post('quantity');
             $cartProduct->save();
         }
-        $cartProducts = CartProduct::where('cart_id', $userCartId)->get();
-        return ['products' => $cartProducts];
+
+        $productPrice = DB::table('products')->where('id', $request->post('productId'))->value('price');
+        $userCart->subtotal = $userCart->subtotal + ($productPrice * $request->post('quantity'));
+        $userCart->save();
+        // $cartProducts = CartProduct::where('cart_id', $userCartId)->get();
+        return ['productQuantity' => $cartProduct->quantity, 'subTotal' => $userCart->subtotal];
+    }
+
+    public function getSubtotal (Request $request) {
+        $userCart = Cart::where('user_id', $request->post('userId'))->first();
+        if (!$userCart) { // if no we creating it
+            $userCart = new Cart([
+                'user_id' => $request['userId'],
+               'subtotal' => 0
+                ]);
+
+            $userCart->save();
+        }
+        return $userCart->subtotal;
     }
 
     public function getItems (Request $request) {

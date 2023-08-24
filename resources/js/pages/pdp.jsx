@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useProduct } from "../ProductContext";
-import testImg from "../../img/pdp/testImg.png";
 import { useLocation } from 'react-router-dom';
 import CollectionSection from "../components/view_collection/CollectionSection";
 import ProductsRequest from "../utils/ProductsRequest";
 
-function Pdp(props) {
+function Pdp() {
+    // login
+    const { loggedIn } = useProduct();
+    // location with our product
     const location = useLocation();
     const { product } = location.state;
-    const { updateProducts, subtotal, setSubtotal } = useProduct();
+    // subtotal and function from context
+    const { subtotal, setSubtotal } = useProduct();
     // amount of items
     const [productAmount, setProductAmount] = useState(1);
     // total price of item
@@ -40,6 +43,7 @@ function Pdp(props) {
         .then(res => {console.log(res)})
         setSubtotal(subtotal + product.price * productAmount);
     };
+
 
     // SECTIONS
 
@@ -121,6 +125,7 @@ function Pdp(props) {
                                 </button>
                             </span>
                         </div>
+                        {loggedIn ?
                         <Link
                             onClick={setProducts}
                             className="descr__block-inner-buttons-add"
@@ -128,6 +133,15 @@ function Pdp(props) {
                         >
                             Add to cart
                         </Link>
+                        :
+                        <Link
+                        onClick={setProducts}
+                        className="descr__block-inner-buttons-add"
+                        to="/login"
+                        >
+                            Login
+                        </Link>
+                        }
                     </div>
                 </div>
             </div>
