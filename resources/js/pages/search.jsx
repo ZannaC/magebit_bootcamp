@@ -6,7 +6,7 @@ function Search() {
         <div className="search-wrap">
             <form className="search-container">
                 <input type="text" id="search-bar" placeholder="Search" />
-                <a href="#">
+                <a href="#" >
                     <img
                         className="search-icon"
                         src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
