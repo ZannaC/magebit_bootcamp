@@ -28,7 +28,7 @@ class CheckoutController extends Controller
         $userData->save();
     }
 
-    // public function replace(Request $request) {
+    public function placeOrder(Request $request) {
 
-    // }
+    }
 }
