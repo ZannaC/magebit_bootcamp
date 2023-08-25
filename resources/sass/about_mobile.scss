@@ -36,14 +36,13 @@
     p:last-child {
       margin-bottom: 15%;
     }
+    &-button {
+        max-width: fit-content;
+    }
   }
 
   .child_content {
     margin: 10% 12% 8% 10%;
-  }
-
-  button {
-    max-width: fit-content;
   }
 }
 

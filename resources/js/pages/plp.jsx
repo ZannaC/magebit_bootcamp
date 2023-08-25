@@ -100,12 +100,14 @@ function Plp() {
     return (
         <div className="plp">
             <section className="plp__filters">
-                <p>Product Type</p>
-                <Checkbox id="typeFurniture" label="Furniture" setProducts={setProducts} />
-                <Checkbox id="typeHomeware" label="Homeware" setProducts={setProducts} />
-                <Checkbox id="typeSofas" label="Sofas" setProducts={setProducts} />
-                <Checkbox id="typeLightFittings" label="Light Fittings" setProducts={setProducts} />
-                <Checkbox id="typeAccessories" label="Accessories" setProducts={setProducts} />
+                <div className='plp__filters-wrapper'>
+                    <p>Product Type</p>
+                    <Checkbox id="typeFurniture" label="Furniture" setProducts={setProducts} />
+                    <Checkbox id="typeHomeware" label="Homeware" setProducts={setProducts} />
+                    <Checkbox id="typeSofas" label="Sofas" setProducts={setProducts} />
+                    <Checkbox id="typeLightFittings" label="Light Fittings" setProducts={setProducts} />
+                    <Checkbox id="typeAccessories" label="Accessories" setProducts={setProducts} />
+                </div>
             </section>
             {listSection}
         </div>

@@ -15,3 +15,28 @@
 
     }
 }
+
+@media (max-width: 768px) {
+    .plp {
+        display: flex;
+        flex-direction: column;
+        &__filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            &-wrapper {
+                min-height: 0;
+                margin: 0;
+                padding: 0 20px;
+            }
+        }
+        &__list {
+            &-item {
+                &-img {
+                    max-width: 160px;
+                    height: 160px;
+                }
+            }
+        }
+    }
+}
