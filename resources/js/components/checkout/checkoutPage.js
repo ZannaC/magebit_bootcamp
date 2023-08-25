@@ -24,7 +24,6 @@ const CheckoutPage = ({ checkoutData, setCheckoutData, myRef }) => {
                     enableReinitialize
                     initialValues={checkoutData}
                     onSubmit={async (values) => {
-                        console.log(values);
                         setCheckoutData(values);
                     }}
                 >
@@ -94,8 +93,6 @@ const CheckoutPage = ({ checkoutData, setCheckoutData, myRef }) => {
                                 id="password"
                                 name="password"
                                 type="password"
-                                // value={password}
-                                // onChange={handlePasswordChange}
                             />
                         </div>
 
@@ -107,17 +104,8 @@ const CheckoutPage = ({ checkoutData, setCheckoutData, myRef }) => {
                                 id="repeatPassword"
                                 name="repeatPassword"
                                 type="password"
-                                // value={repeatPassword}
-                                // onChange={handleRepeatPasswordChange}
                             />
                         </div>
-
-                        {/* {!passwordsMatch && (
-                            <p className="pass_dont_match">
-                                Passwords do not match!
-                            </p>
-                        )} */}
-
                         <button
                             type="submit"
                             className="submitButton"
