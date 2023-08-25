@@ -16,11 +16,12 @@ function Homepage() {
                         The furniture brand for the future, with timeless
                         designs
                     </h1>
-                    <Link to="/plp" className="section1__container-button">
+                    <Link to="plp">
                         <button className="section1__container-button">
                             View collection
                         </button>
                     </Link>
+
                     <h2 className="section1__container-h2">
                         A new era in eco friendly furniture with Avelon, the
                         French luxury retail brand with nice fonts, tasteful
