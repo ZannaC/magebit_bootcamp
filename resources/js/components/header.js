@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 import Search_svg from "../../img/header/search-svg.svg";
 import Cart_svg from "../../img/header/cart-svg.svg";
 import User_svg from "../../img/header/user-svg.svg";
-import Menu from "./menu";
+import Login_svg from '../../img/header/user-menu-svg.svg';
+import Homepage_svg from '../../img/header/home-svg.svg';
+import About_svg from '../../img/header/info-svg.svg';
+import Products_svg from '../../img/header/list-svg.svg';
+import Cart_Menu_svg from '../../img/header/cart-menu-svg.svg';
 import { useProduct } from "../ProductContext";
+import { useUserContext } from "../UserContext";
+import Search from "../pages/search";
+import Menu from "./menu";
 
 function Header() {
-    const loggedIn = localStorage.getItem("login");
-
     const { amount } = useProduct();
-
+    const loggedIn = localStorage.getItem("login");
     const [menuActive, setMenuActive] = useState(false);
-    const items = [
-        { value: "Homepage", href: "/" },
-        { value: "Product listing", href: "/plp" },
-        { value: "About", href: "/about" },
-    ];
+    const items = [{value:"Login", href:"/login", icon: Login_svg}, {value:"Homepage", href:"/", icon: Homepage_svg}, {value:"About", href:"/about", icon: About_svg}, {value:"Products", href:"/plp", icon: Products_svg}, {value:"Cart", href:"/cart", icon: Cart_Menu_svg}]
+
     const [showHamburger, setShowHamburger] = useState(false);
 
     const handleMenuButton = () => {
@@ -25,6 +27,11 @@ function Header() {
     menuActive
         ? (document.body.style.overflow = "hidden")
         : (document.body.style.overflow = "unset");
+
+    const closeMenu = () => {
+        setMenuActive(false);
+        document.body.style.overflow = 'unset';
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -99,12 +106,8 @@ function Header() {
                             <span className="app__burger-btn-span" />
                         </div>
                     </nav>
-                    <Menu
-                        header={"Menu"}
-                        items={items}
-                        active={menuActive}
-                        setActive={setMenuActive}
-                    />
+                    <Menu header={"Avion"} items={items} active={menuActive} setActive={setMenuActive} onCloseMenu={closeMenu}/>
+
                 </div>
             </div>
             <nav className="header__nav">

@@ -25,6 +25,7 @@ import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
 
 import Account from "../pages/account";
+import UserWishlist from "../pages/userWishlist";
 
 import OrderCompleted from "../pages/ordercompleted";
 import Menu from "../components/menu";
@@ -53,14 +54,14 @@ function App() {
                             <Route path="/plp" element={<Plp />} />
                             <Route path="/pdp" element={<Pdp />} />
                             <Route path="/cart" element={<Cart />} />
-                            {savedLogin ? (
+                            {savedLogin ?
                                 <Route
                                     path="/checkout"
                                     element={<Checkout />}
                                 />
-                            ) : (
+                             :
                                 <Route path="/checkout" element={<Login />} />
-                            )}
+                            }
                             <Route path="/checkout" element={<Checkout />} />
                             <Route path="/about" element={<About />} />
                             {savedLogin && (
@@ -82,6 +83,12 @@ function App() {
                             />
                             <Route path="/menu" element={<Menu />} />
                             <Route path="/account" element={<Account />} />
+
+                            <Route
+                                path="/wishlist"
+                                element={<UserWishlist />}
+                            />
+
                         </Routes>
                     </Layout>
                 </ProductProvider>

@@ -34,15 +34,20 @@
     text-align: left;
 }
 
-.menu_list {
+.menu__list {
     list-style-type: none;
+    &-item {
+        &-img {
+            margin-right: 10px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 45px;
+        }
+    }
     a {
         color: #413b64;
         text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        align-items: right;
-        margin: 10px 0;
+        padding: 5px 0;
         transition: color 0.3s ease-in-out;
         &:hover {
             color: #9e94d8;
@@ -60,23 +65,28 @@
         background-color: transparent;
         font-size: 2rem;
     }
-    .menu_list {
+    .menu__list {
         a {
-            color: #413b64;
             border-bottom: 0.5px solid grey;
-            padding: 10px 0;
-            margin: 20px 0;
-            &:hover {
-                color: #9e94d8;
-            }
-            &:active {
-                color: #413b64;
-                transition: none;
-            }
         }
     }
 }
 
+@media (max-width: 475px) {
+    .menu {
+        left: 69.9%;
+    }
+}
+@media (max-width: 425px) {
+    .menu {
+        left: 69.8%;
+    }
+}
+@media (max-width: 418px) {
+    .menu {
+        left: 69.5%;
+    }
+}
 @media (max-width: 389px) {
     .menu {
         left: 69%;
@@ -87,13 +97,63 @@
         left: 68%;
     }
 }
+@media (max-width: 378px) {
+    .menu {
+        left: 67.5%;
+    }
+}
 @media (max-width: 375px) {
     .menu {
         left: 67%;
     }
 }
-@media (max-width: 360px) {
+@media (max-width: 373px) {
+    .menu {
+        left: 66%;
+    }
+}
+@media (max-width: 367px) {
+    .menu {
+        left: 65%;
+    }
+}
+@media (max-width: 362px) {
     .menu {
         left: 64%;
+    }
+}
+@media (max-width: 356px) {
+    .menu {
+        left: 63%;
+    }
+}
+@media (max-width: 351px) {
+    .menu {
+        left: 62%;
+    }
+}
+@media (max-width: 346px) {
+    .menu {
+        left: 61%;
+    }
+}
+@media (max-width: 341px) {
+    .menu {
+        left: 60%;
+    }
+}
+@media (max-width: 336px) {
+    .menu {
+        left: 59%;
+    }
+}
+@media (max-width: 331px) {
+    .menu {
+        left: 58%;
+    }
+}
+@media (max-width: 322px) {
+    .menu {
+        left: 57%;
     }
 }

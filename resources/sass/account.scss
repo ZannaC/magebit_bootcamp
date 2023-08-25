@@ -64,6 +64,15 @@
 
         &-active {
             color: red;
+            cursor: none;
+        }
+    }
+
+    &-list-links a {
+        &:hover {
+            cursor: pointer;
+            background-color: #474072;
+            color: white;
         }
     }
 }
@@ -90,10 +99,6 @@
 
             &::placeholder {
                 opacity: 0.5;
-            }
-
-            &:focus {
-                box-shadow: inset 0 -4px 0 -2px #3f3975;
             }
         }
 
