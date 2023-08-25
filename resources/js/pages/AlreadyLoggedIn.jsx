@@ -2,7 +2,7 @@ import React from "react";
 
 function AlreadyLoggedIn() {
     return (
-        <div>
+        <div className="already">
             Already logged in
         </div>
     );

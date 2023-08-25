@@ -34,27 +34,29 @@ function Search() {
                     ></img>
                 </a>
             </div>
-            <ul className="plp__list">
-                {results.map((product) => (
-                    <button
-                        type="button"
-                        key={product.id}
-                        className="plp__list-button"
-                        onClick={() => handleButtonPdpClick(product)}
-                    >
-                        <li className="plp__list-item">
-                            <CollectionCard
-                                img={product.image}
-                                name={product.name}
-                                price={product.price}
-                                imgClass="plp__list-item-img"
-                                nameClass="plp__list-item-h4"
-                                priceClass="plp__list-item-price"
-                            />
-                        </li>
-                    </button>
-                ))}
-            </ul>
+            <div className="container search__container">
+                <ul className="search__list">
+                    {results.map((product) => (
+                        <button
+                            type="button"
+                            key={product.id}
+                            className="search__list-button"
+                            onClick={() => handleButtonPdpClick(product)}
+                        >
+                            <li className="search__list-item">
+                                <CollectionCard
+                                    img={product.image}
+                                    name={product.name}
+                                    price={product.price}
+                                    imgClass="search__list-item-img"
+                                    nameClass="search__list-item-h4"
+                                    priceClass="search__list-item-price"
+                                />
+                            </li>
+                        </button>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

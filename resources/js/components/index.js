@@ -19,9 +19,8 @@ import About from "../pages/about";
 import Login from "../pages/login";
 import Signup from "../pages/signup";
 import RegisterPage from "../pages/register";
-import Personal from "../pages/pesronal";
+import Personal from "../pages/account";
 import { UserProvider } from "../UserContext";
-import AlreadyLoggedIn from "../pages/AlreadyLoggedIn";
 import Search from "../pages/search";
 
 import Account from "../pages/account";
@@ -67,7 +66,7 @@ function App() {
                             {savedLogin && (
                                 <Route
                                     path="/login"
-                                    element={<AlreadyLoggedIn />}
+                                    element={<Personal />}
                                 />
                             )}
                             <Route path="/login" element={<Login />} />

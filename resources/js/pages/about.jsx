@@ -17,7 +17,7 @@ function About() {
                             <p>Our vision was to create products that combine beauty, functionality, and sustainability.</p>
                             <p>We wanted to offer our customers a unique and personalized shopping experience, where they can find furniture that suits their taste and lifestyle.</p>
                         </div>
-                        <button type="button">Get in touch</button>
+                        <button className='features__child-button' type="button">Get in touch</button>
                     </div>
                 </section>
 

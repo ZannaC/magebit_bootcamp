@@ -1,0 +1,33 @@
+@media (max-width: 900px) {
+    .search {
+        &__list {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            &-item {
+                &-img {
+                    max-width: 180px;
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .search {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            &-item {
+                &-img {
+                    max-width: 160px;
+                    height: 160px;
+                }
+            }
+        }
+        &-container {
+            input {
+                width: 80% !important;
+            }
+        }
+    }
+}
