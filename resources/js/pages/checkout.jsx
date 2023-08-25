@@ -62,8 +62,7 @@ export default function Checkout() {
                 onClick={handleClick}
                 disabled={!isPaymentChecked}
             >
-                PLACE
-                {/* <Link to="/ordercompleted">Place order</Link> */}
+                PLACE ORDER
             </button>
         </div>
     );

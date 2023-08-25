@@ -37,14 +37,16 @@
 
 .place_order_btn {
     padding: 7px 40px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     border: none;
     border-radius: 30px;
     background-color: #2a254b;
     color: white;
     margin-top: 1rem;
-
+    margin: 0 auto;
 }
 
 .place_order_btn a{
