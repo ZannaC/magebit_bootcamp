@@ -3,7 +3,7 @@ import { useProduct } from '../ProductContext';
 import '../../sass/app.css';
 
 function Login() {
-    const { setLoggedIn, loggedIn } = useProduct();
+    const { setLogin, loggedIn } = useProduct();
     const [fetchResponse, setFetchResponse] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -81,7 +81,7 @@ function Login() {
 
     useEffect(() => {
         if (fetchResponse.userExists === 'success') {
-            setLoggedIn(fetchResponse.userId);
+            setLogin(fetchResponse.userId);
         } else if (fetchResponse.userExists === 'error') {
             showUserInvalidMessage();
         }
