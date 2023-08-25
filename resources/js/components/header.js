@@ -17,7 +17,7 @@ function Header() {
     const { amount } = useProduct();
     const loggedIn = localStorage.getItem("login");
     const [menuActive, setMenuActive] = useState(false);
-    const items = [{value:"Login", href:"/login", icon: Login_svg}, {value:"Homepage", href:"/", icon: Homepage_svg}, {value:"About", href:"/about", icon: About_svg}, {value:"Products", href:"/plp", icon: Products_svg}, {value:"Cart", href:"/cart", icon: Cart_Menu_svg}]
+    const items = [{value: loggedIn ? "Personal account" : "Login", href: loggedIn ? "/account" : "/login", icon: Login_svg}, {value:"Homepage", href:"/", icon: Homepage_svg}, {value:"About", href:"/about", icon: About_svg}, {value:"Products", href:"/plp", icon: Products_svg}, {value:"Cart", href:"/cart", icon: Cart_Menu_svg}]
 
     const [showHamburger, setShowHamburger] = useState(false);
 
