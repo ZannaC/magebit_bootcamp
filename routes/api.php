@@ -23,7 +23,7 @@ use App\Http\Controllers\CheckoutController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/place-order', [CartController::class, 'placeOrder']);
+
 
 Route::post('/get-subtotal', [CartController::class, 'getSubtotal']);
 

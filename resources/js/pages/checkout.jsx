@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../sass/app.css";
 import PaymentPage from "../components/checkout/payment";
 import CheckoutPage from "../components/checkout/checkoutPage";
@@ -19,19 +19,29 @@ export default function Checkout() {
         repeatPassword: "",
     });
 
+    const navigate = useNavigate();
+    const [isClicked, setIsClicked] = useState(false);
+
     const myRef = useRef(0);
 
-    function handleClick() {
+    const handleClick = () => {
         myRef.current.click();
-    }
+        setIsClicked(true);
+    };
 
     useEffect(() => {
+        if (!isClicked) return;
         const userId = JSON.parse(localStorage.getItem("login"))?.userId;
         ProductsRequest("checkout-save", {
             userId: userId,
             checkoutData: checkoutData,
+        }).then((response) => {
+            setIsClicked(false);
+            if (response.code == 201) {
+                navigate("/ordercompleted");
+            }
         });
-    }, [checkoutData]);
+    }, [isClicked]);
 
     return (
         <div className="myContainer">
@@ -52,7 +62,7 @@ export default function Checkout() {
                 onClick={handleClick}
                 disabled={!isPaymentChecked}
             >
-                PLACE ORDER
+                PLACE
                 {/* <Link to="/ordercompleted">Place order</Link> */}
             </button>
         </div>

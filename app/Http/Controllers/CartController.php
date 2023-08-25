@@ -48,7 +48,7 @@ class CartController extends Controller
         if (!$userCart) { // if no we creating it
             $userCart = new Cart([
                 'user_id' => $request['userId'],
-               'subtotal' => 0
+                'subtotal' => 0
                 ]);
 
             $userCart->save();
