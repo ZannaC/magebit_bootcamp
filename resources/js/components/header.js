@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Search_svg from "../../img/header/search-svg.svg";
 import Cart_svg from "../../img/header/cart-svg.svg";
 import User_svg from "../../img/header/user-svg.svg";
-import Login_svg from '../../img/header/user-menu-svg.svg';
-import Homepage_svg from '../../img/header/home-svg.svg';
-import About_svg from '../../img/header/info-svg.svg';
-import Products_svg from '../../img/header/list-svg.svg';
-import Cart_Menu_svg from '../../img/header/cart-menu-svg.svg';
+import Login_svg from "../../img/header/user-menu-svg.svg";
+import Homepage_svg from "../../img/header/home-svg.svg";
+import About_svg from "../../img/header/info-svg.svg";
+import Products_svg from "../../img/header/list-svg.svg";
+import Cart_Menu_svg from "../../img/header/cart-menu-svg.svg";
 import { useProduct } from "../ProductContext";
 import { useUserContext } from "../UserContext";
 import Search from "../pages/search";
@@ -17,7 +17,17 @@ function Header() {
     const { amount } = useProduct();
     const loggedIn = localStorage.getItem("login");
     const [menuActive, setMenuActive] = useState(false);
-    const items = [{value: loggedIn ? "Personal account" : "Login", href: loggedIn ? "/account" : "/login", icon: Login_svg}, {value:"Homepage", href:"/", icon: Homepage_svg}, {value:"About", href:"/about", icon: About_svg}, {value:"Products", href:"/plp", icon: Products_svg}, {value:"Cart", href:"/cart", icon: Cart_Menu_svg}]
+    const items = [
+        {
+            value: loggedIn ? "Personal account" : "Login",
+            href: loggedIn ? "/account" : "/login",
+            icon: Login_svg,
+        },
+        { value: "Homepage", href: "/", icon: Homepage_svg },
+        { value: "About", href: "/about", icon: About_svg },
+        { value: "Products", href: "/plp", icon: Products_svg },
+        { value: "Cart", href: "/cart", icon: Cart_Menu_svg },
+    ];
 
     const [showHamburger, setShowHamburger] = useState(false);
 
@@ -30,8 +40,8 @@ function Header() {
 
     const closeMenu = () => {
         setMenuActive(false);
-        document.body.style.overflow = 'unset';
-    }
+        document.body.style.overflow = "unset";
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -85,7 +95,7 @@ function Header() {
                         {loggedIn ? (
                             <Link
                                 className="header__top-right-personal-link"
-                                to="/personal"
+                                to="/account"
                             >
                                 <img src={User_svg} />
                             </Link>
@@ -106,8 +116,13 @@ function Header() {
                             <span className="app__burger-btn-span" />
                         </div>
                     </nav>
-                    <Menu header={"Avion"} items={items} active={menuActive} setActive={setMenuActive} onCloseMenu={closeMenu}/>
-
+                    <Menu
+                        header={"Avion"}
+                        items={items}
+                        active={menuActive}
+                        setActive={setMenuActive}
+                        onCloseMenu={closeMenu}
+                    />
                 </div>
             </div>
             <nav className="header__nav">

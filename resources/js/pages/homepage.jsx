@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../sass/app.css";
 import chair from "../../../resources/img/homePage/chair.png";
 import sofa from "../../../resources/img/homePage/sofa.png";
@@ -15,9 +16,11 @@ function Homepage() {
                         The furniture brand for the future, with timeless
                         designs
                     </h1>
-                    <button className="section1__container-button">
-                        View collection
-                    </button>
+                    <Link to="/plp" className="section1__container-button">
+                        <button className="section1__container-button">
+                            View collection
+                        </button>
+                    </Link>
                     <h2 className="section1__container-h2">
                         A new era in eco friendly furniture with Avelon, the
                         French luxury retail brand with nice fonts, tasteful
