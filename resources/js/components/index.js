@@ -54,14 +54,14 @@ function App() {
                             <Route path="/plp" element={<Plp />} />
                             <Route path="/pdp" element={<Pdp />} />
                             <Route path="/cart" element={<Cart />} />
-                            {savedLogin ? (
+                            {savedLogin ?
                                 <Route
                                     path="/checkout"
                                     element={<Checkout />}
                                 />
-                            ) : (
+                             :
                                 <Route path="/checkout" element={<Login />} />
-                            )}
+                            }
                             <Route path="/checkout" element={<Checkout />} />
                             <Route path="/about" element={<About />} />
                             {savedLogin && (
