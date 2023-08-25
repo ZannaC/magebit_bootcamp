@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../sass/app.css";
 import { useNavigate } from "react-router-dom";
+import { useProduct } from "../ProductContext";
 
 function Signup() {
+    const { setLogin } = useProduct();
     const [fetchResponse, setFetchResponse] = useState("");
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -128,6 +130,7 @@ function Signup() {
             if (typeof fetchResponse.errors?.email !== "undefined") {
                 showUserInvalidMessage();
             } else {
+                setLogin(fetchResponse.userId);
                 navigate("/");
             }
         }

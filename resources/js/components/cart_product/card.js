@@ -86,9 +86,6 @@ function Productcard({product, setSubTotal}) {
                         </button>
                     </span>
                 </div>
-                <div className="product-removal">
-                    <button className="remove-product">Remove</button>
-                </div>
                 <div className="product-line-price">{productQuantity * product.price}</div>
             </div>
         </>
