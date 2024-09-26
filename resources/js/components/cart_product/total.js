@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import { useProduct } from "../../ProductContext";
 
-function Total() {
+function Total({ subtotal }) {
+    // const { subtotal } = useProduct();
     return (
         <div className="totals">
             <div className="totals-item">
                 <label>Subtotal</label>
                 <div className="totals-value" id="cart-subtotal">
-                    159.98
+                    {subtotal}
                 </div>
             </div>
             <div className="totals-item">
                 <label>Tax (5%)</label>
                 <div className="totals-value" id="cart-tax">
-                    7.99
+                    {subtotal * 0.05}
                 </div>
             </div>
             <div className="totals-item">
@@ -24,7 +26,7 @@ function Total() {
             <div className="totals-item totals-item-total">
                 <label>Grand Total</label>
                 <div className="totals-value" id="cart-total">
-                    182.97
+                    {subtotal + subtotal * 0.05 + 15}
                 </div>
             </div>
         </div>

@@ -1,13 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import LinkedIn_svg from "../../img/footer/footer-linkedin.svg";
-import Twitter_svg from "../../img/footer/footer-twitter.svg";
-import Facebook_svg from "../../img/footer/footer-facebook.svg";
-import Instagram_svg from "../../img/footer/footer-instagram.svg";
-import Skype_svg from "../../img/footer/footer-skype.svg";
-import Pinterest_svg from "../../img/footer/footer-pinterest.svg";
+import LinkedIn_svg from "../../img/footer/footer-linkedin.js";
+import Twitter_svg from "../../img/footer/footer-twitter.js";
+import Facebook_svg from "../../img/footer/footer-facebook.js";
+import Instagram_svg from "../../img/footer/footer-instagram.js";
+import Skype_svg from "../../img/footer/footer-skype.js";
+import Pinterest_svg from "../../img/footer/footer-pinterest.js";
 
 function Footer () {
+
+const [emailError, setEmailError] = useState("");
+const [email, setEmail] = useState("");
+function handleEmailSubmit () {
+    const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+    const regex = regexExp.test(email);
+    if (regex) {
+        setEmailError('');
+        fetch ('/api/newsletter-subscribe',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({email: email})
+            })
+    }   else {
+        setEmailError('Invalid email format');
+    }
+}
+function handleEmailChange (event) {
+    setEmail(event.target.value);
+}
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -70,43 +93,46 @@ function Footer () {
                     </div>
                     <div className="footer__top-right">
                         <h3 className="footer__top-right-form-h3">Join our mailing list</h3>
-                        <form className="footer__top-right-form">
-                            <input className="footer__top-right-form-input" type="text" id="fname" name="fname" placeholder="your@email.com" />
-                            <button className="footer__top-right-form-button">Sign up</button>
-                        </form>
+                        <div className="footer__top-right-form">
+                            <input className="footer__top-right-form-input" type="email" name="email" placeholder="your@email.com" value={email} onChange={handleEmailChange}/>
+                            <button className="footer__top-right-form-button" onClick={handleEmailSubmit}>Sign up</button>
+                        </div>
+                    {emailError && <div className="footer__top-error">
+                        {emailError}
+                    </div>}
                     </div>
                 </div>
                 <div className="footer__bottom">
                     <p className="footer__bottom-p">Copyright 2022 Avion LTD</p>
                     <ul className="footer__bottom-list">
                         <li className="footer__bottom-list-item">
-                            <a href="https://linkedin.com">
-                                <img className="footer__bottom-list-item-linkedin" src={LinkedIn_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://linkedin.com">
+                                <LinkedIn_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://twitter.com">
-                                <img className="footer__bottom-list-item-twitter" src={Twitter_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://twitter.com">
+                                <Twitter_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://facebook.com">
-                                <img className="footer__bottom-list-item-facebook" src={Facebook_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://facebook.com">
+                                <Facebook_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://instagram.com">
-                            <img className="footer__bottom-list-item-instagram" src={Instagram_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://instagram.com">
+                                <Instagram_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://skype.com">
-                            <img className="footer__bottom-list-item-skype" src={Skype_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://skype.com">
+                                <Skype_svg />
                             </a>
                         </li>
                         <li className="footer__bottom-list-item">
-                            <a href="https://pinterest.com">
-                            <img className="footer__bottom-list-item-pinterest" src={Pinterest_svg}></img>
+                            <a className="footer__bottom-list-item-link" href="https://pinterest.com">
+                                <Pinterest_svg />
                             </a>
                         </li>
                     </ul>

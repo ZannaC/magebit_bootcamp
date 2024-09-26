@@ -1,22 +1,27 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import "../../sass/app.css";
 import chair from "../../../resources/img/homePage/chair.png";
 import sofa from "../../../resources/img/homePage/sofa.png";
 import Brand from "./brand";
+import Newsletter from "../components/newsletter";
+import CollectionSection from "../components/view_collection/CollectionSection";
 
 function Homepage() {
     return (
         <div>
             <section className="section1">
-                <div className="container section1__container">
+                <div className="section1__container">
                     <h1 className="section1__container-h1">
                         The furniture brand for the future, with timeless
                         designs
                     </h1>
-                    <button className="section1__container-button">
-                        View collection
-                    </button>
+                    <Link to="plp">
+                        <button className="section1__container-button">
+                            View collection
+                        </button>
+                    </Link>
+
                     <h2 className="section1__container-h2">
                         A new era in eco friendly furniture with Avelon, the
                         French luxury retail brand with nice fonts, tasteful
@@ -25,20 +30,46 @@ function Homepage() {
                     </h2>
                 </div>
                 <div className="section1__image">
-                    <img className="section1__image-img" src={chair} alt="" />
+                    <img
+                        className="section1__image-img"
+                        src={chair}
+                        alt="chair image"
+                    />
                 </div>
             </section>
             <Brand />
-            <section className="section3">New ceramics</section>
-            <section className="section4">
-                <h2 className="section4__container-h2">Our popular products</h2>
-                {/* <div className="section4__container-infoBlock"> Data</div>
-                <button className="section4__container-button">
-                    View collection
-                </button> */}
+
+            <section className="section3">
+                <div className="section3__container">
+                    <h2 className="section3__container-h2">New ceramics</h2>
+                    <CollectionSection
+                        imgClass={"collection__list-item-img"}
+                        nameClass={"collection__list-item-h4"}
+                        priceClass={"collection__list-item-p"}
+                        howManyItems={4}
+                        buttonClass={"collection__button"}
+                    />
+                </div>
             </section>
+
+            <section className="section4">
+                <div className="section4__container">
+                    <h2 className="section4__container-h2">
+                        Our popular products
+                    </h2>
+                    <CollectionSection
+                        className="collection"
+                        imgClass={"collection__list-item-img"}
+                        nameClass={"collection__list-item-h4"}
+                        priceClass={"collection__list-item-p"}
+                        howManyItems={2}
+                        buttonClass={"collection__button"}
+                    />
+                </div>
+            </section>
+
             <section className="section5">
-                Join the club and get the benefits
+                <Newsletter />
             </section>
 
             <section className="section6">

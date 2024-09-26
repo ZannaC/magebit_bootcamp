@@ -18,6 +18,9 @@
             font-size: 24px;
         }
         &-right{
+            &-div {
+                position: relative;
+            }
             &-cart {
                 @include btn-reset();
                 margin-right: 16px;
@@ -39,7 +42,6 @@
                 @include btn-reset();
             }
         }
-
     }
     &__nav {
         padding: 20px 0;
@@ -48,6 +50,7 @@
         &-list {
             @include list-reset();
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             max-width: 675px;
             width: 100%;

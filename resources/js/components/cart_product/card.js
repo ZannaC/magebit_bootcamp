@@ -1,24 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ProductsRequest from "../../utils/ProductsRequest";
+// import { debounce } from "lodash";
 
-function Productcard({product}) {
-    const [amount, setAmount] = useState(1);
+function Productcard({product, setSubTotal}) {
+    const userId = JSON.parse(localStorage.getItem('login'))?.userId;
+    const productId = product.id;
+    // quantity
+    const [clickAmount, setClickAmount] = useState(0);
+    // product quantity
+    const [productQuantity, setProductQuantity] = useState(product.quantity);
+
+    function debounce(func, timeout = 300){
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
+      }
+
+    const debouncedUpdateCart = () => {
+        const obj = {
+            productId: productId,
+            quantity: clickAmount,
+            userId: userId,
+        };
+        ProductsRequest('cart-update', obj)
+        .then((res) => {
+            setSubTotal(res.subTotal);
+            setProductQuantity(res.productQuantity);
+        })
+    }; // 300 milliseconds debounce delay
+
+    useEffect(() => {
+        if (clickAmount !== 0) {
+            const delayedUpdateCart = debounce(debouncedUpdateCart, 50);
+            delayedUpdateCart(); // Вызываем созданную задержанную функцию сразу
+            setClickAmount(0); // Очищаем количество кликов на 0
+            return delayedUpdateCart.cancel; // Возвращаем функцию для отмены таймера при размонтировании
+        }
+    }, [clickAmount]);
 
     const handleAmountIncrease = () => {
-        setAmount(amount + 1);
+        setClickAmount(clickAmount + 1);
     };
 
     const handleAmountDecrease = () => {
-        if (amount <= 1) {
+        if (productQuantity <= 1) {
             return;
         }
-        setAmount(amount - 1);
+        setClickAmount(clickAmount - 1);
     };
 
     return (
         <>
             <div className="product">
                 <div className="product-image">
-                    <img src="https://images.unsplash.com/photo-1523263889714-d345f8119047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1076&q=80"></img>
+                    <img src={product.image}></img>
                 </div>
                 <div className="product-details">
                     <div className="product-title">{product.name}</div>
@@ -38,7 +75,7 @@ function Productcard({product}) {
                         </button>
                         <span className="descr__block-inner-buttons-amount-span-amount">
                             {" "}
-                            {product.amount}{" "}
+                            {productQuantity}{" "}
                         </span>
                         <button
                             className="descr__block-inner-buttons-amount-span-increase"
@@ -49,10 +86,7 @@ function Productcard({product}) {
                         </button>
                     </span>
                 </div>
-                <div className="product-removal">
-                    <button className="remove-product">Remove</button>
-                </div>
-                <div className="product-line-price">84.99</div>
+                <div className="product-line-price">{productQuantity * product.price}</div>
             </div>
         </>
     );

@@ -9,6 +9,7 @@
     &__list {
         @include list-reset();
         display: flex;
+        justify-content: space-around;
         margin-bottom: 35px;
         &-item {
             &:not(:last-child) {
@@ -23,19 +24,26 @@
                 font-family: "space-grotesk";
                 font-size: 20px;
                 line-height: 28px;
-                color: #2A254B;
+                color: #2a254b;
                 margin-bottom: 8px;
             }
             &-price {
                 font-size: 18px;
                 line-height: 27px;
-                color: #2A254B;
+                color: #2a254b;
             }
         }
     }
     &__button-block {
         display: flex;
         justify-content: center;
+        a {
+            text-decoration: none;
+            color: #2a254b;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
         &-btn {
             @include btn-reset();
             min-width: 170px;
@@ -43,13 +51,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #F9F9F9;
-            color: #2A254B;
+            background-color: #f9f9f9;
+            color: #2a254b;
             font-size: 16px;
             line-height: 24px;
-            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
             &:hover {
-                background-color: #2A254B;
+                background-color: #2a254b;
                 color: white;
             }
             &:active {

@@ -1,17 +1,52 @@
 //collection
-@import 'collection_mobile.scss';
+@import "collection_mobile.scss";
 
 // About page styles.
-@import 'about_mobile.scss';
+@import "about_mobile.scss";
 
 // Newsletter styles.
-@import 'newsletter_mobile.scss';
+@import "newsletter_mobile.scss";
+
+// header mobile styles
+@import "header_mobile.scss";
+
+// footer mobile styles
+@import "footer_mobile.scss";
+
+// Login page styles.
+@import 'login_mobile.scss';
+
+// Sign up styles.
+@import 'signup_mobile.scss';
 
 // checkout
-@import 'mobile_checkout.scss';
+@import "mobile_checkout.scss";
 
 // pdp
-@import 'pdp_mobile.scss';
+@import "pdp_mobile.scss";
+
+// brand
+@import "brand_mobile.scss";
+
+// home page
+@import "home_mobile.scss";
+
+
+// account page
+@import "account_mobile.scss";
+
+// cart mobile
+@import "cart_mobile.scss";
+
+// burger menu styles
+@import 'menu.scss';
+
+//plp styles
+@import 'plp_mobile.scss';
+
+// search styles
+@import 'search_mobile.scss';
+
 
 @media (max-width: 1200px) {
     .container {

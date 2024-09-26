@@ -1,13 +1,13 @@
 .section1 {
-    max-width: 1440px;
-    margin: 60px 80px;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: rgba(42, 37, 75, 1);
     color: #ffffff;
 
     &__container {
-        padding-left: 60px;
+        padding: 0px 60px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -21,11 +21,21 @@
 
         &-button {
             font-size: 16px;
-            max-width: 170px;
+            min-width: 170px;
+            width: 100%;
             height: 56px;
-
             background-color: rgb(52, 48, 83);
             color: #ffffff;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #474072;
+                color: white;
+            }
+            &:active {
+                transform: scale(0.9);
+            }
         }
         &-h2 {
             color: #ffffff;
@@ -40,7 +50,6 @@
         display: flex;
         justify-content: flex-end;
         align-items: stretch;
-        max-width: 520px;
         width: 100%;
 
         &-img {
@@ -50,33 +59,119 @@
     }
 }
 
+.section3 {
+    max-width: 1280px;
+    margin: 0 auto;
+    &__container {
+        &-h2 {
+            font-family: "Space Grotesk";
+            font-size: 32px;
+            padding-top: 6.25%;
+            padding-bottom: 2.6%;
+        }
+    }
+    .collection__button {
+        @include btn-reset();
+        width: 100%;
+        min-width: 170px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        font-size: 16px;
+        line-height: 24px;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+            transform 0.05s ease-in-out;
+        &:hover {
+            background-color: #2a254b;
+            color: white;
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
+
+.section4 {
+    max-width: 1280px;
+    margin: 0 auto;
+    &__container {
+        &-h2 {
+            font-family: "Space Grotesk";
+            font-size: 32px;
+            padding-top: 6.25%;
+            padding-bottom: 2.6%;
+        }
+    }
+    .collection__button {
+        @include btn-reset();
+        width: 100%;
+        min-width: 170px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+        color: #2a254b;
+        font-size: 16px;
+        line-height: 24px;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+            transform 0.05s ease-in-out;
+        &:hover {
+            background-color: #2a254b;
+            color: white;
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
+
 .section6 {
-    max-width: 1440px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: rgba(255, 255, 255, 1);
 
     &__container {
         padding-top: 72px;
-        padding-left: 84px;
-        padding-right: 100px;
-
+        margin-left: 8.4%;
+        margin-right: 13.9%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
         &-button {
             font-size: 16px;
-            max-width: 170px;
+            min-width: 170px;
+            width: 100%;
             height: 56px;
             border-color: #f9f9f9;
             background-color: rgba(249, 249, 249, 1);
             color: rgba(42, 37, 75, 1);
-            margin-top: 196px;
-            margin-bottom: 54px;
+            margin-top: 29.7%;
+            margin-bottom: 8.2%;
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out, transform 0.05s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                background-color: #2a254b;
+                color: white;
+            }
+            &:active {
+                transform: scale(0.9);
+            }
         }
         &-h2 {
+            max-width: 536px;
             font-family: "Space Grotesk";
             font-size: 24px;
             padding-bottom: 25px;
         }
         &-h3 {
+            max-width: 536px;
             font-size: 16px;
             padding-bottom: 25px;
             line-height: 21.6px;
@@ -86,7 +181,6 @@
         display: flex;
         justify-content: flex-end;
         align-items: stretch;
-        max-width: 720px;
         width: 100%;
 
         &-img {

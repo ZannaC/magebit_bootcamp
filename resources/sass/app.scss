@@ -4,9 +4,6 @@
 // Global
 @import "global.scss";
 
-//footer styles
-@import "footer.scss";
-
 //pdp styles
 @import "pdp.scss";
 
@@ -19,6 +16,8 @@
 // header styles
 @import "header.scss";
 
+//footer styles
+@import "footer.scss";
 
 // Home page styles
 @import "homePage.scss";
@@ -27,16 +26,40 @@
 @import "brand.scss";
 
 // collection styles
-@import 'collection.scss';
+@import "collection.scss";
 
 // homepage
-@import 'homePage.scss';
+@import "homePage.scss";
 
 // About page styles.
-@import 'about.scss';
+@import "about.scss";
 
 // Newsletter styles.
-@import 'newsletter.scss';
+@import "newsletter.scss";
+
+// Login page styles.
+@import "login.scss";
+
+// Sign up page styles.
+@import "signup.scss";
+
+// plp styles
+@import "plp.scss";
+
+// plp styles
+@import "plp.scss";
 
 // Mobile styles.
-@import 'mobile.scss';
+@import "mobile.scss";
+
+// Search styles.
+@import "search.scss";
+
+// Account styles.
+@import "account.scss";
+
+// UserWishlist styles.
+@import "userWishlist.scss";
+
+// already logged in page
+@import "already.scss";

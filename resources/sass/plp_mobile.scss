@@ -1,0 +1,42 @@
+@media (max-width: 1200px) {
+    .plp {
+        &__list {
+            &-item {
+                &-img {
+                    max-width: 180px;
+                    height: 180px;
+                }
+            }
+            &-button {
+                max-width: 180px;
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+    .plp {
+        display: flex;
+        flex-direction: column;
+        &__filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            &-wrapper {
+                min-height: 0;
+                margin: 0;
+                padding: 0 20px;
+            }
+        }
+        &__list {
+            &-item {
+                &-img {
+                    max-width: 160px;
+                    height: 160px;
+                }
+            }
+        }
+    }
+}
